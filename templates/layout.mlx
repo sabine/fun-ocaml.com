@@ -43,6 +43,17 @@ let make ~title ~children () =
       <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"/>
       <meta name="msapplication-TileColor" content="#da532c"/>
       <meta name="theme-color" content="#ffffff"/>
+
+        <meta property="og:title" content="Fun OCaml 2024 - Berlin - September 16+17, 2024"/>
+        <meta property="og:description" content="Fun OCaml 2024 is a 2 days open source hacking event dedicated to OCaml enthusiasts and professionals around the globe! Let's get together for an exhilarating event packed with creativity, innovation, and learning!"/>
+        <meta property="og:image" content="https://fun-ocaml.com/social-media/fun-ocaml.png"/>
+        <meta property="og:site_name" content="Fun OCaml 2024 - Berlin - September 16+17, 2024"/>
+        <meta property="og:url" content="https://fun-ocaml.com"/>
+        <meta name="twitter:card" content="summary_large_image"/>
+        <meta name="twitter:title" content="Fun OCaml 2024 - Berlin - September 16+17, 2024"/>
+        <meta name="twitter:description" content="Fun OCaml 2024 is a 2 days open source hacking event dedicated to OCaml enthusiasts and professionals around the globe! Let's get together for an exhilarating event packed with creativity, innovation, and learning!"/>
+        <meta name="twitter:image" content="https://fun-ocaml.com/social-media/fun-ocaml.png"/>
+        (* <meta name="twitter:site" content="@fun_ocaml"> *)
     </head>
     <body>
       (list children)

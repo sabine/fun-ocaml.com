@@ -136,7 +136,7 @@ let avatar_maybe_you ~title ~subtitle =
     <img class_="rounded-full w-48" src="/img/maybe-you.svg" alt=""/>
     (<div class_="font-bold mt-2">(text title)</div>)
     (<div class_="">(text subtitle)</div>)
-    (button ~classes:"mt-4" ~href:"https://cfp.fun-ocaml.com" "Submit your Proposal")
+    (button ~classes:"mt-4" ~href:cfp_url "Submit your Proposal")
   </div>
 
 let avatar person =
@@ -201,7 +201,7 @@ let organizers_section =
       (<p class_="text-xl my-4">(text "Want to help? Contact any of the organizers!")</p>)
       <div class_="flex flex-wrap gap-10 mt-8">
         (avatar {
-          img_src = "https://avatars.githubusercontent.com/u/6594573?v=4";
+          img_src = "/avatars/sabine.jpg";
           tag_title = "Organizer";
           name = "Sabine Schmaltz";
           title = "Tarides";
@@ -211,7 +211,7 @@ let organizers_section =
           ]
         })
         (avatar {
-          img_src = "https://avatars.githubusercontent.com/u/3763599?v=4";
+          img_src = "/avatars/davesnx.jpg";
           tag_title = "Organizer";
           name = "David Sancho";
           title = "ahrefs";
