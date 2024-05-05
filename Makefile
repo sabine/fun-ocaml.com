@@ -19,8 +19,19 @@ switch: deps ## Create an opam switch and install development dependencies
 build: ## Build the project, including non installable libraries and executables
 	opam exec -- dune build --root .
 
+.PHONE: assets
+assets:
+	mkdir -p output
+	cp -r asset/* output/
+
+.PHONY: css
+css:
+	mkdir -p output/css
+	opam exec -- tailwindcss -m -c tailwind.config.js -i src/css/styles.css -o output/css/main.css
+
 .PHONY: run
-run:
+run: css assets
+	mkdir -p output/privacy
 	opam exec -- dune exec main
 
 .PHONY: clean

@@ -1,0 +1,54 @@
+open Jsx
+
+let navigation_link ~href ~title =
+  <a class_="px-4 h-full items-center hover:text-primary_dark" href=(href)>(text title)</a>
+
+let navigation children =
+  <nav class_="bg-[#1A202C] text-white">
+    <div class_="container mx-auto px-6 flex items-center">
+      <a class_="px-2 pt-3" href="/#event"><img src="/img/fun-ocaml-logo.svg"/></a>
+      (list children)
+    </div>
+  </nav>
+
+let email_link ~id ~user host =
+  list [
+    <a id=(id)></a>;
+    <script>
+  (Format.sprintf {|
+  (function (){
+    let user = "%s";
+    let host = "%s";
+    let elink = document.getElementById("%s");
+    elink.href = `mailto:${user}@${host}`;
+    elink.innerHTML = `${user}@${host}`;
+  })()
+  |} user host id |> unsafe)
+    </script>
+  ]
+
+let make ~title ~children () =
+  <html lang="en">
+    <head>
+      <meta charset="utf-8"/>
+      <title>(text title)</title>
+      <link rel="stylesheet" href="/css/main.css"/>
+      <link rel="stylesheet" href="font-files/inter.css"/>
+      <link rel="stylesheet" href="font-files/Montserrat.css"/>
+
+      <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"/>
+      <link rel="icon" type_="image/png" sizes="32x32" href="/favicon-32x32.png"/>
+      <link rel="icon" type_="image/png" sizes="16x16" href="/favicon-16x16.png"/>
+      <link rel="manifest" href="/site.webmanifest"/>
+      <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"/>
+      <meta name="msapplication-TileColor" content="#da532c"/>
+      <meta name="theme-color" content="#ffffff"/>
+    </head>
+    <body>
+      (list children)
+      (navigation [
+        navigation_link ~href:"/" ~title:"Event";
+        navigation_link ~href:"/privacy" ~title:"Privacy Policy"
+      ])
+    </body>
+  </html>

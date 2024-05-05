@@ -9,8 +9,7 @@ homepage: "https://github.com/sabine/fun-ocaml.com"
 bug-reports: "https://github.com/sabine/fun-ocaml.com/issues"
 depends: [
   "ocaml" {>= "4.14.0"}
-  "dune" {>= "3.6"}
-  "dream-html"
+  "dune" {>= "3.9"}
   "bos"
   "fpath"
   "tailwindcss"

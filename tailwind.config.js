@@ -1,7 +1,7 @@
 const defaultTheme = require("tailwindcss/defaultTheme")
 
 module.exports = {
-  content: ["**/*.eml"],
+  content: ["**/*.mlx"],
   darkMode: 'class',
   theme: {
     screens: {
@@ -11,10 +11,16 @@ module.exports = {
       'xl': '80em',
     },
     extend: {
+      colors: {
+        primary_light: "#d43f00",
+        primary_dark: "#c04e1d",
+        sand: "#faf8f3",
+        dark_blue: "#0e1f43",
+      },
       typography: (theme) => ({ }),
       fontFamily: {
         sans: ["Inter var", ...defaultTheme.fontFamily.sans],
-        mono: ["Roboto Mono", ...defaultTheme.fontFamily.mono]
+        montserrat: ["Montserrat", ...defaultTheme.fontFamily.sans]
       },
     },
   },

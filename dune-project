@@ -1,4 +1,4 @@
-(lang dune 3.6)
+(lang dune 3.9)
 
 (name fun_ocaml)
 
@@ -22,7 +22,6 @@
   (ocaml
    (>= 4.14.0))
   dune
-  dream-html
   bos
   fpath
   tailwindcss
@@ -31,3 +30,10 @@
    (>= 0.2.0))
   ppx_deriving_yaml
   ))
+
+(dialect
+ (name mlx)
+ (implementation
+  (extension mlx)
+  (preprocess
+   (run mlx-pp %{input-file}))))
