@@ -1,0 +1,12 @@
+(executable
+ (name main)
+ (public_name main)
+ (modules main data utils template)
+ (libraries dream bos cmarkit yaml ptime fmt fpath)
+ (preprocess
+  (pps ppx_deriving_yaml)))
+
+(rule
+ (target template.ml)
+ (action
+  (run %{bin:dream_eml} %{dep:template.eml} --workspace %{workspace_root})))

@@ -1,0 +1,87 @@
+- title: Basic Infrastructure
+  subfeatures:
+    - title: 'Signup & Password Reset Flow'
+    - title: 'Image & Video Upload and Distribution'
+- title: Socials
+  subfeatures:
+    - title: 'User Profiles'
+      questions:
+        - title: Where can I find people who enjoy the same topics I do?
+        - title: I want to find people with a similar body shape, so I can follow in their footsteps.
+    - title: 'Posts & Comments'
+      questions:
+      - title: I want to share my progress.
+      - title: I want to ask questions.
+      - title: I want to post images.
+      - title: I want to share videos.
+    - title: 'Following'
+      questions:
+        - title: What are my friends posting?
+        - title: I want to see projects my friends complete.
+        - title: What projects are my friends working on?
+    - title: 'Communities'
+      questions:
+      - title: I want to easily connect my friends with each other.
+      - title: I want to build an audience around a topic.
+- title: 'Community-Built Databases'
+  subfeatures:
+    - title: 'Pattern Database'
+      description: >
+        People record information about patterns in a community-curated
+        database.
+      questions:
+        - title: How did projects using a given pattern turn out?
+        - title: What do other people say about a given pattern?
+        - title:
+            Given a project idea, what is a suitable pattern to use to make it?
+        - title: Is there a pattern available in my desired size?
+        - title: Where can I find an out-of-print pattern?
+      subfeatures:
+        - title: Patterns
+          description: >
+            Patterns are instructions or purely informational building blocks
+            used to create projects. For example, a sewing pattern, some
+            woodworking plans, or an OCaml library or framework.
+        - title: Sources
+          description: >
+            Sources are the means of delivery of patterns. For example, for a
+            sewing pattern, a source can be a PDF download (one-time payment,
+            free), pattern envelope, magazine, book. The source of an
+            OCaml framework or library tends to be GitHub or opam.
+    - title: Materials & Tools Database
+      questions:
+        - title:
+            Where can I buy the same (or a very similar) material used on a
+            project?
+      subfeatures:
+        - title: 'Materials Database'
+          description: >
+            Materials are physical ingredients used to make a project. They are
+            used up in the process of making. For example, fabric, wood,
+            buckles, thread, 3D printer filament.
+        - title: 'Tools Database'
+          description: >
+            Tools are physical items used to make a project. They are not used
+            up in the process of making. For example, a sewing machine, a
+            hammer, a 3D printer.
+    - title: 'Personal Notebook'
+      subfeatures:
+        - title: 'Projects'
+          questions:
+          - title: What materials or tools did they use to make the project?
+        - title: 'Pattern Library'
+        - title: 'Materials Inventory'
+        - title: 'Measurements Tracker'
+        - title: 'Bookmarks'
+          questions:
+          - title: I want to remember things I saw.
+    - title: 'Location & Event Database'
+      description: >
+        Locations are places around the world or the web. Events can be
+        in-person or online. There are various forms and purposes of events.
+      questions:
+        - title: I am bored, is there some challenge or make-a-long I can participate in?
+        - title: I want to learn something, is there a class nearby?
+        - title: I need materials, what stores are nearby and what do they sell?
+        - title: I need materials, where do my friends buy, and which of these stores ship to me?
+        - title: I want to meet people who are into my thing, are there any meetups / local groups?

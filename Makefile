@@ -1,0 +1,36 @@
+.DEFAULT_GOAL := all
+
+.PHONY: all
+all:
+	opam exec -- dune build --root .
+
+.PHONY: deps
+deps: create_switch ## Install development dependencies
+	opam install -y ocamlformat=0.26.0 ocaml-lsp-server
+	opam install -y --deps-only --with-test --with-doc .
+
+.PHONY: create_switch
+create_switch: ## Create switch and pinned opam repo
+	opam switch create . 5.1.1 --no-install
+.PHONY: switch
+switch: deps ## Create an opam switch and install development dependencies
+
+.PHONY: build
+build: ## Build the project, including non installable libraries and executables
+	opam exec -- dune build --root .
+
+.PHONY: run
+run:
+	opam exec -- dune exec main
+
+.PHONY: clean
+clean: ## Clean build artifacts and other generated files
+	opam exec -- dune clean --root .
+
+.PHONY: fmt
+fmt: ## Format the codebase with ocamlformat
+	opam exec -- dune build --root . --auto-promote @fmt
+
+.PHONY: watch
+watch: ## Watch for the filesystem and rebuild on every change
+	opam exec -- dune build @run -w --force --no-buffer
