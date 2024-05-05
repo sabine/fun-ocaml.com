@@ -189,9 +189,10 @@ let sponsors_section =
   </div>
 
 let organizers_section =
-  <div class_="bg-[url('/img/blue-bg.svg')] bg-center bg-cover text-white">
-    <div id="organizers" class_="container mx-auto px-6 py-20">
+  <div id="organizers" class_="bg-[url('/img/blue-bg.svg')] bg-center bg-cover text-white">
+    <div class_="container mx-auto px-6 py-20">
       (h2 ~classes:"text-white" "Organizers & Volunteers")
+      (<p class_="my-4">(text "Want to help? Contact any of the organizers!")</p>)
       <div class_="flex flex-wrap gap-10 mt-8">
         (avatar {
           img_src = "https://avatars.githubusercontent.com/u/6594573?v=4";
