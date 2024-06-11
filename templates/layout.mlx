@@ -1,7 +1,10 @@
-open Jsx
+open JSX
 
 let navigation_link ~href ~title =
-  <a class_="px-4 h-full items-center hover:text-primary_dark" href=(href)>(text title)</a>
+  <a class_="px-4 h-full items-center hover:text-primary_dark" href=(href)>(string title)</a>
+
+let navigation_button ~href ~title =
+  <a class_="inline-flex font-montserrat text-white bg-primary_light px-4 py-2" href=(href)>(string title)</a>
 
 let navigation children =
   <nav class_="bg-[#1A202C] text-white">
@@ -31,7 +34,7 @@ let make ~title ~children () =
   <html lang="en">
     <head>
       <meta charset="utf-8"/>
-      <title>(text title)</title>
+      <title>(string title)</title>
       <link rel="stylesheet" href="/css/main.css"/>
       <link rel="stylesheet" href="font-files/inter.css"/>
       <link rel="stylesheet" href="font-files/Montserrat.css"/>

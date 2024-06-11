@@ -1,4 +1,4 @@
-open Jsx
+open JSX
 
 let top_navigation =
   (Layout.navigation [
@@ -41,6 +41,11 @@ the data you provided will be made public.
 For technical reasons, when you use [cfp.fun-ocaml.com](https://cfp.fun-ocaml.com),
 a CSRF cookie, and, if you create an account, a session cookie will be set.
 
+## tickets.fun-ocaml.com
+
+The conference organizer can see all data you enter. We use your personal information only
+for purposes directly related to organizing the event.
+
 ## Server Logs
 
 When you access our website or individual pages, the browser on your device
@@ -81,7 +86,7 @@ let make () =
       <div class_="mx-auto container px-6 py-20 min-h-screen">
         <div class_="prose prose-xl">
         <p>
-          (text "Privacy contact: ")
+          (string "Privacy contact: ")
           (Layout.email_link ~id:"privacy_email" ~user:"privacy" "fun-ocaml.com")
         </p>
         (privacy |> unsafe)

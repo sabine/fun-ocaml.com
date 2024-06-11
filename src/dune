@@ -2,6 +2,6 @@
  (name main)
  (public_name main)
  (modules main data utils)
- (libraries dream bos cmarkit yaml ptime fmt fpath templates)
+ (libraries bos cmarkit yaml ptime fmt fpath templates)
  (preprocess
   (pps ppx_deriving_yaml)))

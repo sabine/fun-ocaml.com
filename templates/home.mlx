@@ -1,7 +1,9 @@
-open Jsx
+open JSX
 
-let cfp_close_date = "June 9, 2024"
+let cfp_close_date = "June 16, 2024"
 let cfp_url = "https://cfp.fun-ocaml.com/fun-ocaml-2024/cfp"
+
+let registration_url = "https://tickets.fun-ocaml.com/fun-ocaml/2024/"
 
 let top_navigation =
   Layout.navigation [
@@ -11,30 +13,39 @@ let top_navigation =
       Layout.navigation_link ~href:"#venue" ~title:"Venue";
       Layout.navigation_link ~href:"#sponsors" ~title:"Sponsors";
       Layout.navigation_link ~href:"#organizers" ~title:"Organizers";
+      Layout.navigation_button ~href:registration_url ~title:"Register";
   ]
 
 let button ?(classes="") ~href title =
   <a class_=("inline-block bg-gradient-to-r from-primary_dark to-primary_light hover:from-black hover:to-black text-white font-semibold px-8 py-3 rounded-full " ^ classes)
-    href=(href) target="_blank">(text title)</a>
+    href=(href) target="_blank">(string title)</a>
 
 let h2 ?(classes="") title =
-  <h2 class_=("font-bold text-primary_light text-4xl " ^ classes)>(title |> String.uppercase_ascii |> text)</h2>
+  <h2 class_=("font-bold text-primary_light text-4xl " ^ classes)>(title |> String.uppercase_ascii |> string)</h2>
 
 let tag ?(classes="") title =
-   <div class_=(classes ^ " inline-flex font-montserrat text-white bg-primary_light px-4 py-2")>(text title)</div>
+   <div class_=(classes ^ " inline-flex font-montserrat text-white bg-primary_light px-4 py-2")>(string title)</div>
 
 let hero_section =
   <div id="event" class_="bg-[url('/img/hero-background.png')] bg-center bg-cover py-60">
     <div class_="container mx-auto px-6">
       <h1 class_="font-montserrat font-regular text-7xl text-white">(list [
-        text "FUN ";
-        <span class_="text-primary_dark">(text "OCaml")</span>
+        string "FUN ";
+        <span class_="text-primary_dark">(string "OCaml")</span>
       ])
       </h1>
-      <div class_="mt-6 text-7xl font-bold text-white font-montserrat">(text "BERLIN")</div>
+      <div class_="mt-6 text-7xl font-bold text-white font-montserrat">(string "BERLIN")</div>
       (tag ~classes:"text-3xl mt-6" "September 16 & 17, 2024")
+
+      <a class_="flex items-center gap-2 text-white underline hover:no-underline text-xl mt-6" href=(registration_url)>
+        (string ("Register here, starting from June 11, 17:00 CEST / UTC+2"))
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" class_="w-6 h-6">
+          <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+        </svg>
+      </a>
+
       <a class_="flex items-center gap-2 text-white underline hover:no-underline text-xl mt-6" href=(cfp_url)>
-        (text ("The CFP is open until " ^ cfp_close_date))
+        (string ("The CFP is open until " ^ cfp_close_date))
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" class_="w-6 h-6">
           <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
         </svg>
@@ -49,7 +60,7 @@ let program_section =
     <div class_="mt-8 grid lg:grid-cols-2 gap-6">
       <div class_="">
         <img class_="w-full" src="/img/venue1-Credit-Steve-Bergmann.jpeg"/>
-        <small>(text "Image: © Steve Bergmann")</small>
+        <small>(string "Image: © Steve Bergmann")</small>
       </div>
       <div class_="prose prose-xl">
       ({|
@@ -74,8 +85,8 @@ Talks are live-streamed and will appear on [watch.ocaml.org](https://watch.ocaml
   </div>;
   <div class_="bg-[url('/img/blue-bg.svg')] bg-center bg-cover text-white">
     <div class_="py-20 text-center">
-      (<h3 class_="text-3xl font-semibold">(text "Propose a Talk or Workshop")</h3>)
-      (<p class_="text-xl mt-4">(text ("The CFP is open until " ^ cfp_close_date))</p>)
+      (<h3 class_="text-3xl font-semibold">(string "Propose a Talk or Workshop")</h3>)
+      (<p class_="text-xl mt-4">(string ("The CFP is open until " ^ cfp_close_date))</p>)
       (button ~classes:"mt-4 text-xl no-underline" ~href:cfp_url "Submit your Proposal")
     </div>
   </div>;
@@ -118,7 +129,7 @@ Talks are live-streamed and will appear on [watch.ocaml.org](https://watch.ocaml
   ]
 
 type social = {
-  icon : string -> Jsx.element;
+  icon : string -> element;
   title : string;
   href : string;
 }
@@ -134,8 +145,8 @@ type person = {
 let avatar_maybe_you ~title ~subtitle =
   <div class_="flex flex-col items-center text-lg">
     <img class_="rounded-full w-48" src="/img/maybe-you.svg" alt=""/>
-    (<div class_="font-bold mt-2">(text title)</div>)
-    (<div class_="">(text subtitle)</div>)
+    (<div class_="font-bold mt-2">(string title)</div>)
+    (<div class_="">(string subtitle)</div>)
     (button ~classes:"mt-4" ~href:cfp_url "Submit your Proposal")
   </div>
 
@@ -146,8 +157,8 @@ let avatar person =
   <div class_="flex flex-col items-center text-lg">
     <img class_="rounded-full w-48" src=(person.img_src) alt=""/>
     (tag ~classes:"px-4 mt-4" person.tag_title)
-    (<div class_="font-bold mt-2">(text person.name)</div>)
-    (<div class_="">(text person.title)</div>)
+    (<div class_="font-bold mt-2">(string person.name)</div>)
+    (<div class_="">(string person.title)</div>)
     (<div class_="mt-2 flex gap-2">
       (person.socials |> List.map social |> list)
     </div>)
@@ -168,7 +179,7 @@ let schedule_section =
       (h2 ~classes:"text-white" "Schedule")
 
       <div class_="mt-6">
-        (text "TBD")
+        (string "TBD")
       </div>
     </div>
   </div>
@@ -177,9 +188,9 @@ let venue_section =
   <div id="venue" class_="bg-[url('/img/venue2-Credit-Julius-Worel.jpeg')] relative bg-center bg-cover items-center py-32">
     <div class_="max-w-full w-96 bg-white border-primary_dark border-4 mx-auto px-12 py-6">
       (h2 "Venue")
-      <div class_="mt-6 prose prose-lg">(text "Space Shack Coworking")<br/>(text "Akazienstr. 3a, 10823 Berlin")</div>
+      <div class_="mt-6 prose prose-lg">(string "Space Shack Coworking")<br/>(string "Akazienstr. 3a, 10823 Berlin")</div>
       <div class_="absolute bottom-0 right-0 px-4 bg-blur bg-white/80">
-        <small>(text "Image: © Julius Worel")</small>
+        <small>(string "Image: © Julius Worel")</small>
       </div>
     </div>
 
@@ -190,7 +201,7 @@ let sponsors_section =
     (h2 "Sponsors")
 
     <div class_="mt-6">
-      (text "TBA")
+      (string "TBA")
     </div>
   </div>
 
@@ -198,7 +209,7 @@ let organizers_section =
   <div id="organizers" class_="bg-[url('/img/blue-bg.svg')] bg-center bg-cover text-white">
     <div class_="container mx-auto px-6 py-20">
       (h2 ~classes:"text-white" "Organizers & Volunteers")
-      (<p class_="text-xl my-4">(text "Want to help? Contact any of the organizers!")</p>)
+      (<p class_="text-xl my-4">(string "Want to help? Contact any of the organizers!")</p>)
       <div class_="flex flex-wrap gap-10 mt-8">
         (avatar {
           img_src = "/avatars/sabine.jpg";

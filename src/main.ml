@@ -1,7 +1,7 @@
 let render_homepage () =
   let _features = Data.Features.all () in
   let html =
-    Templates.Home.make () |> Html_of_jsx.render
+    Templates.Home.make () |> JSX.render
     |> Printf.sprintf "<!doctype html>%s"
   in
   let oc = open_out "output/index.html" in
@@ -11,7 +11,7 @@ let render_homepage () =
 let render_privacy_policy () =
   let html =
     Templates.Privacy.make ()
-    |> Html_of_jsx.render
+    |> JSX.render
     |> Printf.sprintf "<!doctype html>%s"
   in
   let oc = open_out "output/privacy/index.html" in

@@ -25,6 +25,8 @@
   bos
   fpath
   tailwindcss
+  html_of_jsx
+  mlx
   fmt
   (cmarkit
    (>= 0.2.0))
