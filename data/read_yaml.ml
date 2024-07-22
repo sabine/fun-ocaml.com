@@ -127,7 +127,7 @@ let extract_metadata_body path s =
   let* yaml = Yaml.of_string yaml in
   Ok (yaml, body)
 
-let root_dir = Fpath.(v (Sys.getcwd ()) // v "src" // v "data")
+let root_dir = Fpath.(v (Sys.getcwd ()) // v "data")
 
 let read_file filepath =
   let filepath = Fpath.(root_dir // filepath) in
