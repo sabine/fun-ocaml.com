@@ -1,0 +1,72 @@
+- slug: "riot"  
+  title: Building reliable actor systems with OCaml and Riot
+  speakers: ["leandro"]
+  kind: workshop 	
+- slug: "ocsigen-eliom"	
+  title: Web and mobile app development in OCaml
+  speakers: ["vincent"]
+  kind: workshop 	
+- slug: "gamelle"
+  title: "Gamelle : 2D games in OCaml"
+  speakers: ["emile"]
+  kind: workshop 	
+- slug: dune-multiplatform-project
+  title: Using bindings and the select dune stanza to create multiplatform project
+  speakers: ["paul-elliot"]
+  kind: workshop 	
+- slug: concurrency-parallelism
+  title: Concurrency and Parallelism in OCaml
+  speakers: ["vesa", "arthur", "carine"]
+  kind: workshop
+- slug: image-comparison
+  title: The story behind the fastest image comparison library in the world written in OCaml
+  speakers: ["dmitriy"]
+  kind: talk 	
+- slug: dune
+  title: The Dune Mental Model
+  speakers: ["etienne"]
+  kind: talk 	
+- slug: tiny-code-xmas
+  title: Learning OCaml with Tiny Code Xmas
+  speakers: ["michael"]
+  kind: talk 	
+- slug: melange
+  title: A 'Melange' of Tooling Coming Together
+  speakers: ["antonio"]
+  kind: talk 	
+- slug: mirage-os
+  title: MirageOS - developing operating systems in OCaml
+  speakers: ["hannes"]
+  kind: talk 	
+- slug: ocannl
+  title: OCANNL, the `neural_nets_lib`. Mysteries of NNs training unveiled in OCaml
+  speakers: ["lukasz"]
+  kind: talk 	
+- slug: universal-react
+  title: Universal React in OCaml
+  speakers: ["davesnx"]
+  kind: talk 	
+- slug: journey-of-growth
+  title: Maybe OCaml Was the Friends We Made Along the Way; A Journey of Growth in Software Engineering
+  speakers: ["dillon"]
+  kind: talk 	
+- slug: let-signals
+  title: Let Signals in OCaml
+  speakers: ["rizo"]
+  kind: talk 	
+- slug: multicore-gc
+  title: How the Multicore Garbage Collector works
+  speakers: ["sudha"]
+  kind: talk 	
+- slug: odoc
+  title: Using odoc to write documentation
+  speakers: ["paul-elliot"]
+  kind: talk 	
+- slug: incremental-data-pipelines
+  title: Building Incremental and Reproducible Data Pipelines for Tackling Climate Change
+  speakers: ["patrick", "michael"]
+  kind: talk 	
+- slug: type-engineering
+  title: Type engineering in OCaml, illustrated on the OCaml compiler
+  speakers: ["florian"]
+  kind: talk 	

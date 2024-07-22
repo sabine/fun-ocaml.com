@@ -8,7 +8,7 @@ let registration_url = "https://tickets.fun-ocaml.com/fun-ocaml/2024/"
 let top_navigation =
   Layout.navigation [
       Layout.navigation_link ~href:"#program" ~title:"Program";
-      Layout.navigation_link ~href:"#speakers" ~title:"Speakers";
+      (*Layout.navigation_link ~href:"#speakers" ~title:"Speakers";*)
       Layout.navigation_link ~href:"#schedule" ~title:"Schedule";
       Layout.navigation_link ~href:"#venue" ~title:"Venue";
       Layout.navigation_link ~href:"#sponsors" ~title:"Sponsors";
@@ -38,22 +38,31 @@ let hero_section =
       (tag ~classes:"text-3xl mt-6" "September 16 & 17, 2024")
 
       <a class_="flex items-center gap-2 text-white underline hover:no-underline text-xl mt-6" href=(registration_url)>
-        (string ("Register here, starting from June 11, 17:00 CEST / UTC+2"))
+        (string ("Register here"))
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" class_="w-6 h-6">
           <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
         </svg>
       </a>
 
+      (*
       <a class_="flex items-center gap-2 text-white underline hover:no-underline text-xl mt-6" href=(cfp_url)>
         (string ("The CFP is open until " ^ cfp_close_date))
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" class_="w-6 h-6">
           <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
         </svg>
       </a>
+      *)
     </div>
   </div>
 
 let program_section =
+  let session (s : Data.Sessions.t) =
+    <li>
+      <h3 class_="text-2xl font-semibold">(string s.title)</h3>
+      <p class_="text-lg">(String.concat ", " (List.map (fun (s : Data.People.t) -> s.name) s.speakers) |> string)</p>
+      (tag (match s.kind with | Workshop -> "Workshop" | Talk -> "Talk"))
+    </li>
+  in
   [
   <div id="program" class_="container mx-auto px-6 py-20">
     (h2 "Program")
@@ -86,7 +95,6 @@ Talks are live-streamed and will appear on [watch.ocaml.org](https://watch.ocaml
   <div class_="bg-[url('/img/blue-bg.svg')] bg-center bg-cover text-white">
     <div class_="py-20 text-center">
       (<h3 class_="text-3xl font-semibold">(string "Propose a Talk or Workshop")</h3>)
-      (<p class_="text-xl mt-4">(string ("The CFP is open until " ^ cfp_close_date))</p>)
       (button ~classes:"mt-4 text-xl no-underline" ~href:cfp_url "Submit your Proposal")
     </div>
   </div>;
@@ -99,7 +107,7 @@ Talks are live-streamed and will appear on [watch.ocaml.org](https://watch.ocaml
           <div class_="prose prose-lg">
         ({|
   * **Keynote**
-  * **Talks** until 18:00
+  * **Talks**
   * Open until Midnight for Socializing and Hacking!
         |}
         |> Cmarkit.Doc.of_string ~strict:true
@@ -114,6 +122,7 @@ Talks are live-streamed and will appear on [watch.ocaml.org](https://watch.ocaml
           (tag ~classes:"text-2xl mt-2" "September 17 - 9:00-22:00")
           <div class_="prose prose-lg">
           ({|
+  * **Talks**
   * **Workshops**
   * **Hacking:** Contribute to OCaml projects and understand their internals
         |}
@@ -124,23 +133,15 @@ Talks are live-streamed and will appear on [watch.ocaml.org](https://watch.ocaml
           </div>
         </div>
       </div>
+      <div class_="mt-8">
+        (h2 "Sessions")
+        <ul class_="my-8 flex flex-col gap-4">
+          (list (List.map session Data.Sessions.all))
+        </ul>
+      </div>
     </div>
   </div>
   ]
-
-type social = {
-  icon : string -> element;
-  title : string;
-  href : string;
-}
-
-type person = {
-  img_src : string;
-  tag_title : string;
-  name : string;
-  title : string;
-  socials : social list;
-}
 
 let avatar_maybe_you ~title ~subtitle =
   <div class_="flex flex-col items-center text-lg">
@@ -150,17 +151,48 @@ let avatar_maybe_you ~title ~subtitle =
     (button ~classes:"mt-4" ~href:cfp_url "Submit your Proposal")
   </div>
 
-let avatar person =
-  let social (s : social) =
-    <a href=(s.href) title=(s.title)>(s.icon "w-10 h-10")</a>
+let render_social (social: Data.People.social) = 
+  let icon, title, href =
+    match social with
+    | GitHub username ->
+      Social_icons.github,
+        "@" ^ username ^ " on GitHub",
+        "https://github.com/" ^ username
+    | Twitter username ->
+      Social_icons.twitter,
+        "@" ^ username ^ " on Twitter",
+        "https://twitter.com/" ^ username
+    | Mastodon username ->
+      Social_icons.mastodon,
+        "@" ^ username ^ " on Mastodon",
+        "https://mastodon.social/@" ^ username
+    | LinkedIn username ->
+      Social_icons.linkedin,
+        "@" ^ username ^ " on Twitter",
+        "https://linkedin.com/in/" ^ username
+    | Twitch username ->
+      Social_icons.youtube,
+        "@" ^ username ^ " on Twitch",
+        "https://twitch.tv/" ^ username
+    | YouTube channel_name ->
+      Social_icons.youtube,
+        "@" ^ channel_name ^ " on YouTube",
+        "https://www.youtube.com/@" ^ channel_name
+    | Other { title; href } ->
+      Social_icons.other,
+        title,
+        href
   in
+  <a href=(href) title=(title)>(icon "w-10 h-10")</a>
+
+let avatar ?tag_title (person : Data.People.t) =
   <div class_="flex flex-col items-center text-lg">
-    <img class_="rounded-full w-48" src=(person.img_src) alt=""/>
-    (tag ~classes:"px-4 mt-4" person.tag_title)
+    <img class_="bg-[#666] rounded-full w-48 h-48 object-cover" src=(person.img_src) alt=""/>
+    (match tag_title with | Some tag_title -> tag ~classes:"px-4 mt-4" tag_title | None -> JSX.null)
     (<div class_="font-bold mt-2">(string person.name)</div>)
-    (<div class_="">(string person.title)</div>)
+    (<div class_="">(string person.affiliation)</div>)
     (<div class_="mt-2 flex gap-2">
-      (person.socials |> List.map social |> list)
+      (person.socials |> List.map render_social |> list)
     </div>)
   </div>
 
@@ -168,10 +200,11 @@ let speakers_section =
   <div id="speakers" class_="container mx-auto px-6 py-12">
     (h2 "Speakers")
     <div class_="flex flex-wrap gap-10 mt-8">
-      (avatar_maybe_you ~title:"Propose a Talk or Workshop" ~subtitle:("CFP is open until " ^ cfp_close_date))
+      (list (List.map (avatar ~tag_title:"Speaker") Data.speakers))
+
+      (avatar_maybe_you ~title:"Propose a Talk or Workshop" ~subtitle:"")
     </div>
   </div>
-
 
 let schedule_section =
   <div class_="bg-[url('/img/blue-bg.svg')] bg-center bg-cover text-white">
@@ -211,26 +244,11 @@ let organizers_section =
       (h2 ~classes:"text-white" "Organizers & Volunteers")
       (<p class_="text-xl my-4">(string "Want to help? Contact any of the organizers!")</p>)
       <div class_="flex flex-wrap gap-10 mt-8">
-        (avatar {
-          img_src = "/avatars/sabine.jpg";
-          tag_title = "Organizer";
-          name = "Sabine Schmaltz";
-          title = "Tarides";
-          socials = [
-            {icon = Social_icons.github; title="@sabine on GitHub"; href="https://github.com/sabine"};
-            {icon = Social_icons.twitter; title="@sabine_s_ on Twitter"; href="https://twitter.com/sabine_s_"}
-          ]
-        })
-        (avatar {
-          img_src = "/avatars/davesnx.jpg";
-          tag_title = "Organizer";
-          name = "David Sancho";
-          title = "ahrefs";
-          socials = [
-            {icon = Social_icons.github; title="@davesnx on GitHub"; href="https://github.com/davesnx"};
-            {icon = Social_icons.twitter; title="@davesnx on Twitter"; href="https://twitter.com/davesnx"}
-          ]
-        })
+        (avatar (Data.People.get_by_slug "sabine"))
+        (avatar (Data.People.get_by_slug "davesnx"))
+        (avatar (Data.People.get_by_slug "dmitriy"))
+        (avatar (Data.People.get_by_slug "rizo"))
+        (avatar (Data.People.get_by_slug "jules"))
       </div>
     </div>
   </div>
@@ -241,7 +259,7 @@ let make () =
      top_navigation;
      hero_section;
      list program_section;
-     speakers_section;
+     (*speakers_section;*)
      schedule_section;
      venue_section;
      sponsors_section;

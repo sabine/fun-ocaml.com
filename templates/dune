@@ -2,4 +2,4 @@
  (name templates)
  (preprocess
   (pps html_of_jsx.ppx))
- (libraries html_of_jsx cmarkit))
+ (libraries html_of_jsx cmarkit data))

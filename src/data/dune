@@ -1,0 +1,5 @@
+(library
+ (name data)
+ (preprocess
+  (pps ppx_deriving_yaml html_of_jsx.ppx))
+ (libraries yaml html_of_jsx cmarkit fpath bos))

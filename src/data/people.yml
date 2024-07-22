@@ -1,0 +1,175 @@
+- slug: "antonio"
+  name: Antonio Monteiro
+  affiliation: ""
+  bio: |
+    Antonio is the author of Melange, a new compiler for OCaml that targets JavaScript.
+  github: "anmonteiro"
+  twitter: "_anmonteiro"
+  other_socials: []
+- slug: "arthur"
+  name: Arthur Wendling
+  affiliation: Tarides
+  bio: |
+    
+  github: "art-w"
+  other_socials: []
+- slug: "carine"
+  name: Carine Morel
+  affiliation: Tarides
+  bio: |
+    Software engineer at Tarides, doing mainly multicore stuff !
+  github: "lyrm"
+  other_socials: []
+- slug: "davesnx"
+  name: David Sancho Moreno
+  affiliation: ahrefs
+  bio: |
+    Software Engineer from Barcelona, nomading thought Catalonia, making cute software with Reason and OCaml.
+    I host emelle.tv and currently working at Ahrefs, building user interfaces and tools.
+  github: "davesnx"
+  twitter: "davesnx"
+  other_socials: []
+- slug: "dillon"
+  name: Dillon Mulroy
+  affiliation: Vercel
+  bio: |
+    I am a software engineer at Vercel ▲ with a decade of experience.
+    I have a passion for programming and helping educate and excite
+    other developers on the parts of tech that I find exciting and valuable -
+    like OCaml and functional programming! I also use Neovim, btw.
+  github: "dmmulroy"
+  twitter: "dillon_mulroy"
+  other_socials: []
+- slug: "dmitriy"
+  name: Dmitriy Kovalenko
+  affiliation: ""
+  bio: |
+
+  other_socials: []
+- slug: "emile"
+  name: Emile Trotignon
+  affiliation: "Tarides"
+  bio: |
+    I am an OCaml programmer at Tarides were I work on the odoc documentation generator.
+    Before that I did internships in the OCaml community : at team Cambium in INRIA on adding
+    GADT to the code generating by Menhir (LR1 parser generator),
+    and at OCamlPRO on possible extensions of tail-rec modulo cons.
+  other_socials: []
+- slug: "etienne"
+  name: Etienne Millon
+  affiliation: ""
+  bio: |
+
+  other_socials: []
+- slug: "florian"
+  name: Florian Angeletti
+  affiliation: ""
+  bio: |
+
+  other_socials: []
+- slug: "hannes"
+  name: Hannes Mehnert
+  affiliation: "robur.coop"
+  bio: |
+    In computer security since >20 years. PhD "formal verification of the correctness of OO code"
+    (separation logic & Coq). Learned that verifiying existing code is tedious (mutable state).
+    Redeveloping OS in FP brings trustworthy systems. Works full-time on MirageOS since >10 years,
+    now at robur.coop.
+  other_socials: []
+- slug: "leandro"
+  name: Leandro Ostera
+  affiliation: "Tarides"
+  bio: |
+    Leandro is a product manager and software engineer from Argentina, living in
+    Sweden and working for Tarides. In his day job he leads the OCaml Build System
+    team at Tarides. On their spare time, Leandro likes to do street photography,
+    and stream programming on Twitch.
+  github: leostera
+  twitter: leostera
+  twitch: leostera
+  other_socials: []
+- slug: "lukasz"
+  name: Lukasz Stafiniak
+  affiliation: ""
+  bio: |
+    I have (shallowy) background in type inference and constraint solving, ATP,
+    knowledge representation and reasoning, Reinforcement Learning. I'm interested
+    in Machine Learning, AI, cognitive architectures, philosophy of mind.
+  github: lukstafi
+  other_socials: []
+- slug: "michael"
+  name: Michael Dales
+  affiliation: "Cambridge University"
+  bio: |
+    Michael is a research associate at both the Cambridge University Computer
+    Lab and Cambridge Conservation Initiative, working at the intersection of
+    computer science and ecology: investigating how can computing best support
+    those trying to save the planet from a systems approach.
+  other_socials: []
+- slug: "patrick"
+  name: Patrick Ferris
+  affiliation: "Cambridge University"
+  bio: |
+    A PhD student at the University of Cambridge interested in how
+    computer science, programming languages and systems can better help ecologists
+    and scientists tackle climate change.
+  other_socials: []
+- slug: "paul-elliot"
+  name: "Paul-Elliot Anglès d'Auriac"
+  affiliation: "Tarides"
+  bio: |
+    
+  github: panglesd
+  other_socials: []
+- slug: "rizo"
+  name: "Rizo Isrof"
+  affiliation: "Tarides"
+  bio: |
+    I am a software engineer specialized in design and development of systems for
+    data analysis, IoT and web programming. My passion lies in applying theoretical
+    research ideas to real world problems. I am the co-founder and CEO at Hyper.systems
+    and presently also work as a consultant at Tarides.
+  other_socials: []
+- slug: "sudha"
+  name: "Sudha"
+  affiliation: "Tarides"
+  bio: |
+    Sudha is a software engineer and team lead at Tarides.
+  other_socials: []
+- slug: "vesa"
+  name: "Vesa Karvonen"
+  affiliation: "Tarides"
+  bio: |
+    Vesa works as a Principal Software Engineer in the Multicore Applications Team
+    at Tarides developing libraries and frameworks for concurrent and parallel
+    programming in OCaml.  After learning programming during the 16-bit era, he
+    has worked on a wide variety of platforms and domains.
+  other_socials: []
+- slug: "vincent"
+  name: "Vincent Balat"
+  affiliation: "Tarides"
+  bio: |
+    I am Engineering Manager at Tarides, co-creator of the Ocsigen open-source
+    project (first developed when I was at Inria and University Paris Cité),
+    co-founder of the Be Sport social network.
+  other_socials: []
+- slug: "sabine"
+  name: Sabine Schmaltz
+  affiliation: Tarides
+  bio: |
+    OCaml.org maintainer, team lead of the documentation team at Tarides.
+    After receiving a Ph.D. in 2013 from Saarland university, she became
+    a stay-at-home mother interested in web application and database development
+    until she joined Tarides to work on making OCaml a mainstream programming language.
+  github: "sabine"
+  twitter: "sabine_s_"
+  linkedin: "sabfis"
+  mastodon: "sabine@discuss.systems"
+  twitch: "sabine_ocaml"
+  other_socials: []
+- slug: "jules"
+  name: "Jules Aguillon"
+  affiliation: Tarides
+  bio: |
+
+  other_socials: []
