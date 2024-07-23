@@ -73,7 +73,7 @@ module People = struct
     Result.map (List.map of_metadata) metadata
 
   let all =
-    Read_yaml.yaml_file decode "people.yml"
+    Read_yaml.yaml_file decode "2024/people.yml"
     |> Read_yaml.Result.get_ok ~error:(fun (`Msg m) -> Invalid_argument m)
 
   let get_by_slug slug =
@@ -122,7 +122,7 @@ module Sessions = struct
     Result.map (List.map of_metadata) metadata
 
   let all =
-    Read_yaml.yaml_file decode "sessions.yml"
+    Read_yaml.yaml_file decode "2024/sessions.yml"
     |> Read_yaml.Result.get_ok ~error:(fun (`Msg m) -> Invalid_argument m)
 end
 
