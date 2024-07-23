@@ -1,72 +1,115 @@
-- slug: "riot"  
+- slug: 'riot'
   title: Building reliable actor systems with OCaml and Riot
-  speakers: ["leandro"]
-  kind: workshop 	
-- slug: "ocsigen-eliom"	
+  speakers: ['leandro']
+  kind: workshop
+  abstract: |
+
+- slug: 'ocsigen-eliom'
   title: Web and mobile app development in OCaml
-  speakers: ["vincent"]
-  kind: workshop 	
-- slug: "gamelle"
-  title: "Gamelle : 2D games in OCaml"
-  speakers: ["emile"]
-  kind: workshop 	
+  speakers: ['vincent']
+  kind: workshop
+  abstract: |
+
+- slug: 'gamelle'
+  title: 'Gamelle : 2D games in OCaml'
+  speakers: ['emile']
+  kind: workshop
+  abstract: |
+
 - slug: dune-multiplatform-project
-  title: Using bindings and the select dune stanza to create multiplatform project
-  speakers: ["paul-elliot"]
-  kind: workshop 	
+  title:
+    Using bindings and the select dune stanza to create multiplatform project
+  speakers: ['paul-elliot']
+  kind: workshop
+  abstract: |
+
 - slug: concurrency-parallelism
   title: Concurrency and Parallelism in OCaml
-  speakers: ["vesa", "arthur", "carine"]
+  speakers: ['vesa', 'arthur', 'carine']
   kind: workshop
+  abstract: |
+
 - slug: image-comparison
-  title: The story behind the fastest image comparison library in the world written in OCaml
-  speakers: ["dmitriy"]
-  kind: talk 	
+  title:
+    The story behind the fastest image comparison library in the world written
+    in OCaml
+  speakers: ['dmitriy']
+  kind: talk
+  abstract: |
+
 - slug: dune
   title: The Dune Mental Model
-  speakers: ["etienne"]
-  kind: talk 	
+  speakers: ['etienne']
+  kind: talk
+  abstract: |
+
 - slug: tiny-code-xmas
   title: Learning OCaml with Tiny Code Xmas
-  speakers: ["michael"]
-  kind: talk 	
+  speakers: ['michael']
+  kind: talk
+  abstract: |
+
 - slug: melange
   title: A 'Melange' of Tooling Coming Together
-  speakers: ["antonio"]
-  kind: talk 	
+  speakers: ['antonio']
+  kind: talk
+  abstract: |
+
 - slug: mirage-os
   title: MirageOS - developing operating systems in OCaml
-  speakers: ["hannes"]
-  kind: talk 	
+  speakers: ['hannes']
+  kind: talk
+  abstract: |
+
 - slug: ocannl
-  title: OCANNL, the `neural_nets_lib`. Mysteries of NNs training unveiled in OCaml
-  speakers: ["lukasz"]
-  kind: talk 	
+  title:
+    OCANNL, the `neural_nets_lib`. Mysteries of NNs training unveiled in OCaml
+  speakers: ['lukasz']
+  kind: talk
+  abstract: |
+
 - slug: universal-react
   title: Universal React in OCaml
-  speakers: ["davesnx"]
-  kind: talk 	
+  speakers: ['davesnx']
+  kind: talk
+  abstract: |
+
 - slug: journey-of-growth
-  title: Maybe OCaml Was the Friends We Made Along the Way; A Journey of Growth in Software Engineering
-  speakers: ["dillon"]
-  kind: talk 	
+  title:
+    Maybe OCaml Was the Friends We Made Along the Way; A Journey of Growth in
+    Software Engineering
+  speakers: ['dillon']
+  kind: talk
+  abstract: |
+
 - slug: let-signals
   title: Let Signals in OCaml
-  speakers: ["rizo"]
-  kind: talk 	
+  speakers: ['rizo']
+  kind: talk
+  abstract: |
+
 - slug: multicore-gc
   title: How the Multicore Garbage Collector works
-  speakers: ["sudha"]
-  kind: talk 	
+  speakers: ['sudha']
+  kind: talk
+  abstract: |
+
 - slug: odoc
   title: Using odoc to write documentation
-  speakers: ["paul-elliot"]
-  kind: talk 	
+  speakers: ['paul-elliot']
+  kind: talk
+  abstract: |
+
 - slug: incremental-data-pipelines
-  title: Building Incremental and Reproducible Data Pipelines for Tackling Climate Change
-  speakers: ["patrick", "michael"]
-  kind: talk 	
+  title:
+    Building Incremental and Reproducible Data Pipelines for Tackling Climate
+    Change
+  speakers: ['patrick', 'michael']
+  kind: talk
+  abstract: |
+
 - slug: type-engineering
   title: Type engineering in OCaml, illustrated on the OCaml compiler
-  speakers: ["florian"]
-  kind: talk 	
+  speakers: ['florian']
+  kind: talk
+  abstract: |

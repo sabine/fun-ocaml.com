@@ -85,6 +85,7 @@ module Sessions = struct
     slug : string;
     title : string;
     speakers : string list;
+    abstract : string;
     kind : string;
   }
   [@@deriving of_yaml]
@@ -96,6 +97,7 @@ module Sessions = struct
     slug : string;
     title : string;
     speakers : People.t list;
+    abstract : string;
     kind : kind;
   }
 
@@ -104,6 +106,10 @@ module Sessions = struct
       slug = m.slug;
       title = m.title;
       speakers = m.speakers |> List.map People.get_by_slug;
+      abstract =
+        m.abstract
+        |> Cmarkit.Doc.of_string ~strict:true
+        |> Cmarkit_html.of_doc ~safe:false;
       kind =
         (match m.kind with
         | "talk" -> Talk
