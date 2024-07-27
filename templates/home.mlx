@@ -151,56 +151,11 @@ let avatar_maybe_you ~title ~subtitle =
     (button ~classes:"mt-4" ~href:cfp_url "Submit your Proposal")
   </div>
 
-let render_social (social: Data.People.social) = 
-  let icon, title, href =
-    match social with
-    | GitHub username ->
-      Social_icons.github,
-        "@" ^ username ^ " on GitHub",
-        "https://github.com/" ^ username
-    | Twitter username ->
-      Social_icons.twitter,
-        "@" ^ username ^ " on Twitter",
-        "https://twitter.com/" ^ username
-    | Mastodon username ->
-      Social_icons.mastodon,
-        "@" ^ username ^ " on Mastodon",
-        "https://mastodon.social/@" ^ username
-    | LinkedIn username ->
-      Social_icons.linkedin,
-        "@" ^ username ^ " on Twitter",
-        "https://linkedin.com/in/" ^ username
-    | Twitch username ->
-      Social_icons.youtube,
-        "@" ^ username ^ " on Twitch",
-        "https://twitch.tv/" ^ username
-    | YouTube channel_name ->
-      Social_icons.youtube,
-        "@" ^ channel_name ^ " on YouTube",
-        "https://www.youtube.com/@" ^ channel_name
-    | Other { title; href } ->
-      Social_icons.other,
-        title,
-        href
-  in
-  <a href=(href) title=(title)>(icon "w-10 h-10")</a>
-
-let avatar ?tag_title (person : Data.People.t) =
-  <div class_="flex flex-col items-center text-lg">
-    <img class_="bg-[#666] rounded-full w-48 h-48 object-cover" src=(person.img_src) alt=""/>
-    (match tag_title with | Some tag_title -> tag ~classes:"px-4 mt-4" tag_title | None -> JSX.null)
-    (<div class_="font-bold mt-2">(string person.name)</div>)
-    (<div class_="">(string person.affiliation)</div>)
-    (<div class_="mt-2 flex gap-2">
-      (person.socials |> List.map render_social |> list)
-    </div>)
-  </div>
-
 let speakers_section =
   <div id="speakers" class_="container mx-auto px-6 py-12">
     (h2 "Speakers")
     <div class_="flex flex-wrap gap-10 mt-8">
-      (list (List.map (avatar ~tag_title:"Speaker") Data.speakers))
+      (list (List.map (Avatar.render ~tag_title:"Speaker") Data.speakers))
 
       (avatar_maybe_you ~title:"Propose a Talk or Workshop" ~subtitle:"")
     </div>
@@ -244,11 +199,11 @@ let organizers_section =
       (h2 ~classes:"text-white" "Organizers & Volunteers")
       (<p class_="text-xl my-4">(string "Want to help? Contact any of the organizers!")</p>)
       <div class_="flex flex-wrap gap-10 mt-8">
-        (avatar (Data.People.get_by_slug "sabine"))
-        (avatar (Data.People.get_by_slug "davesnx"))
-        (avatar (Data.People.get_by_slug "dmitriy"))
-        (avatar (Data.People.get_by_slug "rizo"))
-        (avatar (Data.People.get_by_slug "jules"))
+        (Avatar.render (Data.People.get_by_slug "sabine"))
+        (Avatar.render (Data.People.get_by_slug "davesnx"))
+        (Avatar.render (Data.People.get_by_slug "dmitriy"))
+        (Avatar.render (Data.People.get_by_slug "rizo"))
+        (Avatar.render (Data.People.get_by_slug "jules"))
       </div>
     </div>
   </div>
