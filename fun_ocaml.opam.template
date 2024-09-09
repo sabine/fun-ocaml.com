@@ -1,5 +1,5 @@
 pin-depends: [
-  ["tailwindcss.dev" "https://github.com/tmattio/opam-tailwindcss/archive/3e60fc32bbcf82525999d83ad0f395e16107026b.tar.gz"]
+  ["tailwindcss.dev" "https://github.com/tmattio/opam-tailwindcss/archive/4c3007877d616c271205046ff492759c96fe7a76.tar.gz"]
   ["mlx.dev" "https://github.com/ocaml-mlx/mlx/archive/opam-pin-depends-bug.tar.gz"]
   ["html_of_jsx.dev" "https://github.com/davesnx/html_of_jsx/archive/main.tar.gz"]
 ]
