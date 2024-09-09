@@ -1,0 +1,13 @@
+githubRepoOwner: dmtrKovalenko
+githubRepoName: fun-ocaml.com
+githubHost: github.com
+githubRemote: origin
+githubBranch: main
+requireChecks: true
+requireApproval: true
+mergeMethod: rebase
+mergeQueue: false
+forceFetchTags: false
+showPrTitlesInStack: true
+branchPushIndividually: false
+

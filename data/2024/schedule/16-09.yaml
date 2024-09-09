@@ -1,0 +1,76 @@
+date: "Mo, Sep 16, 2024"
+schedule:
+  - time: "8:00 - 9:00"
+    yellow_giant:
+      event: "Arrival"
+    hangout_hub:
+      event: "Pretzels & Fruit"
+  - time: "9:00 - 9:25"
+    yellow_giant:
+      event: "Call for Lightning Talks + Organizer Announcements"
+  - time: "9:25 - 9:50"
+    yellow_giant:
+      event: "Keynote"
+  - time: "10:00 - 10:35"
+    yellow_giant:
+      event: "How the Multicore Garbage Collector works"
+    hangout_hub_room:
+      event: "Beginner Introduction to OCaml Jules"
+    hangout_hub:
+      event: "Socializing & Hacking"
+  - time: "10:35 - 11:10"
+    yellow_giant:
+      event: "Universal React in OCaml"
+  - time: "11:10 - 11:20"
+    yellow_giant:
+      event: "Break"
+  - time: "11:20 - 11:55"
+    yellow_giant:
+      event: "MirageOS - Developing Operating Systems in OCaml"
+  - time: "11:55 - 12:30"
+    yellow_giant:
+      event: "A 'Melange' of Tooling Coming Together"
+  - time: "12:30 - 14:00"
+    yellow_giant:
+      event: "-"
+    hangout_hub:
+      event: "Lunch"
+  - time: "14:00 - 15:00"
+    yellow_giant:
+      event: "Lightning Talks + Connecting People"
+  - time: "15:00 - 15:10"
+    yellow_giant:
+      event: "Break"
+  - time: "15:10 - 15:45"
+    yellow_giant:
+      event: "The Dune Mental Model"
+    hangout_hub_room:
+      event: "Web and mobile app development in OCaml"
+    hangout_hub:
+      event: "Socializing & Hacking"
+  - time: "15:45 - 16:20"
+    yellow_giant:
+      event: "Using odoc to write documentation"
+  - time: "16:20 - 16:40"
+    yellow_giant:
+      event: "Break"
+  - time: "16:40 - 17:15"
+    yellow_giant:
+      event: "Let Signals in OCaml"
+  - time: "17:15 - 17:50"
+    yellow_giant:
+      event: "The story behind the fastest image comparison library in the world written in OCaml"
+  - time: "17:50 - 18:00"
+    yellow_giant:
+      event: "Wrap up by Organizers"
+  - time: "18:00 - 20:00"
+    yellow_giant:
+      event: "-"
+    hangout_hub:
+      event: "Dinner"
+  - time: "20:00 - 24:00"
+    yellow_giant:
+      event: "-"
+    hangout_hub_room:
+      event: "Karaoke"
+
