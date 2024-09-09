@@ -1,3 +1,6 @@
 _opam
 _build
 output
+.DS_Store
+**/.DS_Store
+.spr.yml

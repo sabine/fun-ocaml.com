@@ -42,7 +42,9 @@
   other_socials: []
 - slug: "dmitriy"
   name: Dmitriy Kovalenko
-  affiliation: ""
+  affiliation: "LightSource"
+  github: dmtrKovalenko
+  twitter: goose_plus_plus
   bio: |
 
   other_socials: []

@@ -1,0 +1,66 @@
+date: "Tu, Sep 17, 2024"
+schedule:
+  - time: "9:00 - 10:00"
+    yellow_giant:
+      event: "Arrival"
+    hangout_hub:
+      event: "Pretzels & Fruit"
+  - time: "10:00 - 10:35"
+    yellow_giant:
+      event: "OCANNL, the `neural_nets_lib`: Mysteries of NNs training unveiled in OCaml"
+    apollo:
+      event: "Workshop A - Building Reliable Actor Systems with OCaml and Riot"
+    hangout_hub_room:
+      event: "Workshop B - Concurrency and Parallelism in OCaml"
+    hangout_hub:
+      event: "Socializing & Hacking"
+  - time: "10:35 - 11:10"
+    yellow_giant:
+      event: "Type engineering in OCaml, illustrated on the OCaml compiler"
+  - time: "11:10 - 11:20"
+    yellow_giant:
+      event: "Break"
+  - time: "11:20 - 11:55"
+    yellow_giant:
+      event: "Learning OCaml with Tiny Code Xmas"
+  - time: "11:55 - 12:30"
+    yellow_giant:
+      event: "Building Incremental and Reproducible Data Pipelines for Tackling Climate Change"
+  - time: "12:30 - 14:30"
+    yellow_giant:
+      event: "-"
+    hangout_hub:
+      event: "Lunch"
+  - time: "14:30 - 15:05"
+    yellow_giant:
+      event: "Maybe OCaml Was the Friends We Made Along the Way: A Journey of Growth in Software Engineering"
+    hangout_hub:
+      event: "Socializing & Hacking"
+  - time: "15:05 - 15:40"
+    yellow_giant:
+      event: '"Easy" GADT''s by repeating yourself.'
+    apollo:
+      event: "Workshop C - Hands-on MirageOS"
+    hangout_hub_room:
+      event: "Workshop D - Gamelle : 2D games in OCaml"
+  - time: "15:40 - 16:00"
+    yellow_giant:
+      event: null
+  - time: "16:00 - 16:35"
+    yellow_giant:
+      event: null
+  - time: "16:35 - 17:10"
+    yellow_giant:
+      event: null
+  - time: "17:10 - 17:45"
+    yellow_giant:
+      event: null
+  - time: "17:45 - 18:00"
+    yellow_giant:
+      event: "Summary"
+  - time: "18:00 - 19:00"
+    yellow_giant:
+      event: "-"
+    hangout_hub:
+      event: "Dinner, Socializing and Hacking"
+
