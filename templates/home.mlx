@@ -2,6 +2,7 @@ open JSX
 
 let cfp_close_date = "June 16, 2024"
 let cfp_url = "https://cfp.fun-ocaml.com/fun-ocaml-2024/cfp"
+let twitch_url = "https://www.twitch.tv/sabine_ocaml"
 
 let registration_url = "https://tickets.fun-ocaml.com/fun-ocaml/2024/"
 
@@ -13,7 +14,6 @@ let top_navigation =
       Layout.navigation_link ~href:"#venue" ~title:"Venue";
       Layout.navigation_link ~href:"#sponsors" ~title:"Sponsors";
       Layout.navigation_link ~href:"#organizers" ~title:"Organizers";
-      Layout.navigation_button ~href:registration_url ~title:"Register";
   ]
 
 let button ?(classes="") ~href title =
@@ -94,8 +94,11 @@ Talks are live-streamed and will appear on [watch.ocaml.org](https://watch.ocaml
   </div>;
   <div class_="bg-[url('/img/blue-bg.svg')] bg-center bg-cover text-white">
     <div class_="py-20 text-center">
-      (<h3 class_="text-3xl font-semibold">(string "Propose a Talk or Workshop")</h3>)
-      (button ~classes:"mt-4 text-xl no-underline" ~href:cfp_url "Submit your Proposal")
+      (<h3 class_="text-3xl font-semibold">(string "Watch a live stream")</h3>)
+      (<p class_="text-gray-500 mt-2">(string "Event is going to be live streamed free of a charge")</p>)
+
+
+      (button ~classes:"mt-4 text-xl no-underline" ~href:twitch_url "Go to Twitch")
     </div>
   </div>;
   <div class_="bg-sand">
