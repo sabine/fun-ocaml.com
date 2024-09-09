@@ -187,12 +187,21 @@ let venue_section =
 
   </div>
 
-let sponsors_section =
+let sponsors_section = 
   <div id="sponsors" class_="container mx-auto px-6 py-20">
-    (h2 "Sponsors")
+    (h2 ~classes:"text-center" "Sponsors & Partners")
 
-    <div class_="mt-6">
-      (string "TBA")
+    <div style="gap:2rem" class_="flex justify-center mt-4"> 
+      (list (
+        Data.Sponsors.all 
+        |> List.map (fun (sponsor: Data.Sponsors.sponsor) -> 
+          <img 
+            class_="object-contain h-24" 
+            alt=sponsor.name
+            src=sponsor.logo_url 
+          />
+        )
+      ))
     </div>
   </div>
 

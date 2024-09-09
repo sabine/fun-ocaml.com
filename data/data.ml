@@ -127,3 +127,19 @@ module Sessions = struct
 end
 
 let speakers = People.all
+
+module Sponsors = struct 
+  type sponsor = {
+    name: string;
+    logo_url: string;
+  }
+
+  let all: sponsor list  =
+    [
+      { name = "Tarides"; logo_url= "/img/tarides.webp" };
+      { name = "Ahrefs"; logo_url= "/img/ahrefs.svg" };
+      { name = "Jane Street"; logo_url= "/img/jane_street.svg" };
+      { name = "LightSource"; logo_url= "/img/lightsource.svg"}
+    ]
+
+end
