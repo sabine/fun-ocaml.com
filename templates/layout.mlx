@@ -59,7 +59,7 @@ let make ~title ~children () =
       <meta name="twitter:image" content="https://fun-ocaml.com/social-media/fun-ocaml.png?1"/>
       (* <meta name="twitter:site" content="@fun_ocaml"> *)
     </head>
-    <body class_="container mx-auto">
+    <body>
       (list children)
       (navigation [
         navigation_link ~href:"/" ~title:"Event";

@@ -27,7 +27,7 @@ let tag ?(classes="") title =
    <div class_=(classes ^ " inline-flex font-montserrat text-white bg-primary_light px-4 py-2")>(string title)</div>
 
 let hero_section =
-  <div id="event" class_="bg-[url('/img/hero-background.png')] bg-center bg-cover py-60">
+  <div id="event" class_="bg-[url('/img/hero-background.jpg')] bg-center bg-cover py-60">
     <div class_="container mx-auto px-6">
       <h1 class_="font-montserrat font-regular text-7xl text-white">(list [
         string "FUN ";
@@ -191,7 +191,7 @@ let sponsors_section =
   <div id="sponsors" class_="container mx-auto px-6 py-20">
     (h2 ~classes:"text-center" "Sponsors & Partners")
 
-    <div style="gap:2rem" class_="flex justify-center mt-4"> 
+    <div style="gap:2rem" class_="flex flex-wrap justify-center mt-4">
       (list (
         Data.Sponsors.all 
         |> List.map (fun (sponsor: Data.Sponsors.sponsor) -> 
