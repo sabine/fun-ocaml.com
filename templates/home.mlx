@@ -27,7 +27,7 @@ let tag ?(classes="") title =
    <div class_=(classes ^ " inline-flex font-montserrat text-white bg-primary_light px-4 py-2")>(string title)</div>
 
 let hero_section =
-  <div id="event" class_="bg-[url('/img/hero-background.jpg')] bg-center bg-cover py-60">
+  <div id="event" class_="bg-[url('/img/hero-background.webp')] bg-center bg-cover py-60">
     <div class_="container mx-auto px-6">
       <h1 class_="font-montserrat font-regular text-7xl text-white">(list [
         string "FUN ";
