@@ -37,12 +37,6 @@
   kind: talk
   abstract: |
 
-- slug: dune
-  title: The Dune Mental Model
-  speakers: ['etienne']
-  kind: talk
-  abstract: |
-
 - slug: tiny-code-xmas
   title: Learning OCaml with Tiny Code Xmas
   speakers: ['michael']

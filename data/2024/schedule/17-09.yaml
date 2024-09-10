@@ -40,7 +40,7 @@ schedule:
       event: "Socializing & Hacking"
   - time: "15:05 - 15:40"
     yellow_giant:
-      event: '"Easy" GADT''s by repeating yourself.'
+      event: '-'
     apollo:
       event: "Workshop - Hands-on MirageOS"
       rowspan: 2

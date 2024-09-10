@@ -45,7 +45,7 @@ schedule:
       event: "Break"
   - time: "15:10 - 15:45"
     yellow_giant:
-      event: "The Dune Mental Model"
+      event: '"Easy" GADT''s by repeating yourself.'
     hangout_hub_room:
       event: "Workshop: Web and mobile app development in OCaml"
       rowspan: 5
