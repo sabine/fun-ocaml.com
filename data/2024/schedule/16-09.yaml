@@ -3,6 +3,7 @@ schedule:
   - time: "8:00 - 9:00"
     yellow_giant:
       event: "Arrival"
+      colspan: 2
     hangout_hub:
       event: "Pretzels & Fruit"
   - time: "9:00 - 9:25"
@@ -15,9 +16,11 @@ schedule:
     yellow_giant:
       event: "How the Multicore Garbage Collector works"
     hangout_hub_room:
-      event: "Beginner Introduction to OCaml Jules"
+      event: "Workshop: Beginner Introduction to OCaml"
+      rowspan: 5
     hangout_hub:
       event: "Socializing & Hacking"
+      rowspan: 5
   - time: "10:35 - 11:10"
     yellow_giant:
       event: "Universal React in OCaml"
@@ -31,9 +34,8 @@ schedule:
     yellow_giant:
       event: "A 'Melange' of Tooling Coming Together"
   - time: "12:30 - 14:00"
-    yellow_giant:
-      event: "-"
     hangout_hub:
+      colspan: 3
       event: "Lunch"
   - time: "14:00 - 15:00"
     yellow_giant:
@@ -45,9 +47,11 @@ schedule:
     yellow_giant:
       event: "The Dune Mental Model"
     hangout_hub_room:
-      event: "Web and mobile app development in OCaml"
+      event: "Workshop: Web and mobile app development in OCaml"
+      rowspan: 5
     hangout_hub:
       event: "Socializing & Hacking"
+      rowspan: 5
   - time: "15:45 - 16:20"
     yellow_giant:
       event: "Using odoc to write documentation"

@@ -143,3 +143,37 @@ module Sponsors = struct
     ]
 
 end
+
+module Schedule = struct
+  type event = {
+    event: string;
+    colspan: int option;
+    rowspan: int option;
+  }
+  [@@deriving of_yaml]
+
+
+  type schedule_row = {
+    time: string;
+    yellow_giant: event option;
+    apollo: event option;
+    hangout_hub_room: event option;
+    hangout_hub: event option;
+  }
+  [@@deriving of_yaml]
+
+
+  type schedule = {
+    date: string;
+    schedule: schedule_row list;
+  }
+  [@@deriving of_yaml]
+
+
+  let day_one = Read_yaml.yaml_file schedule_of_yaml "2024/schedule/16-09.yaml"
+    |> Read_yaml.Result.get_ok ~error:(fun (`Msg m) -> Invalid_argument m)
+
+  let day_two = Read_yaml.yaml_file schedule_of_yaml "2024/schedule/17-09.yaml"
+    |> Read_yaml.Result.get_ok ~error:(fun (`Msg m) -> Invalid_argument m)
+
+end 
