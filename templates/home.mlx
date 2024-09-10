@@ -95,7 +95,7 @@ Talks are live-streamed and will appear on [watch.ocaml.org](https://watch.ocaml
   <div class_="bg-[url('/img/blue-bg.svg')] bg-center bg-cover text-white">
     <div class_="py-20 text-center">
       (<h3 class_="text-3xl font-semibold">(string "Watch a live stream")</h3>)
-      (<p class_="text-gray-500 mt-2">(string "Event is going to be live streamed free of a charge")</p>)
+      (<p class_="text-gray-400 mt-2">(string "Event is going to be live streamed free of a charge")</p>)
 
 
       (button ~classes:"mt-4 text-xl no-underline" ~href:twitch_url "Go to Twitch")
@@ -191,7 +191,7 @@ let sponsors_section =
   <div id="sponsors" class_="container mx-auto px-6 py-20">
     (h2 ~classes:"text-center" "Sponsors & Partners")
 
-    <div style="gap:2rem" class_="flex flex-wrap justify-center mt-4">
+    <div style="row-gap:2rem;column-gap:0.5rem" class_="flex flex-wrap justify-center mt-12">
       (list (
         Data.Sponsors.all 
         |> List.map (fun (sponsor: Data.Sponsors.sponsor) -> 
