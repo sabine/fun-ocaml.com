@@ -29,10 +29,15 @@ css:
 	mkdir -p output/css
 	opam exec -- tailwindcss -m -c tailwind.config.js -i src/css/styles.css -o output/css/main.css
 
+
 .PHONY: run
 run: css assets
 	mkdir -p output/privacy
 	opam exec -- dune exec main
+	cp output/css/main.css output/css/main.$(shell md5sum output/css/main.css | cut -d' ' -f1).css
+	@echo "Replacing '/css/main.css' with '/css/main.$(shell md5sum output/css/main.css | cut -d' ' -f1).css' in all *.html files in output..."
+	find output -name '*.html' -exec sed -i 's/\/css\/main.css/\/css\/main.$(shell md5sum output/css/main.css | cut -d' ' -f1).css/g' {} \;
+
 
 .PHONY: clean
 clean: ## Clean build artifacts and other generated files
