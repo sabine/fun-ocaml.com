@@ -26,6 +26,10 @@ let h2 ?(classes="") title =
 let tag ?(classes="") title =
    <div class_=(classes ^ " inline-flex font-montserrat text-white bg-primary_light px-4 py-2")>(string title)</div>
 
+let string_opt = function
+  | Some s -> string s
+  | None -> string ""
+
 let hero_section =
   <div id="event" class_="bg-[url('/img/hero-background.webp')] bg-center bg-cover py-60">
     <div class_="container mx-auto px-6">
@@ -164,16 +168,92 @@ let speakers_section =
     </div>
   </div>
 
-let schedule_section =
-  <div class_="bg-[url('/img/blue-bg.svg')] bg-center bg-cover text-white">
-    <div id="schedule" class_="container mx-auto px-6 py-20">
-      (h2 ~classes:"text-white" "Schedule")
+let render_schedule_slot_cell (slot: Data.Schedule.event option) =
+  match slot with 
+  | Some slot ->
+    let colspan = Option.value ~default:1 slot.colspan in
+    let rowspan = Option.value ~default:1 slot.rowspan in
 
-      <div class_="mt-6">
-        (string "TBD")
+    <td class_="py-2 px-4" colspan=colspan rowspan=rowspan>
+      (string slot.event)
+    </td>
+  | None -> null
+
+
+let schedule_day_one_section =
+  <div class_="bg-center bg-gradient-to-br from-[#0F254F] to-[#0B1228] bg-cover text-gray-200">
+    <div id="schedule" class_="container mx-auto py-20">
+      (h2 ~classes:"text-white text-center" "Day One")
+
+      <div class_="-mx-4 overflow-x-auto sm:-mx-6">
+        <div class_="inline-block min-w-full py-2 align-middle">
+          <table class_="mt-6 table-auto divide-y divide-gray-400">
+            <thead>
+              <tr class_="divide-x divide-gray-400">
+                <th class_="text-left px-4 pb-2">"Time"</th>
+                <th class_="text-left px-4 pb-2">"Yellow Giant Room"</th>
+                <th class_="text-left px-4 pb-2">"Hangout hub Room"</th>
+                <th class_="text-left px-4 pb-2">"Hangout hub"</th>
+              </tr>
+            </thead>
+
+            <tbody class_="divide-y divide-gray-400">
+              (list (
+                Data.Schedule.day_one.schedule
+                |> List.map (fun (row: Data.Schedule.schedule_row) -> 
+                  <tr class_="divide-x divide-gray-400">
+                    <td class_="px-4 whitespace-nowrap">(string row.time)</td>
+                    (row.yellow_giant |> render_schedule_slot_cell)
+                    (row.hangout_hub_room |> render_schedule_slot_cell)
+                    (row.hangout_hub |> render_schedule_slot_cell)
+                  </tr>
+                )
+              ))
+            </tbody>
+          </table>
+        </div>
+      </div>
+   </div>
+  </div>
+
+let schedule_day_two_section =
+  <div class_="bg-center bg-gradient-to-tr from-[#4A1500] to-[#8B4000] bg-cover text-white">
+    <div id="schedule" class_="container mx-auto py-20">
+      (h2 ~classes:"text-white text-center" "Day Two")
+
+      <div class_="-mx-4 overflow-x-auto sm:-mx-6">
+         <div class_="inline-block min-w-full py-2 align-middle">
+            <table class_="mt-6 table-auto divide-y divide-gray-200">
+              <thead>
+                <tr class_="divide-x divide-gray-200">
+                  <th class_="text-left px-4 pb-2">"Time"</th>
+                  <th class_="text-left px-4 pb-2">"Yellow Giant Room"</th>
+                  <th class_="text-left px-4 pb-2">"Apollo Room"</th>
+                  <th class_="text-left px-4 pb-2">"Hangout hub Room"</th>
+                  <th class_="text-left px-4 pb-2">"Hangout hub"</th>
+                </tr>
+              </thead>
+
+              <tbody class_="divide-y divide-gray-200">
+                (list (
+                  Data.Schedule.day_two.schedule
+                  |> List.map (fun (row: Data.Schedule.schedule_row) -> 
+                    <tr class_="divide-x divide-gray-200">
+                      <td class_="px-4 whitespace-nowrap">(string row.time)</td>
+                      (row.yellow_giant |> render_schedule_slot_cell)
+                      (row.apollo |> render_schedule_slot_cell)
+                      (row.hangout_hub_room |> render_schedule_slot_cell)
+                      (row.hangout_hub |> render_schedule_slot_cell)
+                    </tr>
+                  )
+                ))
+              </tbody>
+            </table>
+        </div>
       </div>
     </div>
-  </div>
+   </div>
+
 
 let venue_section =
   <div id="venue" class_="bg-[url('/img/venue2-Credit-Julius-Worel.jpeg')] relative bg-center bg-cover items-center py-32">
@@ -227,7 +307,8 @@ let make () =
      hero_section;
      list program_section;
      (*speakers_section;*)
-     schedule_section;
+     schedule_day_one_section;
+     schedule_day_two_section;
      venue_section;
      sponsors_section;
      organizers_section;

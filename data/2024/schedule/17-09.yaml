@@ -9,11 +9,14 @@ schedule:
     yellow_giant:
       event: "OCANNL, the `neural_nets_lib`: Mysteries of NNs training unveiled in OCaml"
     apollo:
-      event: "Workshop A - Building Reliable Actor Systems with OCaml and Riot"
+      event: "Workshop: Building Reliable Actor Systems with OCaml and Riot"
+      rowspan: 5
     hangout_hub_room:
-      event: "Workshop B - Concurrency and Parallelism in OCaml"
+      event: "Workshop: Concurrency and Parallelism in OCaml"
+      rowspan: 5
     hangout_hub:
       event: "Socializing & Hacking"
+      rowspan: 5
   - time: "10:35 - 11:10"
     yellow_giant:
       event: "Type engineering in OCaml, illustrated on the OCaml compiler"
@@ -27,10 +30,9 @@ schedule:
     yellow_giant:
       event: "Building Incremental and Reproducible Data Pipelines for Tackling Climate Change"
   - time: "12:30 - 14:30"
-    yellow_giant:
-      event: "-"
     hangout_hub:
       event: "Lunch"
+      colspan: 4
   - time: "14:30 - 15:05"
     yellow_giant:
       event: "Maybe OCaml Was the Friends We Made Along the Way: A Journey of Growth in Software Engineering"
@@ -40,24 +42,16 @@ schedule:
     yellow_giant:
       event: '"Easy" GADT''s by repeating yourself.'
     apollo:
-      event: "Workshop C - Hands-on MirageOS"
+      event: "Workshop - Hands-on MirageOS"
+      rowspan: 2
     hangout_hub_room:
-      event: "Workshop D - Gamelle : 2D games in OCaml"
-  - time: "15:40 - 16:00"
-    yellow_giant:
-      event: null
-  - time: "16:00 - 16:35"
-    yellow_giant:
-      event: null
-  - time: "16:35 - 17:10"
-    yellow_giant:
-      event: null
-  - time: "17:10 - 17:45"
-    yellow_giant:
-      event: null
+      event: "Workshop - Gamelle : 2D games in OCaml"
+      colspan: 2
+      rowspan: 2
   - time: "17:45 - 18:00"
     yellow_giant:
       event: "Summary"
+      colspan: 4
   - time: "18:00 - 19:00"
     yellow_giant:
       event: "-"
