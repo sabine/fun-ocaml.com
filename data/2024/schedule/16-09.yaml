@@ -23,7 +23,7 @@ schedule:
       rowspan: 5
   - time: "10:35 - 11:10"
     yellow_giant:
-      event: "Universal React in OCaml"
+      event: "A 'Melange' of Tooling Coming Together"
   - time: "11:10 - 11:20"
     yellow_giant:
       event: "Break"
@@ -32,7 +32,7 @@ schedule:
       event: "MirageOS - Developing Operating Systems in OCaml"
   - time: "11:55 - 12:30"
     yellow_giant:
-      event: "A 'Melange' of Tooling Coming Together"
+      event: "Universal React in OCaml"
   - time: "12:30 - 14:00"
     hangout_hub:
       colspan: 3
@@ -77,4 +77,3 @@ schedule:
       event: "-"
     hangout_hub_room:
       event: "Karaoke"
-
