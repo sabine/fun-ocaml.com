@@ -16,13 +16,6 @@
   kind: workshop
   abstract: |
 
-- slug: dune-multiplatform-project
-  title:
-    Using bindings and the select dune stanza to create multiplatform project
-  speakers: ['paul-elliot']
-  kind: workshop
-  abstract: |
-
 - slug: concurrency-parallelism
   title: Concurrency and Parallelism in OCaml
   speakers: ['vesa', 'arthur', 'carine']
@@ -105,5 +98,11 @@
 - slug: type-engineering
   title: Type engineering in OCaml, illustrated on the OCaml compiler
   speakers: ['florian']
+  kind: talk
+  abstract: |
+
+- slug: dune
+  title: The Future of Dune
+  speakers: ['leandro']
   kind: talk
   abstract: |
