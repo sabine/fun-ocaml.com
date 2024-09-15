@@ -116,7 +116,6 @@ module Sessions = struct
         | "workshop" -> Workshop
         | t -> failwith ("session kind not recognized: " ^ t));
     }
-
   let decode data =
     let metadata = metadata_list_of_yaml data in
     Result.map (List.map of_metadata) metadata
@@ -139,7 +138,8 @@ module Sponsors = struct
       { name = "Tarides"; logo_url= "/img/tarides.webp" };
       { name = "Ahrefs"; logo_url= "/img/ahrefs.svg" };
       { name = "Jane Street"; logo_url= "/img/jane_street.svg" };
-      { name = "LightSource"; logo_url= "/img/lightsource.svg"}
+      { name = "LightSource"; logo_url= "/img/lightsource.svg"};
+      { name = "Hyper"; logo_url="/img/hyper.svg"}
     ]
 
 end
