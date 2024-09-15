@@ -7,8 +7,8 @@ let navigation_button ~href ~title =
   <a class_="inline-flex font-montserrat text-white bg-primary_light px-4 py-2" href=(href)>(string title)</a>
 
 let navigation children =
-  <nav class_="bg-[#1A202C] text-white overflow-hidden max-w-screen">
-    <div class_="container mx-auto py-2 lg:py-0 px-6 flex items-center">
+  <nav class_="bg-[#1A202C] overflow-hiddne max-w-screen text-white">
+    <div class_="md:container flex flex-col gap-2 items-start mx-auto py-2 lg:py-0 px-6 md:flex-row md:items-center">
       <a class_="px-2 pt-3 hidden md:inline" href="/#event"><img src="/img/fun-ocaml-logo.svg"/></a>
       (list children)
     </div>
