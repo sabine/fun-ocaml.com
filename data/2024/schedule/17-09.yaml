@@ -40,7 +40,7 @@ schedule:
       event: "Socializing & Hacking"
   - time: "15:05 - 15:40"
     yellow_giant:
-      event: 'The Future of Dune'
+      event: 'The story behind the fastest image comparison library in the world written in OCaml'
     apollo:
       event: "Workshop - Hands-on MirageOS"
       rowspan: 2

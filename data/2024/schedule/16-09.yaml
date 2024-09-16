@@ -63,7 +63,7 @@ schedule:
       event: "Let Signals in OCaml"
   - time: "17:15 - 17:50"
     yellow_giant:
-      event: "The story behind the fastest image comparison library in the world written in OCaml"
+      event: "The Future of Dune"
   - time: "17:50 - 18:00"
     yellow_giant:
       event: "Wrap up by Organizers"
