@@ -35,12 +35,12 @@ schedule:
       colspan: 4
   - time: "14:30 - 15:05"
     yellow_giant:
-      event: "Maybe OCaml Was the Friends We Made Along the Way: A Journey of Growth in Software Engineering"
+      event: 'The story behind the fastest image comparison library in the world written in OCaml'
     hangout_hub:
       event: "Socializing & Hacking"
   - time: "15:05 - 15:40"
     yellow_giant:
-      event: 'The story behind the fastest image comparison library in the world written in OCaml'
+      event: "Maybe OCaml Was the Friends We Made Along the Way: A Journey of Growth in Software Engineering"
     apollo:
       event: "Workshop - Hands-on MirageOS"
       rowspan: 2
