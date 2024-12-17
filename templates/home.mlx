@@ -169,7 +169,7 @@ let speakers_section =
   </div>
 
 let render_schedule_slot_cell (slot: Data.Schedule.event option) =
-  match slot with 
+  match slot with
   | Some slot ->
     let colspan = Option.value ~default:1 slot.colspan in
     let rowspan = Option.value ~default:1 slot.rowspan in
@@ -200,7 +200,7 @@ let schedule_day_one_section =
             <tbody class_="divide-y divide-gray-400">
               (list (
                 Data.Schedule.day_one.schedule
-                |> List.map (fun (row: Data.Schedule.schedule_row) -> 
+                |> List.map (fun (row: Data.Schedule.schedule_row) ->
                   <tr class_="divide-x divide-gray-400">
                     <td class_="px-4 whitespace-nowrap">(string row.time)</td>
                     (row.yellow_giant |> render_schedule_slot_cell)
@@ -237,7 +237,7 @@ let schedule_day_two_section =
               <tbody class_="divide-y divide-gray-200">
                 (list (
                   Data.Schedule.day_two.schedule
-                  |> List.map (fun (row: Data.Schedule.schedule_row) -> 
+                  |> List.map (fun (row: Data.Schedule.schedule_row) ->
                     <tr class_="divide-x divide-gray-200">
                       <td class_="px-4 whitespace-nowrap">(string row.time)</td>
                       (row.yellow_giant |> render_schedule_slot_cell)
@@ -267,21 +267,21 @@ let venue_section =
 
   </div>
 
-let sponsors_section = 
+let sponsors_section =
   <div id="sponsors" class_="container mx-auto px-6 py-20">
     (h2 ~classes:"text-center" "Sponsors & Partners")
 
     <div style="gap:2rem" class_="mt-8 grid grid-rows-5 grid-cols-1 md:grid-rows-2 md:grid-cols-3">
       (list (
-        Data.Sponsors.all 
-        |> List.map (fun (sponsor: Data.Sponsors.sponsor) -> 
-          <div class_="mx-auto">
-            <img 
-              class_="object-contain h-24" 
+        Data.Sponsors.all
+        |> List.map (fun (sponsor: Data.Sponsors.sponsor) ->
+          <a href=(sponsor.url) target="_blank" class_="mx-auto">
+            <img
+              class_="object-contain h-24"
               alt=sponsor.name
-              src=sponsor.logo_url 
+              src=sponsor.logo_url
             />
-          </div>
+          </a>
         )
       ))
     </div>
@@ -302,6 +302,26 @@ let organizers_section =
     </div>
   </div>
 
+let recommended_events_section =
+  <div id="recommended-events" class_="container mx-auto px-6 py-20">
+    (h2 ~classes:"text-center" "Other Recommended Events")
+
+    <div style="gap:2rem" class_="mt-8 grid grid-rows-5 grid-cols-1 md:grid-rows-2 md:grid-cols-3">
+      (list (
+        Data.RecommendedEvents.all
+        |> List.map (fun (event: Data.RecommendedEvents.event) ->
+          <a href=(event.url) target="_blank" class_="mx-auto">
+            <img
+              class_="object-contain h-24"
+              alt=event.name
+              src=event.logo_url
+            />
+          </a>
+        )
+      ))
+    </div>
+  </div>
+
 let make () =
   <Layout title=("Fun OCaml 2024")>
     ([
@@ -314,5 +334,6 @@ let make () =
      venue_section;
      sponsors_section;
      organizers_section;
+     recommended_events_section;
     ])
   </Layout>
