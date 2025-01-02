@@ -8,23 +8,15 @@ let write_file path content =
   close_out oc
 
 let render_homepage () =
-  let html =
-    Templates.Home.make () |> JSX.render |> Printf.sprintf "<!doctype html>%s"
-  in
+  let html = Templates.Home.make () |> JSX.render in
   write_file "output/index.html" html
 
 let render_session_page (s : Data.Sessions.t) =
-  let html =
-    Templates.Session.render s |> JSX.render
-    |> Printf.sprintf "<!doctype html>%s"
-  in
+  let html = Templates.Session.render s |> JSX.render in
   write_file ("output/2024/" ^ s.slug ^ "/index.html") html
 
 let render_privacy_policy () =
-  let html =
-    Templates.Privacy.make () |> JSX.render
-    |> Printf.sprintf "<!doctype html>%s"
-  in
+  let html = Templates.Privacy.make () |> JSX.render in
   write_file "output/privacy/index.html" html
 
 let () =
