@@ -1,8 +1,8 @@
 .DEFAULT_GOAL := all
 
 .PHONY: all
-all:
-	opam exec -- dune build --root .
+all: build run
+	@echo "Building"
 
 .PHONY: deps
 deps: create_switch ## Install development dependencies
@@ -23,6 +23,8 @@ build: ## Build the project, including non installable libraries and executables
 assets:
 	mkdir -p output
 	cp -r asset/* output/
+	cp -r data/2024/media/* output/2024
+	cp -r data/2025/media/* output/2025
 
 .PHONY: css
 css:

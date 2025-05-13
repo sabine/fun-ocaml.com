@@ -1,0 +1,340 @@
+open JSX
+
+let cfp_close_date = "June 16, 2024"
+let cfp_url = "https://cfp.fun-ocaml.com/fun-ocaml-2024/cfp"
+let twitch_url = "https://www.twitch.tv/sabine_ocaml"
+
+let registration_url = "https://tickets.fun-ocaml.com/fun-ocaml/2024/"
+
+let top_navigation =
+  Layout.navigation [
+      Layout.navigation_link ~href:"#program" ~title:"Program";
+      (*Layout.navigation_link ~href:"#speakers" ~title:"Speakers";*)
+      Layout.navigation_link ~href:"#schedule" ~title:"Schedule";
+      Layout.navigation_link ~href:"#venue" ~title:"Venue";
+      Layout.navigation_link ~href:"#sponsors" ~title:"Sponsors";
+      Layout.navigation_link ~href:"#organizers" ~title:"Organizers";
+  ]
+
+let button ?(classes="") ~href title =
+  <a class_=("inline-block bg-gradient-to-r from-primary_dark to-primary_light hover:from-black hover:to-black text-white font-semibold px-8 py-3 rounded-full " ^ classes)
+    href=(href) target="_blank">(string title)</a>
+
+let h2 ?(classes="") title =
+  <h2 class_=("font-bold text-primary_light text-4xl " ^ classes)>(title |> String.uppercase_ascii |> string)</h2>
+
+let tag ?(classes="") title =
+   <div class_=(classes ^ " inline-flex font-montserrat text-white bg-primary_light px-4 py-2")>(string title)</div>
+
+let string_opt = function
+  | Some s -> string s
+  | None -> string ""
+
+let hero_section =
+  <div id="event" class_="bg-[url('/2024/img/hero-background.webp')] bg-center bg-cover py-60">
+    <div class_="container mx-auto px-6">
+      <h1 class_="font-montserrat font-regular text-7xl text-white">(list [
+        string "FUN ";
+        <span class_="text-primary_dark">(string "OCaml")</span>
+      ])
+      </h1>
+      <div class_="mt-6 text-7xl font-bold text-white font-montserrat">(string "BERLIN")</div>
+      (tag ~classes:"text-3xl mt-6" "September 16 & 17, 2024")
+
+    (*
+      <a class_="flex items-center gap-2 text-white underline hover:no-underline text-xl mt-6" href=(registration_url)>
+        (string ("Register here"))
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" class_="w-6 h-6">
+          <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+        </svg>
+      </a>
+
+
+      <a class_="flex items-center gap-2 text-white underline hover:no-underline text-xl mt-6" href=(cfp_url)>
+        (string ("The CFP is open until " ^ cfp_close_date))
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" class_="w-6 h-6">
+          <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+        </svg>
+      </a>
+      *)
+    </div>
+  </div>
+
+let program_section =
+  let session (s : Data2024.Sessions.t) =
+    <li>
+      <h3 class_="text-2xl font-semibold">(string s.title)</h3>
+      <p class_="text-lg">(String.concat ", " (List.map (fun (s : Data2024.People.t) -> s.name) s.speakers) |> string)</p>
+      (tag (match s.kind with | Workshop -> "Workshop" | Talk -> "Talk"))
+    </li>
+  in
+  [
+  <div id="program" class_="container mx-auto px-6 py-20">
+    (h2 "Program")
+    <div class_="mt-8 grid lg:grid-cols-2 gap-6">
+      <div class_="">
+        <img class_="w-full" src="/2024/img/venue1-Credit-Steve-Bergmann.jpeg"/>
+        <small>(string "Image: © Steve Bergmann")</small>
+      </div>
+      <div class_="prose prose-xl">
+      ({|
+**Fun OCaml 2024** is a **2 days open source hacking event**
+dedicated to OCaml enthusiasts and professionals around the globe!
+
+Let's get together for an exhilarating event packed with creativity, innovation, and learning:
+
+* Collaborate on open source projects
+* Learn through workshops, talks, and hands-on session,
+* Connect with fellow OCaml developers
+* Celebrate the impact and potential of OCaml for solving real-world problems.
+
+Talks are live-streamed and will appear on [watch.ocaml.org](https://watch.ocaml.org) and YouTube after the event.
+      |}
+      |> Cmarkit.Doc.of_string ~strict:true
+      |> Cmarkit_html.of_doc ~safe:false
+      |> unsafe
+      )
+      </div>
+    </div>
+  </div>;
+  <div class_="bg-[url('/img/blue-bg.svg')] bg-center bg-cover text-white">
+    <div class_="py-20 text-center">
+      (<h3 class_="text-3xl font-semibold">(string "Watch a live stream")</h3>)
+      (<p class_="text-gray-400 mt-2">(string "Event is going to be live streamed free of a charge")</p>)
+
+
+      (button ~classes:"mt-4 text-xl no-underline" ~href:twitch_url "Go to Twitch")
+    </div>
+  </div>;
+  <div class_="bg-sand">
+    <div id="program" class_="container mx-auto px-6 py-20">
+      <div class_="flex flex-col gap-20 md:flex-row">
+        <div class_="grow">
+          (h2 "Day 1")
+          (tag ~classes:"text-2xl mt-2" "September 16 - 9:00-24:00")
+          <div class_="prose prose-lg">
+        ({|
+  * **Keynote**
+  * **Talks**
+  * Open until Midnight for Socializing and Hacking!
+        |}
+        |> Cmarkit.Doc.of_string ~strict:true
+        |> Cmarkit_html.of_doc ~safe:false
+        |> unsafe
+        )
+          </div>
+        </div>
+        <img class_="hidden md:block" src="/img/separator.svg"/>
+        <div class_="grow">
+          (h2 "Day 2")
+          (tag ~classes:"text-2xl mt-2" "September 17 - 9:00-22:00")
+          <div class_="prose prose-lg">
+          ({|
+  * **Talks**
+  * **Workshops**
+  * **Hacking:** Contribute to OCaml projects and understand their internals
+        |}
+        |> Cmarkit.Doc.of_string ~strict:true
+        |> Cmarkit_html.of_doc ~safe:false
+        |> unsafe
+        )
+          </div>
+        </div>
+      </div>
+      <div class_="mt-8">
+        (h2 "Sessions")
+        <ul class_="my-8 flex flex-col gap-4">
+          (list (List.map session Data2024.Sessions.all))
+        </ul>
+      </div>
+    </div>
+  </div>
+  ]
+
+let avatar_maybe_you ~title ~subtitle =
+  <div class_="flex flex-col items-center text-lg">
+    <img class_="rounded-full w-48" src="/img/maybe-you.svg" alt=""/>
+    (<div class_="font-bold mt-2">(string title)</div>)
+    (<div class_="">(string subtitle)</div>)
+    (button ~classes:"mt-4" ~href:cfp_url "Submit your Proposal")
+  </div>
+
+let speakers_section =
+  <div id="speakers" class_="container mx-auto px-6 py-12">
+    (h2 "Speakers")
+    <div class_="flex flex-wrap gap-10 mt-8">
+      (list (List.map (Avatar.render ~tag_title:"Speaker") Data2024.speakers))
+
+      (avatar_maybe_you ~title:"Propose a Talk or Workshop" ~subtitle:"")
+    </div>
+  </div>
+
+let render_schedule_slot_cell (slot: Data2024.Schedule.event option) =
+  match slot with
+  | Some slot ->
+    let colspan = Option.value ~default:1 slot.colspan in
+    let rowspan = Option.value ~default:1 slot.rowspan in
+
+    <td class_="py-2 px-4" colspan=colspan rowspan=rowspan>
+      (string slot.event)
+    </td>
+  | None -> null
+
+
+let schedule_day_one_section =
+  <div class_="bg-center bg-gradient-to-br from-[#0F254F] to-[#0B1228] bg-cover text-gray-200">
+    <div id="schedule" class_="container mx-auto py-20">
+      (h2 ~classes:"text-white text-center" "Day One")
+
+      <div class_="-mx-4 overflow-x-auto sm:-mx-6">
+        <div class_="inline-block min-w-full py-2 align-middle">
+          <table class_="mt-6 table-auto divide-y divide-gray-400">
+            <thead>
+              <tr class_="divide-x divide-gray-400">
+                <th class_="text-left px-4 pb-2">"Time"</th>
+                <th class_="text-left px-4 pb-2">"Yellow Giant Room"</th>
+                <th class_="text-left px-4 pb-2">"Hangout hub Room"</th>
+                <th class_="text-left px-4 pb-2">"Hangout hub"</th>
+              </tr>
+            </thead>
+
+            <tbody class_="divide-y divide-gray-400">
+              (list (
+                Data2024.Schedule.day_one.schedule
+                |> List.map (fun (row: Data2024.Schedule.schedule_row) ->
+                  <tr class_="divide-x divide-gray-400">
+                    <td class_="px-4 whitespace-nowrap">(string row.time)</td>
+                    (row.yellow_giant |> render_schedule_slot_cell)
+                    (row.hangout_hub_room |> render_schedule_slot_cell)
+                    (row.hangout_hub |> render_schedule_slot_cell)
+                  </tr>
+                )
+              ))
+            </tbody>
+          </table>
+        </div>
+      </div>
+   </div>
+  </div>
+
+let schedule_day_two_section =
+  <div class_="bg-center bg-gradient-to-tr from-[#4A1500] to-[#8B4000] bg-cover text-white">
+    <div id="schedule" class_="container mx-auto py-20">
+      (h2 ~classes:"text-white text-center" "Day Two")
+
+      <div class_="-mx-4 overflow-x-auto sm:-mx-6">
+         <div class_="inline-block min-w-full py-2 align-middle">
+            <table class_="mt-6 table-auto divide-y divide-gray-200">
+              <thead>
+                <tr class_="divide-x divide-gray-200">
+                  <th class_="text-left px-4 pb-2">"Time"</th>
+                  <th class_="text-left px-4 pb-2">"Yellow Giant Room"</th>
+                  <th class_="text-left px-4 pb-2">"Apollo Room"</th>
+                  <th class_="text-left px-4 pb-2">"Hangout hub Room"</th>
+                  <th class_="text-left px-4 pb-2">"Hangout hub"</th>
+                </tr>
+              </thead>
+
+              <tbody class_="divide-y divide-gray-200">
+                (list (
+                  Data2024.Schedule.day_two.schedule
+                  |> List.map (fun (row: Data2024.Schedule.schedule_row) ->
+                    <tr class_="divide-x divide-gray-200">
+                      <td class_="px-4 whitespace-nowrap">(string row.time)</td>
+                      (row.yellow_giant |> render_schedule_slot_cell)
+                      (row.apollo |> render_schedule_slot_cell)
+                      (row.hangout_hub_room |> render_schedule_slot_cell)
+                      (row.hangout_hub |> render_schedule_slot_cell)
+                    </tr>
+                  )
+                ))
+              </tbody>
+            </table>
+        </div>
+      </div>
+    </div>
+   </div>
+
+
+let venue_section =
+  <div id="venue" class_="bg-[url('/2024/img/venue2-Credit-Julius-Worel.jpeg')] relative bg-center bg-cover items-center py-32">
+    <div class_="max-w-full w-96 bg-white border-primary_dark border-4 mx-auto px-12 py-6">
+      (h2 "Venue")
+      <div class_="mt-6 prose prose-lg">(string "Space Shack Coworking")<br/>(string "Akazienstr. 3a, 10823 Berlin")</div>
+      <div class_="absolute bottom-0 right-0 px-4 bg-blur bg-white/80">
+        <small>(string "Image: © Julius Worel")</small>
+      </div>
+    </div>
+
+  </div>
+
+let sponsors_section =
+  <div id="sponsors" class_="container mx-auto px-6 py-20">
+    (h2 ~classes:"text-center" "Sponsors & Partners")
+
+    <div style="gap:2rem" class_="mt-8 grid grid-rows-5 grid-cols-1 md:grid-rows-2 md:grid-cols-3">
+      (list (
+        Data2024.Sponsors.all
+        |> List.map (fun (sponsor: Data2024.Sponsors.sponsor) ->
+          <a href=(sponsor.url) target="_blank" class_="mx-auto">
+            <img
+              class_="object-contain h-24"
+              alt=sponsor.name
+              src=sponsor.logo_url
+            />
+          </a>
+        )
+      ))
+    </div>
+  </div>
+
+let organizers_section =
+  <div id="organizers" class_="bg-[url('/img/blue-bg.svg')] bg-center bg-cover text-white">
+    <div class_="container mx-auto px-6 py-20">
+      (h2 ~classes:"text-white" "Organizers & Volunteers")
+      (<p class_="text-xl my-4">(string "Want to help? Contact any of the organizers!")</p>)
+      <div class_="flex flex-wrap gap-10 mt-8">
+        (Avatar.render (Data2024.People.get_by_slug "sabine"))
+        (Avatar.render (Data2024.People.get_by_slug "davesnx"))
+        (Avatar.render (Data2024.People.get_by_slug "dmitriy"))
+        (Avatar.render (Data2024.People.get_by_slug "rizo"))
+        (Avatar.render (Data2024.People.get_by_slug "jules"))
+      </div>
+    </div>
+  </div>
+
+let recommended_events_section =
+  <div id="recommended-events" class_="container mx-auto px-6 py-20">
+    (h2 ~classes:"text-center" "Other Recommended Events")
+
+    <div style="gap:2rem" class_="mt-8 grid grid-rows-5 grid-cols-1 md:grid-rows-2 md:grid-cols-3">
+      (list (
+        Data2024.RecommendedEvents.all
+        |> List.map (fun (event: Data2024.RecommendedEvents.event) ->
+          <a href=(event.url) target="_blank" class_="mx-auto">
+            <img
+              class_="object-contain h-24"
+              alt=event.name
+              src=event.logo_url
+            />
+          </a>
+        )
+      ))
+    </div>
+  </div>
+
+let make () =
+  <Layout title=("Fun OCaml 2024")>
+    ([
+     top_navigation;
+     hero_section;
+     list program_section;
+     (*speakers_section;*)
+     schedule_day_one_section;
+     schedule_day_two_section;
+     venue_section;
+     sponsors_section;
+     organizers_section;
+     recommended_events_section;
+    ])
+  </Layout>

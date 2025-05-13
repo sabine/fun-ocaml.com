@@ -1,0 +1,47 @@
+- slug: "davesnx"
+  name: David Sancho Moreno
+  affiliation: ahrefs
+  bio: |
+      Software Engineer from Barcelona, nomading thought Catalonia, making cute software with Reason and OCaml.
+      I host emelle.tv and currently working at Ahrefs, building user interfaces and tools.
+  github: "davesnx"
+  twitter: "davesnx"
+  other_socials: []
+- slug: "dmitriy"
+  name: Dmitriy Kovalenko
+  affiliation: "LightSource"
+  github: dmtrKovalenko
+  twitter: goose_plus_plus
+  bio: |
+
+  other_socials: []
+- slug: "rizo"
+  name: "Rizo Isrof"
+  affiliation: "Tarides"
+  bio: |
+      I am a software engineer specialized in design and development of systems for
+      data analysis, IoT and web programming. My passion lies in applying theoretical
+      research ideas to real world problems. I am the co-founder and CEO at Hyper.systems
+      and presently also work as a consultant at Tarides.
+  other_socials: []
+- slug: "sabine"
+  name: Sabine Schmaltz
+  affiliation: Tarides
+  bio: |
+      OCaml.org maintainer, team lead of the documentation team at Tarides.
+      After receiving a Ph.D. in 2013 from Saarland university, she became
+      a stay-at-home mother interested in web application and database development
+      until she joined Tarides to work on making OCaml a mainstream programming language.
+  github: "sabine"
+  twitter: "sabine_s_"
+  linkedin: "sabfis"
+  bluesky: "sabine.sh"
+  twitch: "sabine_ocaml"
+  other_socials: []
+- slug: "ivan"
+  name: Ivan Hrekov
+  affiliation: Splunk
+  github: ivnhk
+  twitter: ivvasyk
+  bio: ""
+  other_socials: []

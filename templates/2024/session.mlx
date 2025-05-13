@@ -1,0 +1,29 @@
+open JSX
+
+let top_navigation =
+  Layout.navigation [
+      Layout.navigation_link ~href:"/" ~title:"Conference";
+  ]
+
+let button ?(classes="") ~href title =
+  <a class_=("inline-block bg-gradient-to-r from-primary_dark to-primary_light hover:from-black hover:to-black text-white font-semibold px-8 py-3 rounded-full " ^ classes)
+    href=(href) target="_blank">(string title)</a>
+
+let h2 ?(classes="") title =
+  <h2 class_=("font-bold text-primary_light text-4xl " ^ classes)>(title |> String.uppercase_ascii |> string)</h2>
+
+let tag ?(classes="") title =
+   <div class_=(classes ^ " inline-flex font-montserrat text-white bg-primary_light px-4 py-2")>(string title)</div>
+
+let render (s: Data2024.Sessions.t) =
+  <Layout title=(s.title ^ " - Fun OCaml 2024")>
+    [
+      <div class_="mt-8">
+        <h1 class_="text-2xl font-semibold">(string s.title)</h1>
+        (tag (match s.kind with | Workshop -> "Workshop" | Talk -> "Talk"))
+
+        (h2 "Speakers")
+        <p class_="text-lg">(String.concat ", " (List.map (fun (s : Data2024.People.t) -> s.name) s.speakers) |> string)</p>
+      </div> 
+    ]
+  </Layout>

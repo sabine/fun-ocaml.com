@@ -1,0 +1,5 @@
+(library
+ (name templates2024)
+ (preprocess
+  (pps html_of_jsx.ppx))
+ (libraries html_of_jsx cmarkit data2024))

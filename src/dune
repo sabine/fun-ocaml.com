@@ -2,4 +2,12 @@
  (name main)
  (public_name main)
  (modules main)
- (libraries bos cmarkit ptime fmt data templates))
+ (libraries
+  bos
+  cmarkit
+  ptime
+  fmt
+  data2024
+  data2025
+  templates2024
+  templates2025))

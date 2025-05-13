@@ -1,0 +1,96 @@
+open JSX
+
+let top_navigation =
+  (Layout.navigation [
+    Layout.navigation_link ~href:"/" ~title:"Event";
+    Layout.navigation_link ~href:"/privacy" ~title:"Privacy Policy"
+  ])
+
+let privacy =
+  {|
+# Privacy
+
+We collect and retain as little data about you as possible,
+and make the retention and use of your data as transparent and manageable for you as we can.
+
+We transmit all data using up-to-date transport layer encryption
+between your browser and our servers. [fun-ocaml.com](https://fun-ocaml.com)
+does not currently integrate with third-party services.
+
+We are hosting [fun-ocaml.com](https://fun-ocaml.com) and its subdomains on servers
+in Germany, and are subject to German data protection laws.
+Our team has access to all data submitted, for technical reasons.
+We will only look at or use that data if we need to do so for a support request.
+
+As a visitor to the [fun-ocaml.com](https://fun-ocaml.com) website:
+
+* No information is shared with, sent to, or sold to third-parties
+* No information is shared with advertising companies
+* No information is mined or harvested for personal and behavioral trends
+* No information is monetized
+
+If you have questions or concerns, please contact us.
+
+## cfp.fun-ocaml.com
+
+If you are a submitter or speaker, the conference organizer can see
+all data (except passwords) you enter during and after the Call for Participation.
+If the organizer accepts your submission and you confirm your attendance,
+the data you provided will be made public.
+
+For technical reasons, when you use [cfp.fun-ocaml.com](https://cfp.fun-ocaml.com),
+a CSRF cookie, and, if you create an account, a session cookie will be set.
+
+## tickets.fun-ocaml.com
+
+The conference organizer can see all data you enter. We use your personal information only
+for purposes directly related to organizing the event.
+
+## Server Logs
+
+When you access our website or individual pages, the browser on your device
+automatically sends information to the server of our website.
+The following information is stored in log files:
+
+* IP address of the requesting computer,
+* Date and time of access,
+* Name and URL of the retrieved file,
+* Website from which access is made (referrer URL),
+* browser used and, if applicable, the operating system of your computer,
+* Status codes and amount of data transferred,
+
+This data is processed for the following purposes:
+
+* Provision of the Internet offering including all functions and content,
+* Ensuring a smooth connection to the websites,
+* Ensuring comfortable use of our websites,
+* Ensuring system security and stability,
+* Anonymized statistical evaluation of access,
+* optimization of the website,
+* Disclosure to law enforcement authorities if there has been an unlawful intervention/attack on our systems,
+* other administrative purposes.
+
+This data will be deleted after fourteen days unless it is no longer required
+for other purposes (e.g. defense or assertion of claims).
+
+The legal basis for data processing is Article 6 Paragraph 1 Letter f of the GDPR.
+Our legitimate interest follows from the data collection purposes described above.
+      |}
+    |> Cmarkit.Doc.of_string ~strict:true
+    |> Cmarkit_html.of_doc ~safe:false
+
+let make () =
+  <Layout title=("Privacy Policy")>
+    ([
+      top_navigation;
+      <div class_="mx-auto container px-6 py-20 min-h-screen">
+        <div class_="prose prose-xl">
+        <p>
+          (string "Privacy contact: ")
+          (Layout.email_link ~id:"privacy_email" ~user:"privacy" "fun-ocaml.com")
+        </p>
+        (privacy |> unsafe)
+        </div>
+      </div>
+    ])
+  </Layout>
