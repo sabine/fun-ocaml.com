@@ -253,7 +253,6 @@ let sponsors_section =
     (h2 ~classes:"text-center" "Sponsors & Partners")
 
     <div style="gap:2rem" class_="mt-8 grid grid-rows-5 grid-cols-1 md:grid-rows-2 md:grid-cols-3">
-    (string "Coming Soon")
       (list (
         Data2025.Sponsors.all
         |> List.map (fun (sponsor: Data2025.Sponsors.sponsor) ->

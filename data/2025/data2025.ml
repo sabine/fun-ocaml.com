@@ -156,7 +156,9 @@ let speakers = People.all
 module Sponsors = struct
   type sponsor = { name : string; logo_url : string; url : string }
 
-  let all : sponsor list = []
+  let all : sponsor list = [
+    { name = "octra labs"; logo_url = "https://avatars.githubusercontent.com/u/117525754?s=200&v=4"; url = "https://octra.org" }
+  ]
 end
 
 module Schedule = struct
