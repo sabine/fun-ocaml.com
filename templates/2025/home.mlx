@@ -57,6 +57,13 @@ let hero_section =
   </div>
 
 let program_section =
+  let session (s : Data2025.Sessions.t) =
+    <li>
+      <h3 class_="text-2xl font-semibold">(string s.title)</h3>
+      <p class_="text-lg">(String.concat ", " (List.map (fun (s :   Data2025.People.t) -> s.name) s.speakers) |> string)</p>
+      (tag (match s.kind with | Workshop -> "Workshop" | Talk -> "Talk"))
+    </li>
+  in
   [
   <div id="program" class_="container mx-auto px-6 py-20">
     (h2 "Program")
@@ -127,6 +134,12 @@ Talks are live-streamed and will appear on [watch.ocaml.org](https://watch.ocaml
         )
           </div>
         </div>
+      </div>
+      <div class_="mt-8">
+        (h2 "Sessions")
+        <ul class_="my-8 flex flex-col gap-4">
+          (list (List.map session Data2025.Sessions.all))
+        </ul>
       </div>
     </div>
   </div>
@@ -249,6 +262,13 @@ let venue_section =
   </div>
 
 let sponsors_section =
+  let render_sponsor_reason (reason: Data2025.Sponsors.reason) =
+  match reason with
+  | PlatinumSponsor -> "Platinum Sponsor"
+  | GoldSponsor -> "Gold Sponsor"
+  | BronzeSponsor -> "Bronze Sponsor"
+  | VolunteerOrOrganizer names -> "Volunteer / organizer commitment (" ^ names ^ ")"
+  in
   <div id="sponsors" class_="container mx-auto px-6 py-20">
     (h2 ~classes:"text-center" "Sponsors & Partners")
 
@@ -256,12 +276,18 @@ let sponsors_section =
       (list (
         Data2025.Sponsors.all
         |> List.map (fun (sponsor: Data2025.Sponsors.sponsor) ->
-          <a href=(sponsor.url) target="_blank" class_="mx-auto">
-            <img
-              class_="object-contain h-24"
-              alt=sponsor.name
-              src=sponsor.logo_url
-            />
+          <a href=(sponsor.url) target="_blank" class_="mx-auto text-center">
+            <div class_="h-24 flex items-center">
+                <img
+                    class_="object-contain max-h-24 mx-auto w-3xs max-w-full"
+                        alt=sponsor.name
+                            src=sponsor.logo_url
+                />
+            </div>
+            <div class_="font-bold">
+                (string sponsor.name)
+            </div>
+            (string (render_sponsor_reason sponsor.reason))
           </a>
         )
       ))

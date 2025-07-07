@@ -1,1 +1,14 @@
-[]
+- slug: "raven-ml"
+  title: Build Langage Models with Raven
+  speakers: ["thibaut"]
+  kind: workshop
+  abstract: |
+      Discover how to build and train language models using OCaml with Raven, a modern scientific computing ecosystem that brings JAX-like capabilities to functional programming. This hands-on workshop introduces Raven's key libraries-Nx for tensor operations, Rune for automatic differentiation and JIT compilation, and Kaun for neural network architectures-demonstrating how to implement transformer-based models with type safety and competitive performance.
+
+      We'll explore Rune's effect-based autodiff system, implement attention mechanisms, and train a small language model while leveraging OCaml's type system for production-ready ML systems.
+- slug: "terrateam"
+  title: "Frameworks: No, Libraries: Yes. Developing a product in OCaml from Scratch"
+  speakers: ["malcolm"]
+  kind: talk
+  abstract: |
+      Terrateam is an open source infrastructure management product written in OCaml.  In order to stay lean and flexible, Terrateam has developed almost all of its own frameworks and tooling.  With a small team, the Terrateam product punches well above its weight compared to its competition.  This talk will cover the choice to develop their own frameworks, the good, the bad, and how OCaml has been instrumental in being able to achieve so much despite being a two person company.

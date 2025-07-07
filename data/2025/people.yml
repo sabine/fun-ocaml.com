@@ -1,3 +1,18 @@
+- slug: "thibaut"
+  name: Thibaut Mattio
+  affiliation: none
+  bio: |
+      Thibaut is building Raven, an AI ecosystem bringing modern machine learning capabilities to OCaml. Previously, he worked at Tarides where he led the OCaml Platform initiative to modernize OCaml's developer experience.
+  github: "tmattio"
+  twitter: "tmattio_"
+  other_socials: []
+- slug: "malcolm"
+  name: Malcolm Matalka
+  affiliation: Terrateam
+  bio: |
+      Malcolm has been a software engineer since he graduated from shoes with Velcro to laces. He has been developing in OCaml for fun for close to 20 years and, as co-founder of Terrateam, in 2023 decided to develop in OCaml for profit.
+  other_socials: []
+
 - slug: "davesnx"
   name: David Sancho Moreno
   affiliation: ahrefs

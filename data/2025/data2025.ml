@@ -151,14 +151,45 @@ module Sessions = struct
     |> Read_yaml.Result.get_ok ~error:(fun (`Msg m) -> Invalid_argument m)
 end
 
-let speakers = People.all
+let speakers =
+  People.all (* FIXME: incorrect because there's also volunteers listed here *)
 
 module Sponsors = struct
-  type sponsor = { name : string; logo_url : string; url : string }
+  type reason =
+    | PlatinumSponsor
+    | GoldSponsor
+    | BronzeSponsor
+    | VolunteerOrOrganizer of string
 
-  let all : sponsor list = [
-    { name = "octra labs"; logo_url = "https://avatars.githubusercontent.com/u/117525754?s=200&v=4"; url = "https://octra.org" }
-  ]
+  type sponsor = {
+    name : string;
+    logo_url : string;
+    url : string;
+    reason : reason;
+  }
+
+  let all : sponsor list =
+    [
+      {
+        name = "octra labs";
+        logo_url = "https://avatars.githubusercontent.com/u/117525754?s=200&v=4";
+        url = "https://octra.org";
+        reason = PlatinumSponsor;
+      };
+      {
+        name = "ahrefs";
+        logo_url = "/2025/sponsors/ahrefs.svg";
+        url = "https://ahrefs.com";
+        reason = PlatinumSponsor;
+      };
+      {
+        name = "Tarides";
+        logo_url =
+          "https://tarides.com/images/logo_tarides~33_WrizEfwvah_qWChdjSg.svg";
+        url = "https://tarides.com";
+        reason = VolunteerOrOrganizer "Sabine";
+      };
+    ]
 end
 
 module Schedule = struct
