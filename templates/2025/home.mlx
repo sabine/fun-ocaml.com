@@ -41,7 +41,7 @@ let hero_section =
       (tag ~classes:"text-3xl mt-6" "September 15 & 16, 2025")
 
       <a class_="flex items-center gap-2 text-white underline hover:no-underline text-xl mt-6" href=(registration_url)>
-        (string ("Register here"))
+        (string ("Register for free here"))
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" class_="w-6 h-6">
           <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
         </svg>
@@ -254,7 +254,14 @@ let venue_section =
   <div id="venue" class_="bg-[url('/2025/img/venue2.jpg')] relative bg-center bg-cover items-center py-32">
     <div class_="max-w-full w-96 bg-white border-primary_dark border-4 mx-auto px-12 py-6">
       (h2 "Venue")
-      <div class_="mt-6 prose prose-lg">(string "Digital Knowledge Village")<br/>(string "457 Puławska St.")<br/>(string "02-844 Warsaw")</div>
+      <div class_="mt-6 prose prose-lg">
+        (string "Digital Knowledge Village")<br/>
+        (string "457 Puławska St.")<br/>
+        (string "02-844 Warsaw")<br/>
+        <a href="https://maps.app.goo.gl/2ZgApqZhyt1EFYCn7" target="_blank">
+        (string "on Google Maps")
+        </a>
+      </div>
       <div class_="absolute bottom-0 right-0 px-4 bg-blur bg-white/80">
       </div>
     </div>
@@ -291,6 +298,9 @@ let sponsors_section =
           </a>
         )
       ))
+    </div>
+    <div class_="text-center">
+    (button ~href:"mailto:info@sabineschmaltz.de?subject=Sponsoring%20FUN%20OCaml&body=Hi%20Sabine,%0D%0A%0D%0Aplease%20give%20me%20an%20overview%20of%20sponsorship%20opportunities!" "Sponsor FUN OCaml?")
     </div>
   </div>
 

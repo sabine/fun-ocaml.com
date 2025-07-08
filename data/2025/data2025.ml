@@ -183,6 +183,12 @@ module Sponsors = struct
         reason = PlatinumSponsor;
       };
       {
+        name = "LexiFi";
+        logo_url = "/2025/sponsors/lexifi.png";
+        url = "https://www.lexifi.com";
+        reason = BronzeSponsor;
+      };
+      {
         name = "Tarides";
         logo_url =
           "https://tarides.com/images/logo_tarides~33_WrizEfwvah_qWChdjSg.svg";
