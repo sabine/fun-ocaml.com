@@ -299,7 +299,7 @@ let sponsors_section =
         )
       ))
     </div>
-    <div class_="text-center">
+    <div class_="text-center mt-6">
     (button ~href:"mailto:info@sabineschmaltz.de?subject=Sponsoring%20FUN%20OCaml&body=Hi%20Sabine,%0D%0A%0D%0Aplease%20give%20me%20an%20overview%20of%20sponsorship%20opportunities!" "Sponsor FUN OCaml?")
     </div>
   </div>
