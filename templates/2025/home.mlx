@@ -274,7 +274,7 @@ let sponsors_section =
   | PlatinumSponsor -> "Platinum Sponsor"
   | GoldSponsor -> "Gold Sponsor"
   | BronzeSponsor -> "Bronze Sponsor"
-  | VolunteerOrOrganizer names -> "Volunteer / organizer commitment (" ^ names ^ ")"
+  | VolunteerOrOrganizer -> "Volunteer / organizer commitment"
   in
   <div id="sponsors" class_="container mx-auto px-6 py-20">
     (h2 ~classes:"text-center" "Sponsors & Partners")

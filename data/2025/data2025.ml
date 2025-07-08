@@ -159,7 +159,7 @@ module Sponsors = struct
     | PlatinumSponsor
     | GoldSponsor
     | BronzeSponsor
-    | VolunteerOrOrganizer of string
+    | VolunteerOrOrganizer
 
   type sponsor = {
     name : string;
@@ -193,7 +193,7 @@ module Sponsors = struct
         logo_url =
           "https://tarides.com/images/logo_tarides~33_WrizEfwvah_qWChdjSg.svg";
         url = "https://tarides.com";
-        reason = VolunteerOrOrganizer "Sabine";
+        reason = VolunteerOrOrganizer;
       };
     ]
 end
