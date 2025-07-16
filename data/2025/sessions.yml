@@ -6,9 +6,24 @@
       Discover how to build and train language models using OCaml with Raven, a modern scientific computing ecosystem that brings JAX-like capabilities to functional programming. This hands-on workshop introduces Raven's key libraries-Nx for tensor operations, Rune for automatic differentiation and JIT compilation, and Kaun for neural network architectures-demonstrating how to implement transformer-based models with type safety and competitive performance.
 
       We'll explore Rune's effect-based autodiff system, implement attention mechanisms, and train a small language model while leveraging OCaml's type system for production-ready ML systems.
+
 - slug: "terrateam"
   title: "Frameworks: No, Libraries: Yes. Developing a product in OCaml from Scratch"
   speakers: ["malcolm"]
   kind: talk
   abstract: |
       Terrateam is an open source infrastructure management product written in OCaml.  In order to stay lean and flexible, Terrateam has developed almost all of its own frameworks and tooling.  With a small team, the Terrateam product punches well above its weight compared to its competition.  This talk will cover the choice to develop their own frameworks, the good, the bad, and how OCaml has been instrumental in being able to achieve so much despite being a two person company.
+
+- slug: "oxcaml-system-engineers-pov"
+  title: "0xCaml From a System Engineer's Point of View"
+  speakers: ["dmitriy"]
+  kind: talk
+  abstract: |
+      I do a lot of Rust, C, Zig and whatever else cursed systems programming languages are there. So recently 0xCaml popped out and I was def interested if I can finally use it. So I did some research on how it actually works comparing to native OCaml and other languages and try to build odiff (the fastest image comparison lib in the world) with 0xCaml. Here is what I learned.
+
+- slug: "reinforcement-learning-workshop"
+  title: "Train a Reinforcement Learning Agent for the Box-Pushing Game Sokoban in OCANNL or Raven"
+  speakers: ["lukasz"]
+  kind: workshop
+  abstract: |
+      I will give a very brief intro to Reinforcement Learning (RL), covering just the REINFORCE algorithm. We will build an RL harness and an environment for the Sokoban game (cheating allowed). We will program and train models using a convolutional neural net or an axial-attention transformer. While the nets are training, I will introduce the Group Relative Policy Optimization (GRPO) algorithm and discuss how our agent setup relates to post-training of language models on solving problems. Time permitting, we would then implement GRPO and compare its performance with REINFORCE.

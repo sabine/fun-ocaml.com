@@ -12,6 +12,26 @@
   bio: |
       Malcolm has been a software engineer since he graduated from shoes with Velcro to laces. He has been developing in OCaml for fun for close to 20 years and, as co-founder of Terrateam, in 2023 decided to develop in OCaml for profit.
   other_socials: []
+- slug: "dmitriy"
+  name: Dmitriy Kovalenko
+  affiliation: "LightSource"
+  github: dmtrKovalenko
+  twitter: goose_plus_plus
+  bio: |
+      serial twitter shitposter. Born to write OCaml, forced to write Rust full time. Primarily working on the video related stuff
+  other_socials: []
+- slug: "lukasz"
+  name: Lukasz Stafiniak
+  affiliation: "Ahrefs"
+  bio: |
+      Long-time OCaml programmer; interested in AI, Deep Learning, formal methods, cognitive science. I worked on type inference, datalog, semantic parsing, Deep Learning. Since 2024, I'm sponsored by Ahrefs to work on OCANNL.
+  other_socials: []
+- slug: "nicolas"
+  name: "Nicolás Ojeda Bär"
+  affiliation: "LexiFi"
+  bio: |
+      Employed at LexiFi. Core maintainer of the OCaml compiler. Maintainer of the Dune build system. Also, OCaml Software Foundation.
+  other_socials: []
 
 - slug: "davesnx"
   name: David Sancho Moreno
@@ -21,14 +41,6 @@
       I host emelle.tv and currently working at Ahrefs, building user interfaces and tools.
   github: "davesnx"
   twitter: "davesnx"
-  other_socials: []
-- slug: "dmitriy"
-  name: Dmitriy Kovalenko
-  affiliation: "LightSource"
-  github: dmtrKovalenko
-  twitter: goose_plus_plus
-  bio: |
-
   other_socials: []
 - slug: "rizo"
   name: "Rizo Isrof"
