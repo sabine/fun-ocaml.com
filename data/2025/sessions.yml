@@ -27,3 +27,21 @@
   kind: workshop
   abstract: |
       I will give a very brief intro to Reinforcement Learning (RL), covering just the REINFORCE algorithm. We will build an RL harness and an environment for the Sokoban game (cheating allowed). We will program and train models using a convolutional neural net or an axial-attention transformer. While the nets are training, I will introduce the Group Relative Policy Optimization (GRPO) algorithm and discuss how our agent setup relates to post-training of language models on solving problems. Time permitting, we would then implement GRPO and compare its performance with REINFORCE.
+
+- slug: "static-websites-functional-programming"
+  title: "Generating Static Websites the Functional Programming Way"
+  speakers: ["xavier"]
+  kind: talk
+  abstract: |
+      Static site generators like Jekyll, Zola, and Hugo are effective, but fall short for complex sites like personal encyclopedias, wikis, or sites with rich content. Features like *backlinks* and *transclusions* require richer context and efficient builds. This talk explores the theory behind static site generation (as a case of *build systems*) and shows how to implement advanced features inspired by [Project Xanadu](https://www.xanadu.net/) using [YOCaml](https://github.com/xhtmlboi/yocaml), a static site framework based on functional abstractions (such as strong profunctors) in OCaml.
+
+- slug: "slipshow"
+  title: "Slipshow: A Full-Featured Presentation Tool in OCaml"
+  speakers: ["paul-elliot"]
+  kind: talk
+  abstract: |
+      Slipshow is a tool to create interactive presentations. Started as a JavaScript project, it is now fully written in OCaml and features a runtime engine, a compiler, a collaborative editing website, a VSCode extension, a standalone app...
+
+      This talk tells the story of how it is possible to develop and maintain such a challenging project as a single developer.
+
+      If you are reading this far into the abstract, I suspect you are going to FUN OCaml? Are you giving a talk? If so, consider (re)writing your presentation in Slipshow!

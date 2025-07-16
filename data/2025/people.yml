@@ -32,6 +32,19 @@
   bio: |
       Employed at LexiFi. Core maintainer of the OCaml compiler. Maintainer of the Dune build system. Also, OCaml Software Foundation.
   other_socials: []
+- slug: "paul-elliot"
+  name: "Paul-Elliot Anglès d'Auriac"
+  affiliation: ""
+  bio: |
+      Nice to meet you!
+  other_socials: []
+- slug: "xavier"
+  name: "Xavier Van de Woestyne"
+  affiliation: "Tarides"
+  bio: |
+      I love programming languages (like OCaml, Elm, Elixir/Erlang, IO, Haskell and Scala), Types systems and Web programming, and speciality coffee.
+      I live in Nantes and I work at Tarides (improving the OCaml ecosystem).
+  other_socials: []
 
 - slug: "davesnx"
   name: David Sancho Moreno
