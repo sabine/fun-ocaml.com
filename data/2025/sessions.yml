@@ -70,3 +70,75 @@
       OCaml's ecosystem includes many platform-specific packages that can break portability when transitive dependencies won't work across different operating systems.
 
       Manas Yayanth explains how they implemented portable lock files for esy (the Reason/OCaml package manager), ensuring projects can be built cross-platform.
+
+- slug: "from-ocaml-4-to-5"
+  title: "From OCaml 4 to 5 and from Parmap to Effects: A legacy code transition story"
+  speakers: ["nathan", "nat"]
+  kind: talk
+  abstract: |
+      OCaml 5's support for shared memory parallelism and effects-based concurrency opens up new ways for developers to build new OCaml programs for modern hardware, but it isn't trivial to migrate existing software to this new world.  We've spent the last few months porting a large (~3MM LoC) OCaml codebase from process-based parallelism to multi-domain Eio, and learned a lot along the way.  In this talk, we'll discuss the fundamentals of shared-memory parallism, our incremental migration approach which used a combination of static and dynamic analysis, the pitfalls (both expected and unexpected) that we encountered along the way, and some lessons that others can adopt for their own journey.
+
+- slug: "vif-hurl-web-framework-for-ocaml-5"
+  title: "Vif & Hurl, a Web Framework for OCaml 5"
+  speakers: ["romain"]
+  kind: workshop
+  abstract: |
+      The aim of this workshop is to present Vif, a new typed web framework for OCaml 5. We will introduce Vif to participants through a practical example: a user space with a chat room, which we will develop into a web application. We will test this application using hurl, an HTTP client in OCaml. We will see typed routes, typed forms, typed SQL queries (thanks to caqti) as well as websockets (and of course, js_of_ocaml). More importantly, participants will also be able to give feedback on our framework (and perhaps participate in its development) in order to improve it and bring web development back to the world of OCaml 5 and types!
+
+- slug: "ocaml-observability-with-opentelemetry"
+  title: "OCaml Observability with OpenTelmetry"
+  speakers: ["austin"]
+  kind: workshop
+  abstract: |
+      This session demonstrates how Semgrep leveraged OpenTelemetry to scale their OCaml-based product, covering practical implementation of telemetry types and real-world examples from their production system. You'll learn hands-on techniques for instrumenting OCaml applications with observability tools that have proven essential for scaling complex software systems.
+
+- slug: "performance-pitfalls-tales-from-a-python-ocaml-codebase"
+  title: "Performance Pitfalls: Tales From a Python/OCaml Codebase"
+  speakers: ["emma"]
+  kind: talk
+  abstract: |
+      Semgrep is a tool that enables developers to search their code for security vulnerabilities, built with an OCaml engine and a Python frontend. This has come with a fair amount of performance pain. In this talk, I'll share some of the worst problems we ran into, how we found them, and how we solved them (mostly, rewriting Python code in OCaml).
+
+- slug: "i-can-see-the-pixels"
+  title: "I Can See The Pixels: Designing Cross-Stitch Patterns in OCaml"
+  speakers: ["mindy"]
+  kind: talk
+  abstract: |
+      I was unsatisfied with existing cross-stitch pattern generating software, which was mostly structured like pixel-based paint programs. Those programs with support for very common operations like tiling borders were locked behind paywalls. I decided to write my own in OCaml, and I've been using it to design cross-stitch patterns since 2019. I'll talk a bit about the joy of making the Exact Right Tool, the anguish of abandoned experiments, and the ambiguous pleasure of monetizing art.
+
+- slug: "ocaml-at-lexifi"
+  title: "OCaml at LexiFi"
+  speakers: ["nicolas"]
+  kind: talk
+  abstract: |
+      [LexiFi](https://www.lexifi.com/) is likely to have been the first real industrial user of OCaml, back when it was funded in 2000. In this talk, I will present some of the things we have learned along the way. Some of the points I will address: our technology stack (development environment, deployment and distribution, cloud infrastructure, etc), tooling, strong and weak points of OCaml, people aspects (hiring and training), etc. If there is time, I will also present one of our key technical innovations: extending the OCaml compiler with type reflection (this topic will be explored further in the dedicated Workshop).
+
+- slug: "mlx-melange-react-server-components"
+  title: "mlx, Melange, React and Server Components"
+  speakers: ["davesnx"]
+  kind: workshop
+  abstract: |
+      An interactive workshop exploring a powerful technology stack that bridges functional programming with modern web development. We'll demonstrate how OCaml-based tools integrate seamlessly with React to create robust, type-safe applications.
+
+      - We will use mlx (an OCaml syntax that adds JSX into the language)
+      - Hands-on exploration of Melange single context and other patters of universal libraries
+      - Explaining what's React server components
+      - and implementing a small app
+
+- slug: "analyzing-programs-with-smt-solvers"
+  title: "Analyzing Programs with SMT Solvers"
+  speakers: ["tikhon"]
+  kind: talk
+  abstract: |
+      We can use SMT solvers like Z3 to analyze programs and answer
+      difficult questions about our code. By generating and solving complex
+      constraints, we can improve error message localization, attack
+      cryptographic protocols, check refinement types, search for proofs,
+      verify invariants, compare programs against specifications or even
+      synthesize code. Z3 is the goto state-of-the-art SMT solver, available
+      under and open source license and has a first-class OCaml library.
+
+      In this talk, I'll walk through a simple OCaml program to generate SMT
+      constraints that represent a bounded model of programs in a simple
+      imperative language. Algebraic data types and pattern matching are a
+      perfect fit for this kin

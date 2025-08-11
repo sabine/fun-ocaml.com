@@ -49,9 +49,8 @@
   name: "Leandro Ostera"
   affiliation: "Tarides"
   bio: |
-      Leandro is a product manager and software engineer from Argentina, living in Sweden and working for Tarides. In his day job he leads the OCaml Build System team at Tarides. On their spare time, Leandro likes to do street photography, and stream programming on Twitch.
+      Leandro is a product manager and software engineer from Argentina, living in Sweden and working for Tarides. On their spare time, Leandro likes to do street photography, and stream programming on Twitch.
   github: leostera
-  twitter: leostera
   twitch: leostera
   other_socials: []
 - slug: "manas"
@@ -62,24 +61,57 @@
   github: ManasJayanth
   twitter: manasjayanth
   other_socials: []
-
 - slug: "davesnx"
   name: David Sancho Moreno
   affiliation: ahrefs
   bio: |
-      Software Engineer from Barcelona, nomading thought Catalonia, making cute software with Reason and OCaml.
-      I host emelle.tv and currently working at Ahrefs, building user interfaces and tools.
+      A Software Engineer based in Barcelona, making software with Reason and OCaml. I am currently working at ahrefs, making tools that help developers to build great user interfaces.
   github: "davesnx"
   twitter: "davesnx"
   other_socials: []
-- slug: "rizo"
-  name: "Rizo Isrof"
-  affiliation: "Tarides"
+- slug: "mindy"
+  name: "Mindy Preston (yomimono)"
+  affiliation: ""
   bio: |
-      I am a software engineer specialized in design and development of systems for
-      data analysis, IoT and web programming. My passion lies in applying theoretical
-      research ideas to real world problems. I am the co-founder and CEO at Hyper.systems
-      and presently also work as a consultant at Tarides.
+      yomimono can't be stopped from writing OCaml programs, no matter how many times we ask her politely.
+  github: "yomimono"
+  other_socials: []
+- slug: "tikhon"
+  name: Tikhon Jelvis
+  affiliation: Semgrep
+  bio: |
+      Tikhon Jelvis is a staff engineer working on static analysis for dependencies at Semgrep. (In OCaml!)
+      Before Semgrep, Tikhon was a principal scientist working on supply chain optimization at Target, co-wrote Foundations of Reinforcement Learning and chaired the Haskell.org committee.
+  github: "TikhonJelvis"
+  other_socials: []
+- slug: "emma"
+  name: Emma Jin
+  affiliation: Semgrep
+  bio: |
+      Emma Jin is an engineering manager at Semgrep, where her team builds the core analysis engine. Before managing, she was a program analysis engineer, during which she led work to make Semgrep more than 10x faster and played a key role in launching interfile analysis.
+  other_socials: []
+- slug: "austin"
+  name: Austin Theriault
+  affiliation: Semgrep
+  bio: |
+      Austin Theriault is a Senior Software Engineer at Semgrep, that works on observability, systems, OCaml, and fixing whatever breaks.
+  other_socials: []
+- slug: "romain"
+  name: Romain Calascibetta
+  affiliation: Robur
+  bio: ""
+  other_socials: []
+- slug: "nathan"
+  name: Nathan Taylor
+  affiliation: Semgrep
+  bio: |
+      Nathan is a software developer at Semgrep, where he's currently working on scaling their static analysis engine.  He previously hacked on low-level and concurrent systems at Twitter, Apple, and Microsoft Research (among others), and is known to enjoy a good type system or two.
+  other_socials: []
+- slug: "nat"
+  name: Nat Mote
+  affiliation: Semgrep
+  bio: |
+      Nat has been solving performance and scalability challenges in OCaml for a decade, first on the Flow typechecker and then on Semgrep's static analysis engine. On Flow, he worked on IDE integrations and made a number of performance improvements to incremental typechecking. On Semgrep he has worked on new language support, type inference, autofix, performance measurement, memory optimizations, and more.
   other_socials: []
 - slug: "sabine"
   name: Sabine Schmaltz
@@ -87,8 +119,7 @@
   bio: |
       OCaml.org maintainer, team lead of the documentation team at Tarides.
       After receiving a Ph.D. in 2013 from Saarland university, she became
-      a stay-at-home mother interested in web application and database development
-      until she joined Tarides to work on making OCaml a mainstream programming language.
+      a stay-at-home mother interested in web application and database development until she joined Tarides to work on making OCaml a mainstream programming language.
   github: "sabine"
   twitter: "sabine_s_"
   linkedin: "sabfis"
