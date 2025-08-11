@@ -172,7 +172,7 @@ module Sponsors = struct
     [
       {
         name = "octra labs";
-        logo_url = "https://avatars.githubusercontent.com/u/117525754?s=200&v=4";
+        logo_url = "/2025/sponsors/octra.jpg";
         url = "https://octra.org";
         reason = PlatinumSponsor;
       };
@@ -183,15 +183,32 @@ module Sponsors = struct
         reason = PlatinumSponsor;
       };
       {
+        name = "Dialo";
+        logo_url = "/2025/sponsors/dialo.svg";
+        url = "https://dialo.ai";
+        reason = GoldSponsor;
+      };
+      {
         name = "LexiFi";
         logo_url = "/2025/sponsors/lexifi.png";
         url = "https://www.lexifi.com";
         reason = BronzeSponsor;
       };
       {
+        name = "Jane Street";
+        logo_url = "/2025/sponsors/janestreet.svg";
+        url = "https://www.janestreet.com/";
+        reason = BronzeSponsor;
+      };
+      {
+        name = "LightSource";
+        logo_url = "/2025/sponsors/lightsource.svg";
+        url = "https://lightsource.ai/";
+        reason = VolunteerOrOrganizer;
+      };
+      {
         name = "Tarides";
-        logo_url =
-          "https://tarides.com/images/logo_tarides~33_WrizEfwvah_qWChdjSg.svg";
+        logo_url = "/2025/sponsors/tarides.svg";
         url = "https://tarides.com";
         reason = VolunteerOrOrganizer;
       };
