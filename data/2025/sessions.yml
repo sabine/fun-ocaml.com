@@ -62,14 +62,12 @@
   abstract: |
       This talk breaks down how the OCaml ecosystem is actually growing by digging into real GitHub data - repo activity, contributor trends, and which libraries are gaining traction. We'll look at the numbers behind OCaml's momentum and what they tell us about where the community and tooling are headed in 2025.
 
-- slug: "cross-platform-projects"
-  title: "Cross-Platform OCaml Projects"
-  speakers: ["manas"]
+- slug: "surprise"
+  title: "Surprise talk"
+  speakers: []
   kind: talk
   abstract: |
-      OCaml's ecosystem includes many platform-specific packages that can break portability when transitive dependencies won't work across different operating systems.
-
-      Manas Jayanth explains how they implemented portable lock files for esy (the Reason/OCaml package manager), ensuring projects can be built cross-platform.
+    No info yet!
 
 - slug: "from-ocaml-4-to-5"
   title: "From OCaml 4 to 5 and from Parmap to Effects: A legacy code transition story"

@@ -53,14 +53,6 @@
   github: leostera
   twitch: leostera
   other_socials: []
-- slug: "manas"
-  name: "Manas Jayanth"
-  affiliation: ""
-  bio: |
-      esy.sh, Reason, OCaml and Emacs. I maintain esy, the package manager, and it's ecosystem (native packages, compiler package and tools)
-  github: ManasJayanth
-  twitter: manasjayanth
-  other_socials: []
 - slug: "davesnx"
   name: David Sancho Moreno
   affiliation: ahrefs
