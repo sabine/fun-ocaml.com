@@ -1,0 +1,37 @@
+{
+  "name": "pdf-attendee-tags-generator",
+  "version": "1.0.0",
+  "description": "A Node.js script to add attendee name tags to conference flyer PDFs",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "generate": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "pdf",
+    "conference",
+    "flyer",
+    "attendee",
+    "name-tags",
+    "pdf-manipulation",
+    "pdf-lib"
+  ],
+  "author": "Claude.ai",
+  "license": "MIT",
+  "dependencies": {
+    "@pdf-lib/fontkit": "^1.1.1",
+    "pdf-lib": "^1.17.1"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/pdf-attendee-tags-generator.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yourusername/pdf-attendee-tags-generator/issues"
+  },
+  "homepage": "https://github.com/yourusername/pdf-attendee-tags-generator#readme"
+}

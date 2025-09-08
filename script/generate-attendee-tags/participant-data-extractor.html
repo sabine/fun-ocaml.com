@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FUN OCaml 2025 Participant Data Extractor</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            margin: 0;
+            font-size: 2rem;
+            font-weight: 300;
+        }
+        
+        .header p {
+            margin: 10px 0 0;
+            opacity: 0.9;
+        }
+        
+        .content {
+            padding: 30px;
+        }
+        
+        .upload-area {
+            border: 3px dashed #667eea;
+            border-radius: 12px;
+            padding: 40px;
+            text-align: center;
+            margin-bottom: 30px;
+            background: #f8f9ff;
+            transition: all 0.3s ease;
+        }
+        
+        .upload-area:hover {
+            border-color: #5a67d8;
+            background: #f0f2ff;
+        }
+        
+        .upload-area.dragover {
+            border-color: #4c51bf;
+            background: #e6f3ff;
+            transform: scale(1.02);
+        }
+        
+        .file-input {
+            display: none;
+        }
+        
+        .upload-btn {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 500;
+            transition: transform 0.2s;
+        }
+        
+        .upload-btn:hover {
+            transform: translateY(-2px);
+        }
+        
+        .controls {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+        
+        .control-group {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .control-group label {
+            font-weight: 500;
+            color: #4a5568;
+        }
+        
+        select, input[type="checkbox"] {
+            padding: 8px 12px;
+            border: 2px solid #e2e8f0;
+            border-radius: 6px;
+            font-size: 14px;
+        }
+        
+        .stats {
+            background: #f7fafc;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+        
+        .stat-item {
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #667eea;
+        }
+        
+        .stat-label {
+            color: #718096;
+            font-size: 0.9rem;
+        }
+        
+        .output-section {
+            background: #f8f9fa;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+        
+        .output-header {
+            background: #e9ecef;
+            padding: 15px 20px;
+            border-radius: 8px 8px 0 0;
+            font-weight: 500;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .copy-btn {
+            background: #28a745;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        
+        .copy-btn:hover {
+            background: #218838;
+        }
+        
+        .copy-btn.copied {
+            background: #6f42c1;
+        }
+        
+        .output-content {
+            padding: 20px;
+            max-height: 400px;
+            overflow-y: auto;
+        }
+        
+        .json-output {
+            background: #2d3748;
+            color: #e2e8f0;
+            padding: 20px;
+            border-radius: 6px;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            line-height: 1.5;
+            white-space: pre-wrap;
+            word-break: break-all;
+        }
+        
+        .preview-list {
+            max-height: 300px;
+            overflow-y: auto;
+        }
+        
+        .preview-item {
+            padding: 12px;
+            border-bottom: 1px solid #e2e8f0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .preview-item:last-child {
+            border-bottom: none;
+        }
+        
+        .participant-name {
+            font-weight: 500;
+            color: #2d3748;
+        }
+        
+        .participant-company {
+            color: #718096;
+            font-style: italic;
+        }
+        
+        .no-company {
+            color: #e53e3e;
+        }
+        
+        .error {
+            background: #fed7d7;
+            border: 1px solid #fc8181;
+            color: #c53030;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        
+        .success {
+            background: #c6f6d5;
+            border: 1px solid #68d391;
+            color: #2f855a;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>FUN OCaml 2025 Participant Extractor</h1>
+            <p>Extract participant data for PDF name tag generation</p>
+        </div>
+        
+        <div class="content">
+            <div class="upload-area" id="uploadArea">
+                <p style="margin: 0 0 15px; font-size: 18px; color: #4a5568;">
+                    Drop your JSON file here or click to browse
+                </p>
+                <button class="upload-btn" onclick="document.getElementById('fileInput').click()">
+                    Choose JSON File
+                </button>
+                <input type="file" id="fileInput" class="file-input" accept=".json" onchange="handleFile(event)">
+            </div>
+            
+            <div id="errorDiv" style="display: none;"></div>
+            <div id="successDiv" style="display: none;"></div>
+            
+            <div id="controlsDiv" style="display: none;">
+                <div class="controls">
+                    <div class="control-group">
+                        <label for="statusFilter">Status:</label>
+                        <select id="statusFilter" onchange="updateOutput()">
+                            <option value="all">All Participants</option>
+                            <option value="p" selected>Paid Only</option>
+                            <option value="c">Cancelled Only</option>
+                        </select>
+                    </div>
+                    
+                    <div class="control-group">
+                        <label for="companyFilter">Company:</label>
+                        <select id="companyFilter" onchange="updateOutput()">
+                            <option value="all">All Participants</option>
+                            <option value="with">With Company Only</option>
+                            <option value="without">Without Company Only</option>
+                        </select>
+                    </div>
+                    
+                    <div class="control-group">
+                        <input type="checkbox" id="fallbackCompany" onchange="updateOutput()" checked>
+                        <label for="fallbackCompany">Use "Independent" for missing companies</label>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="statsDiv" style="display: none;"></div>
+            
+            <div id="outputDiv" style="display: none;">
+                <div class="output-section">
+                    <div class="output-header">
+                        <span>JSON Output for PDF Script</span>
+                        <button class="copy-btn" id="copyBtn" onclick="copyToClipboard()">Copy to Clipboard</button>
+                    </div>
+                    <div class="output-content">
+                        <div class="json-output" id="jsonOutput"></div>
+                    </div>
+                </div>
+                
+                <div class="output-section">
+                    <div class="output-header">
+                        <span>Participant Preview</span>
+                    </div>
+                    <div class="output-content">
+                        <div class="preview-list" id="previewList"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let rawData = null;
+        let processedData = [];
+
+        // File upload handling
+        const uploadArea = document.getElementById('uploadArea');
+        const fileInput = document.getElementById('fileInput');
+
+        uploadArea.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            uploadArea.classList.add('dragover');
+        });
+
+        uploadArea.addEventListener('dragleave', () => {
+            uploadArea.classList.remove('dragover');
+        });
+
+        uploadArea.addEventListener('drop', (e) => {
+            e.preventDefault();
+            uploadArea.classList.remove('dragover');
+            const files = e.dataTransfer.files;
+            if (files.length > 0) {
+                processFile(files[0]);
+            }
+        });
+
+        function handleFile(event) {
+            const file = event.target.files[0];
+            if (file) {
+                processFile(file);
+            }
+        }
+
+        function processFile(file) {
+            if (!file.name.endsWith('.json')) {
+                showError('Please select a JSON file.');
+                return;
+            }
+
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                try {
+                    rawData = JSON.parse(e.target.result);
+                    if (rawData.event && rawData.event.orders) {
+                        extractParticipants();
+                        showSuccess(`Successfully loaded ${processedData.length} participants!`);
+                        showControls();
+                        updateOutput();
+                    } else {
+                        showError('Invalid JSON structure. Expected Pretix event data with orders.');
+                    }
+                } catch (error) {
+                    showError('Invalid JSON file: ' + error.message);
+                }
+            };
+            reader.readAsText(file);
+        }
+
+        function extractParticipants() {
+            processedData = [];
+            
+            rawData.event.orders.forEach(order => {
+                order.positions.forEach(position => {
+                    processedData.push({
+                        name: position.attendee_name,
+                        company: position.company,
+                        email: position.attendee_email,
+                        status: order.status,
+                        rawPosition: position,
+                        rawOrder: order
+                    });
+                });
+            });
+        }
+
+        function updateOutput() {
+            if (!processedData.length) return;
+
+            const statusFilter = document.getElementById('statusFilter').value;
+            const companyFilter = document.getElementById('companyFilter').value;
+            const useFallback = document.getElementById('fallbackCompany').checked;
+
+            // Filter data
+            let filtered = processedData.filter(participant => {
+                if (statusFilter !== 'all' && participant.status !== statusFilter) {
+                    return false;
+                }
+                
+                if (companyFilter === 'with' && (!participant.company || participant.company === null)) {
+                    return false;
+                }
+                
+                if (companyFilter === 'without' && participant.company && participant.company !== null) {
+                    return false;
+                }
+                
+                return true;
+            });
+
+            // Generate output for PDF script
+            const speakers = filtered.map(participant => ({
+                name: participant.name,
+                company: participant.company || (useFallback ? "Independent" : "")
+            }));
+
+            // Update stats
+            updateStats(filtered);
+
+            // Update JSON output
+            const jsonString = JSON.stringify(speakers, null, 2);
+            document.getElementById('jsonOutput').textContent = jsonString;
+
+            // Update preview
+            updatePreview(filtered, useFallback);
+
+            // Show output sections
+            document.getElementById('outputDiv').style.display = 'block';
+        }
+
+        function updateStats(filtered) {
+            const withCompany = filtered.filter(p => p.company && p.company !== null).length;
+            const withoutCompany = filtered.filter(p => !p.company || p.company === null).length;
+            const statusCounts = {};
+            
+            filtered.forEach(p => {
+                statusCounts[p.status] = (statusCounts[p.status] || 0) + 1;
+            });
+
+            const statsHtml = `
+                <div class="stat-item">
+                    <div class="stat-number">${filtered.length}</div>
+                    <div class="stat-label">Total Participants</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">${withCompany}</div>
+                    <div class="stat-label">With Company</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">${withoutCompany}</div>
+                    <div class="stat-label">Without Company</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">${statusCounts.p || 0}</div>
+                    <div class="stat-label">Paid</div>
+                </div>
+            `;
+
+            document.getElementById('statsDiv').innerHTML = `<div class="stats">${statsHtml}</div>`;
+            document.getElementById('statsDiv').style.display = 'block';
+        }
+
+        function updatePreview(filtered, useFallback) {
+            const previewHtml = filtered.map(participant => {
+                const companyDisplay = participant.company || (useFallback ? "Independent" : "");
+                const companyClass = participant.company ? "participant-company" : "no-company";
+                
+                return `
+                    <div class="preview-item">
+                        <div class="participant-name">${participant.name}</div>
+                        <div class="${companyClass}">${companyDisplay || "[No Company]"}</div>
+                    </div>
+                `;
+            }).join('');
+
+            document.getElementById('previewList').innerHTML = previewHtml;
+        }
+
+        function copyToClipboard() {
+            const jsonOutput = document.getElementById('jsonOutput').textContent;
+            navigator.clipboard.writeText(jsonOutput).then(() => {
+                const btn = document.getElementById('copyBtn');
+                btn.textContent = 'Copied!';
+                btn.classList.add('copied');
+                setTimeout(() => {
+                    btn.textContent = 'Copy to Clipboard';
+                    btn.classList.remove('copied');
+                }, 2000);
+            });
+        }
+
+        function showError(message) {
+            const errorDiv = document.getElementById('errorDiv');
+            errorDiv.innerHTML = `<div class="error">${message}</div>`;
+            errorDiv.style.display = 'block';
+            document.getElementById('successDiv').style.display = 'none';
+        }
+
+        function showSuccess(message) {
+            const successDiv = document.getElementById('successDiv');
+            successDiv.innerHTML = `<div class="success">${message}</div>`;
+            successDiv.style.display = 'block';
+            document.getElementById('errorDiv').style.display = 'none';
+        }
+
+        function showControls() {
+            document.getElementById('controlsDiv').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
