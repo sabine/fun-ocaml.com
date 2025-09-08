@@ -55,16 +55,16 @@
 
       In this hands-on workshop, participants implement a toy version of type reflection in the compiler, serving as both an introduction to the technique and a "compiler hacking 101" experience for those interested in contributing to OCaml's development.
 
-- slug: "ocaml-ecosystem"
-  title: "State of the OCaml Ecosystem 2025"
-  speakers: ["leandro"]
+- slug: "surprise-2"
+  title: "Surprise Talk"
+  speakers: ["thibaut"]
   kind: talk
   abstract: |
-      This talk breaks down how the OCaml ecosystem is actually growing by digging into real GitHub data - repo activity, contributor trends, and which libraries are gaining traction. We'll look at the numbers behind OCaml's momentum and what they tell us about where the community and tooling are headed in 2025.
+    No info yet!
 
 - slug: "surprise"
   title: "Surprise talk"
-  speakers: []
+  speakers: ["adam"]
   kind: talk
   abstract: |
     No info yet!

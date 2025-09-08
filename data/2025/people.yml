@@ -45,14 +45,15 @@
       I love programming languages (like OCaml, Elm, Elixir/Erlang, IO, Haskell and Scala), Types systems and Web programming, and speciality coffee.
       I live in Nantes and I work at Tarides (improving the OCaml ecosystem).
   other_socials: []
-- slug: "leandro"
-  name: "Leandro Ostera"
-  affiliation: "Tarides"
+- slug: "adam"
+  name: "Adam Cholewiński"
+  affiliation: "Dialo"
   bio: |
-      Leandro is a product manager and software engineer from Argentina, living in Sweden and working for Tarides. On their spare time, Leandro likes to do street photography, and stream programming on Twitch.
-  github: leostera
-  twitch: leostera
+      TBD
+  github: adamchol
+  twitter: adamchol_
   other_socials: []
+
 - slug: "davesnx"
   name: David Sancho Moreno
   affiliation: ahrefs

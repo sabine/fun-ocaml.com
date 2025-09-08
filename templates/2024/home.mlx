@@ -63,9 +63,11 @@ let hero_section =
 let program_section =
   let session (s : Data2024.Sessions.t) =
     <li>
-      <h3 class_="text-2xl font-semibold">(string s.title)</h3>
-      <p class_="text-lg">(String.concat ", " (List.map (fun (s : Data2024.People.t) -> s.name) s.speakers) |> string)</p>
+      <a href=(Data2024.Sessions.url s.slug)>
+        <h3 class_="text-2xl font-semibold">(string s.title)</h3>
+        <p class_="text-lg">(String.concat ", " (List.map (fun (s : Data2024.People.t) -> s.name) s.speakers) |> string)</p>
       (tag (match s.kind with | Workshop -> "Workshop" | Talk -> "Talk"))
+      </a>
     </li>
   in
   [

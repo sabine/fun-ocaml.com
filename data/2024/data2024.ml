@@ -141,6 +141,8 @@ module Sessions = struct
     let metadata = metadata_list_of_yaml data in
     Result.map (List.map of_metadata) metadata
 
+  let url slug = "/2024/" ^ slug ^ "/"
+
   let all =
     Read_yaml.yaml_file decode "2024/sessions.yml"
     |> Read_yaml.Result.get_ok ~error:(fun (`Msg m) -> Invalid_argument m)

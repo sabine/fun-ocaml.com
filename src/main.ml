@@ -31,6 +31,15 @@ let render_session_page (s : Data2024.Sessions.t) =
       (Printexc.to_string e);
     raise e
 
+let render_2025_session_page (s : Data2025.Sessions.t) =
+  try
+    let html = Templates2025.Session.render s |> JSX.render in
+    write_file ("output/2025/" ^ s.slug ^ "/index.html") html
+  with e ->
+    Printf.printf "Error rendering session page for %s: %s\n" s.slug
+      (Printexc.to_string e);
+    raise e
+
 let render_privacy_policy () =
   try
     let html = Templates2025.Privacy.make () |> JSX.render in
@@ -44,7 +53,9 @@ let () =
     render_homepage ();
     render_privacy_policy ();
     Data2024.Sessions.all
-    |> List.iter (fun (s : Data2024.Sessions.t) -> render_session_page s)
+    |> List.iter (fun (s : Data2024.Sessions.t) -> render_session_page s);
+    Data2025.Sessions.all
+    |> List.iter (fun (s : Data2025.Sessions.t) -> render_2025_session_page s)
   with e ->
     Printf.printf "Fatal error: %s\n" (Printexc.to_string e);
     exit 1

@@ -18,12 +18,33 @@ let tag ?(classes="") title =
 let render (s: Data2025.Sessions.t) =
   <Layout title=(s.title)>
     [
-      <div class_="mt-8">
-        <h1 class_="text-2xl font-semibold">(string s.title)</h1>
-        (tag (match s.kind with | Workshop -> "Workshop" | Talk -> "Talk"))
+      top_navigation;
+      <div class_="container mx-auto px-6 py-12">
+        <div class_="max-w-4xl">
+          <h1 class_="font-bold text-4xl">(string s.title)</h1>
+          <div class_="mt-4">
+            (tag (match s.kind with | Workshop -> "Workshop" | Talk -> "Talk"))
+          </div>
 
-        (h2 "Speakers")
-        <p class_="text-lg">(String.concat ", " (List.map (fun (s : Data2025.People.t) -> s.name) s.speakers) |> string)</p>
+          (h2 ~classes:"mt-8" "Speakers")
+          <div class_="mt-6 flex flex-wrap gap-10">
+            (list (List.map Avatar.render s.speakers))
+          </div>
+
+          (h2 ~classes:"mt-12" "Abstract")
+          <div class_="mt-6 prose prose-lg">
+            (s.abstract |> unsafe)
+          </div>
+
+          <div class_="mt-12 pt-8 border-t border-gray-200">
+            <a class_="text-primary_light hover:text-primary_dark flex items-center gap-2" href="/">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" class_="w-6 h-6">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" />
+              </svg>
+              (string "Back to Conference")
+            </a>
+          </div>
+        </div>
       </div>
     ]
   </Layout>
