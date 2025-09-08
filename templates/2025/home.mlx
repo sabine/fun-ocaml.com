@@ -59,9 +59,11 @@ let hero_section =
 let program_section =
   let session (s : Data2025.Sessions.t) =
     <li>
-      <h3 class_="text-2xl font-semibold">(string s.title)</h3>
-      <p class_="text-lg">(String.concat ", " (List.map (fun (s :   Data2025.People.t) -> s.name) s.speakers) |> string)</p>
-      (tag (match s.kind with | Workshop -> "Workshop" | Talk -> "Talk"))
+      <a href=(Data2025.Sessions.url s.slug) class_="block hover:bg-white/50 p-4 -mx-4 rounded-lg">
+        <h3 class_="text-2xl font-semibold hover:text-primary_dark">(string s.title)</h3>
+        <p class_="text-lg">(String.concat ", " (List.map (fun (s : Data2025.People.t) -> s.name) s.speakers) |> string)</p>
+        (tag (match s.kind with | Workshop -> "Workshop" | Talk -> "Talk"))
+      </a>
     </li>
   in
   [
