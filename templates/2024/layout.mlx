@@ -58,6 +58,7 @@ let make ~title ~children () =
       <meta name="twitter:description" content="Fun OCaml 2024 is a 2 days open source hacking event dedicated to OCaml enthusiasts and professionals around the globe! Let's get together for an exhilarating event packed with creativity, innovation, and learning!"/>
       <meta name="twitter:image" content="https://fun-ocaml.com/2024/social-media-preview.png?1"/>
       (* <meta name="twitter:site" content="@fun_ocaml"> *)
+      <script src="https://analytics.ahrefs.com/analytics.js" dataKey="INJ8YGRMW+NCMPy+IEhl+g" async=(true)></script>
     </head>
     <body>
       (list children)
