@@ -57,15 +57,6 @@ let hero_section =
   </div>
 
 let program_section =
-  let session (s : Data2025.Sessions.t) =
-    <li>
-      <a href=(Data2025.Sessions.url s.slug) class_="block hover:bg-white/50 p-4 -mx-4 rounded-lg">
-        <h3 class_="text-2xl font-semibold hover:text-primary_dark">(string s.title)</h3>
-        <p class_="text-lg">(String.concat ", " (List.map (fun (s : Data2025.People.t) -> s.name) s.speakers) |> string)</p>
-        (tag (match s.kind with | Workshop -> "Workshop" | Talk -> "Talk"))
-      </a>
-    </li>
-  in
   [
   <div id="program" class_="container mx-auto px-6 py-20">
     (h2 "Program")
@@ -137,12 +128,7 @@ Talks are live-streamed and will appear on [watch.ocaml.org](https://watch.ocaml
           </div>
         </div>
       </div>
-      <div class_="mt-8">
-        (h2 "Sessions")
-        <ul class_="my-8 flex flex-col gap-4">
-          (list (List.map session Data2025.Sessions.all))
-        </ul>
-      </div>
+
     </div>
   </div>
   ]
@@ -169,10 +155,22 @@ let render_schedule_slot_cell (slot: Data2025.Schedule.event option) =
   match slot with
   | Some slot ->
     <td class_="py-2 px-4">
-      <div class_="font-medium">(string slot.event)</div>
-      (match slot.speaker with
-       | Some speaker -> <div class_="text-sm text-gray-300">(string speaker)</div>
-       | None -> JSX.null)
+      (match slot.slug with
+       | Some slug ->
+         <a href=(Data2025.Sessions.url slug) class_="block p-2 -m-2 rounded hover:bg-primary_light/20 transition-colors">
+           <div class_="font-medium text-white underline hover:text-primary_light">(string slot.event)</div>
+           (match slot.speaker with
+            | Some speaker -> <div class_="text-sm text-gray-300">(string speaker)</div>
+            | None -> JSX.null)
+         </a>
+       | None ->
+         <div>
+           <div class_="font-medium">(string slot.event)</div>
+           (match slot.speaker with
+            | Some speaker -> <div class_="text-sm text-gray-300">(string speaker)</div>
+            | None -> JSX.null)
+         </div>
+      )
     </td>
   | None ->
     <td class_="py-2 px-4"></td>

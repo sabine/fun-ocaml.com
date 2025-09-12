@@ -1,8 +1,8 @@
 date: "Mo, Sep 15, 2025"
 schedule:
     - time: "8:00 - 9:00"
-      great_hall:
-          event: "Arrival"
+      foyer:
+          event: "Arrival, small breakfast"
     - time: "9:00 - 9:10"
       great_hall:
           event: "Organizer Announcements"
@@ -10,6 +10,7 @@ schedule:
       great_hall:
           event: "Surprise Talk"
           speaker: "Thibaut Mattio"
+          slug: "surprise-2"
     - time: "9:45 - 9:50"
       great_hall:
           event: "Introducing The OCaml Security Advisory Database"
@@ -21,10 +22,12 @@ schedule:
       great_hall:
           event: "Crafting Production-Grade Network Protocols in OCaml"
           speaker: "Adam Cholewiński"
+          slug: "production-grade-network-protocols"
     - time: "10:35 - 11:10"
       great_hall:
           event: "From OCaml 4 to 5 and from Parmap to Effects: A legacy code transition story"
           speaker: "Nathan Taylor and Nat Mote"
+          slug: "from-ocaml-4-to-5"
     - time: "11:10 - 11:20"
       great_hall:
           event: "Break"
@@ -32,10 +35,12 @@ schedule:
       great_hall:
           event: "Analyzing Programs with SMT Solvers"
           speaker: "Tikhon Jelvis"
+          slug: "analyzing-programs-with-smt-solvers"
     - time: "11:55 - 12:30"
       great_hall:
           event: "OxCaml From a System Engineer's Point of View"
           speaker: "Dmitriy Kovalenko"
+          slug: "oxcaml-system-engineers-pov"
     - time: "12:30 - 13:50"
       foyer:
           event: "Lunch break"
@@ -43,10 +48,12 @@ schedule:
       great_hall:
           event: "Frameworks: No, Libraries: Yes. Developing a Product in OCaml From Scratch"
           speaker: "Malcolm Matalka"
+          slug: "terrateam"
     - time: "14:25 - 15:00"
       great_hall:
           event: "Performance Pitfalls: Tales From a Python/OCaml Codebase"
           speaker: "Emma Jin"
+          slug: "performance-pitfalls-tales-from-a-python-ocaml-codebase"
     - time: "15:00 - 15:10"
       great_hall:
           event: "Break"
@@ -54,10 +61,12 @@ schedule:
       great_hall:
           event: "OCaml at LexiFi"
           speaker: "Nicolas Ojeda Bär"
+          slug: "ocaml-at-lexifi"
     - time: "15:45 - 16:20"
       great_hall:
           event: "Generating Static Websites the Functional Programming Way"
           speaker: "Xavier van de Woestyne"
+          slug: "static-websites-functional-programming"
     - time: "16:20 - 16:40"
       great_hall:
           event: "Break"
@@ -65,10 +74,12 @@ schedule:
       great_hall:
           event: "I Can See The Pixels: Designing Cross-Stitch Patterns in OCaml"
           speaker: "Mindy Preston"
+          slug: "i-can-see-the-pixels"
     - time: "17:15 - 17:50"
       great_hall:
           event: "Slipshow: A Full-Featured Presentation Tool in OCaml"
           speaker: "Paul-Elliot Anglès d'Auriac"
+          slug: "slipshow"
     - time: "17:50 - 18:15"
       great_hall:
           event: "Wrap up"

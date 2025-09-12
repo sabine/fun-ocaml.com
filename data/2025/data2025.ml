@@ -218,7 +218,8 @@ module Sponsors = struct
 end
 
 module Schedule = struct
-  type event = { event : string; speaker : string option } [@@deriving of_yaml]
+  type event = { event : string; speaker : string option; slug : string option }
+  [@@deriving of_yaml]
 
   type schedule_row = {
     time : string;

@@ -60,14 +60,14 @@
   speakers: ["thibaut"]
   kind: talk
   abstract: |
-    No info yet!
+      No info yet!
 
-- slug: "surprise"
-  title: "Surprise talk"
+- slug: "production-grade-network-protocols"
+  title: "Crafting Production-Grade Network Protocols in OCaml"
   speakers: ["adam"]
   kind: talk
   abstract: |
-    No info yet!
+      No info yet!
 
 - slug: "from-ocaml-4-to-5"
   title: "From OCaml 4 to 5 and from Parmap to Effects: A legacy code transition story"
