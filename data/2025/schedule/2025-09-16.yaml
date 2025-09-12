@@ -1,2 +1,32 @@
 date: "Tu, Sep 16, 2025"
-schedule: []
+schedule:
+    - time: "8:00 - 9:00"
+      foyer:
+          event: "Arrival"
+    - time: "9:30 - 11:45"
+      workshop_a:
+          event: "Build Language Models with Raven"
+          speaker: "Thibaut Mattio"
+      workshop_b:
+          event: "Hacking the OCaml Compiler to Add Type Reflection"
+          speaker: "Nicolas Ojeda Bär"
+    - time: "11:45 - 13:15"
+      workshop_a:
+          event: "Train a Reinforcement Learning Agent for the Box-Pushing Game Sokoban in OCANNL or Raven"
+          speaker: "Lukasz Stafiniak"
+      workshop_b:
+          event: "Vif & Hurl, a Web Framework for OCaml 5"
+          speaker: "Romain Calascibetta"
+    - time: "13:15 - 15:30"
+      foyer:
+          event: "lunch break"
+    - time: "15:30 - 18:00"
+      workshop_a:
+          event: "OCaml Observability with OpenTelmetry"
+          speaker: "Austin Theriault"
+      workshop_b:
+          event: "React in OCaml with Melange"
+          speaker: "David Sancho Moreno"
+    - time: "18:00-22:00"
+      foyer:
+          event: "Dinner, Socializing and Hacking"

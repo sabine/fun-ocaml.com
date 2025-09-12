@@ -1,2 +1,74 @@
 date: "Mo, Sep 15, 2025"
-schedule: []
+schedule:
+    - time: "8:00 - 9:00"
+      great_hall:
+          event: "Arrival"
+    - time: "9:00 - 9:10"
+      great_hall:
+          event: "Organizer Announcements"
+    - time: "9:10 - 9:45"
+      great_hall:
+          event: "Surprise Talk"
+          speaker: "Thibaut Mattio"
+    - time: "9:45 - 9:50"
+      great_hall:
+          event: "Introducing The OCaml Security Advisory Database"
+          speaker: "Hannes Mehnert"
+    - time: "9:50 - 10:00"
+      great_hall:
+          event: "Break"
+    - time: "10:00 - 10:35"
+      great_hall:
+          event: "Crafting Production-Grade Network Protocols in OCaml"
+          speaker: "Adam Cholewiński"
+    - time: "10:35 - 11:10"
+      great_hall:
+          event: "From OCaml 4 to 5 and from Parmap to Effects: A legacy code transition story"
+          speaker: "Nathan Taylor and Nat Mote"
+    - time: "11:10 - 11:20"
+      great_hall:
+          event: "Break"
+    - time: "11:20 - 11:55"
+      great_hall:
+          event: "Analyzing Programs with SMT Solvers"
+          speaker: "Tikhon Jelvis"
+    - time: "11:55 - 12:30"
+      great_hall:
+          event: "OxCaml From a System Engineer's Point of View"
+          speaker: "Dmitriy Kovalenko"
+    - time: "12:30 - 13:50"
+      foyer:
+          event: "Lunch break"
+    - time: "13:50 - 14:25"
+      great_hall:
+          event: "Frameworks: No, Libraries: Yes. Developing a Product in OCaml From Scratch"
+          speaker: "Malcolm Matalka"
+    - time: "14:25 - 15:00"
+      great_hall:
+          event: "Performance Pitfalls: Tales From a Python/OCaml Codebase"
+          speaker: "Emma Jin"
+    - time: "15:00 - 15:10"
+      great_hall:
+          event: "Break"
+    - time: "15:10 - 15:45"
+      great_hall:
+          event: "OCaml at LexiFi"
+          speaker: "Nicolas Ojeda Bär"
+    - time: "15:45 - 16:20"
+      great_hall:
+          event: "Generating Static Websites the Functional Programming Way"
+          speaker: "Xavier van de Woestyne"
+    - time: "16:20 - 16:40"
+      great_hall:
+          event: "Break"
+    - time: "16:40 - 17:15"
+      great_hall:
+          event: "I Can See The Pixels: Designing Cross-Stitch Patterns in OCaml"
+          speaker: "Mindy Preston"
+    - time: "17:15 - 17:50"
+      great_hall:
+          event: "Slipshow: A Full-Featured Presentation Tool in OCaml"
+          speaker: "Paul-Elliot Anglès d'Auriac"
+    - time: "17:50 - 18:15"
+      great_hall:
+          event: "Wrap up"

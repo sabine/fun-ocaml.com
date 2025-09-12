@@ -168,29 +168,30 @@ let speakers_section =
 let render_schedule_slot_cell (slot: Data2025.Schedule.event option) =
   match slot with
   | Some slot ->
-    let colspan = Option.value ~default:1 slot.colspan in
-    let rowspan = Option.value ~default:1 slot.rowspan in
-
-    <td class_="py-2 px-4" colspan=colspan rowspan=rowspan>
-      (string slot.event)
+    <td class_="py-2 px-4">
+      <div class_="font-medium">(string slot.event)</div>
+      (match slot.speaker with
+       | Some speaker -> <div class_="text-sm text-gray-300">(string speaker)</div>
+       | None -> JSX.null)
     </td>
-  | None -> null
+  | None ->
+    <td class_="py-2 px-4"></td>
 
 
 let schedule_day_one_section =
   <div class_="bg-center bg-gradient-to-br from-[#0F254F] to-[#0B1228] bg-cover text-gray-200">
     <div id="schedule" class_="container mx-auto py-20">
       (h2 ~classes:"text-white text-center" "Day One")
+      (tag ~classes:"text-xl mt-4 mx-auto text-center block w-fit" "September 15 - 9:00-18:15")
 
       <div class_="-mx-4 overflow-x-auto sm:-mx-6">
         <div class_="inline-block min-w-full py-2 align-middle">
-          <table class_="mt-6 table-auto divide-y divide-gray-400">
+          <table class_="mt-6 table-auto divide-y divide-gray-400 w-full">
             <thead>
               <tr class_="divide-x divide-gray-400">
-                <th class_="text-left px-4 pb-2">"Time"</th>
-                <th class_="text-left px-4 pb-2">"Yellow Giant Room"</th>
-                <th class_="text-left px-4 pb-2">"Hangout hub Room"</th>
-                <th class_="text-left px-4 pb-2">"Hangout hub"</th>
+                <th class_="text-left px-4 pb-2 w-32">"Time"</th>
+                <th class_="text-left px-4 pb-2">"Great Hall"</th>
+                <th class_="text-left px-4 pb-2">"Foyer"</th>
               </tr>
             </thead>
 
@@ -199,10 +200,9 @@ let schedule_day_one_section =
                 Data2025.Schedule.day_one.schedule
                 |> List.map (fun (row: Data2025.Schedule.schedule_row) ->
                   <tr class_="divide-x divide-gray-400">
-                    <td class_="px-4 whitespace-nowrap">(string row.time)</td>
-                    (row.yellow_giant |> render_schedule_slot_cell)
-                    (row.hangout_hub_room |> render_schedule_slot_cell)
-                    (row.hangout_hub |> render_schedule_slot_cell)
+                    <td class_="px-4 whitespace-nowrap font-medium">(string row.time)</td>
+                    (row.great_hall |> render_schedule_slot_cell)
+                    (row.foyer |> render_schedule_slot_cell)
                   </tr>
                 )
               ))
@@ -215,19 +215,19 @@ let schedule_day_one_section =
 
 let schedule_day_two_section =
   <div class_="bg-center bg-gradient-to-tr from-[#4A1500] to-[#8B4000] bg-cover text-white">
-    <div id="schedule" class_="container mx-auto py-20">
+    <div class_="container mx-auto py-20">
       (h2 ~classes:"text-white text-center" "Day Two")
+      (tag ~classes:"text-xl mt-4 mx-auto text-center block w-fit" "September 16 - 9:00-22:00")
 
       <div class_="-mx-4 overflow-x-auto sm:-mx-6">
          <div class_="inline-block min-w-full py-2 align-middle">
-            <table class_="mt-6 table-auto divide-y divide-gray-200">
+            <table class_="mt-6 table-auto divide-y divide-gray-200 w-full">
               <thead>
                 <tr class_="divide-x divide-gray-200">
-                  <th class_="text-left px-4 pb-2">"Time"</th>
-                  <th class_="text-left px-4 pb-2">"Yellow Giant Room"</th>
-                  <th class_="text-left px-4 pb-2">"Apollo Room"</th>
-                  <th class_="text-left px-4 pb-2">"Hangout hub Room"</th>
-                  <th class_="text-left px-4 pb-2">"Hangout hub"</th>
+                  <th class_="text-left px-4 pb-2 w-32">"Time"</th>
+                  <th class_="text-left px-4 pb-2">"Workshop A"</th>
+                  <th class_="text-left px-4 pb-2">"Workshop B"</th>
+                  <th class_="text-left px-4 pb-2">"Foyer"</th>
                 </tr>
               </thead>
 
@@ -236,11 +236,10 @@ let schedule_day_two_section =
                   Data2025.Schedule.day_two.schedule
                   |> List.map (fun (row: Data2025.Schedule.schedule_row) ->
                     <tr class_="divide-x divide-gray-200">
-                      <td class_="px-4 whitespace-nowrap">(string row.time)</td>
-                      (row.yellow_giant |> render_schedule_slot_cell)
-                      (row.apollo |> render_schedule_slot_cell)
-                      (row.hangout_hub_room |> render_schedule_slot_cell)
-                      (row.hangout_hub |> render_schedule_slot_cell)
+                      <td class_="px-4 whitespace-nowrap font-medium">(string row.time)</td>
+                      (row.workshop_a |> render_schedule_slot_cell)
+                      (row.workshop_b |> render_schedule_slot_cell)
+                      (row.foyer |> render_schedule_slot_cell)
                     </tr>
                   )
                 ))
@@ -347,10 +346,8 @@ let make () =
      hero_section;
      list program_section;
      (*speakers_section;*)
-     (*
      schedule_day_one_section;
      schedule_day_two_section;
-     *)
      venue_section;
      sponsors_section;
      organizers_section;
