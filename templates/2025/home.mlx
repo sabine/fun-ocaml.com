@@ -1,7 +1,7 @@
 open JSX
 
 let cfp_url = "https://cfp.fun-ocaml.com/fun-ocaml-2025/cfp"
-let youtube_url = "https://youtube.com/@FUNOCaml"
+let youtube_url = "https://www.youtube.com/live/L_rTHhIEfVM"
 
 let registration_url = "https://tickets.fun-ocaml.com/fun-ocaml/2025/"
 
@@ -47,12 +47,14 @@ let hero_section =
         </svg>
       </a>
 
+      (*
       <a class_="flex items-center gap-2 text-white underline hover:no-underline text-xl mt-6" href=(cfp_url)>
         (string ("Apply as a speaker / FUN OCaml CFP"))
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" class_="w-6 h-6">
           <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
         </svg>
       </a>
+      *)
     </div>
   </div>
 
