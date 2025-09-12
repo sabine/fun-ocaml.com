@@ -72,3 +72,6 @@ schedule:
     - time: "17:50 - 18:15"
       great_hall:
           event: "Wrap up"
+    - time: "18:15 - 24:00"
+      foyer:
+          event: "Dinner, Socializing & Hacking"
