@@ -13,7 +13,7 @@ schedule:
           slug: "surprise-2"
     - time: "9:45 - 9:50"
       great_hall:
-          event: "Introducing The OCaml Security Advisory Database"
+          event: "Introducing the OCaml Security Team (OCSF)"
           speaker: "Hannes Mehnert"
     - time: "9:50 - 10:00"
       great_hall:
