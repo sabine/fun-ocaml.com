@@ -166,8 +166,8 @@ let render_schedule_slot_cell (slot: Data2025.Schedule.event option) =
             | None -> JSX.null)
          </a>
        | None ->
-         <div>
-           <div class_="px-4 py-2 font-medium">(string slot.event)</div>
+         <div class_="px-4 py-2">
+           <div class_="font-medium">(string slot.event)</div>
            (match slot.speaker with
             | Some speaker -> <div class_="text-sm text-gray-300">(string speaker)</div>
             | None -> JSX.null)
