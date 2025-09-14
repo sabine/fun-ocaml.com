@@ -156,11 +156,11 @@ let speakers_section =
 let render_schedule_slot_cell (slot: Data2025.Schedule.event option) =
   match slot with
   | Some slot ->
-    <td>
+      <td>
       (match slot.slug with
        | Some slug ->
-         <a href=(Data2025.Sessions.url slug) class_="block px-4 py-2 rounded transition-colors">
-           <div class_="font-medium text-white underline hover:bg-primary_dark">(string slot.event)</div>
+         <a href=(Data2025.Sessions.url slug) class_="block px-4 py-2 rounded transition-colors hover:bg-primary_dark">
+           <div class_="font-medium text-white underline">(string slot.event)</div>
            (match slot.speaker with
             | Some speaker -> <div class_="text-sm text-gray-300">(string speaker)</div>
             | None -> JSX.null)
@@ -177,39 +177,56 @@ let render_schedule_slot_cell (slot: Data2025.Schedule.event option) =
   | None ->
     <td class_="py-2"></td>
 
+let render_schedule_table ~headers ~schedule =
+  <div class_="px-8 w-full overflow-x-auto">
+    <div class_="inline-block min-w-full py-2 align-middle">
+      <table class_="mt-6 table-auto divide-y divide-gray-200 w-full">
+        <thead>
+          <tr class_="divide-x divide-gray-200">
+            <th class_="text-left px-4 pb-2 w-32">"Time"</th>
+            (list (headers |> List.map (fun header ->
+              <th class_="text-left px-4 pb-2">(string header)</th>
+            )))
+          </tr>
+        </thead>
+        <tbody class_="divide-y divide-gray-200">
+          (list (
+            schedule
+            |> List.map (fun (row: Data2025.Schedule.schedule_row) ->
+              <tr class_="divide-x divide-gray-200">
+                <td class_="whitespace-nowrap font-medium">(string row.time)</td>
+                (match headers with
+                 | ["Great Hall"; "Foyer"] ->
+                   list [
+                     (row.great_hall |> render_schedule_slot_cell);
+                     (row.foyer |> render_schedule_slot_cell)
+                   ]
+                 | ["Workshop A"; "Workshop B"; "Foyer"] ->
+                   list [
+                     (row.workshop_a |> render_schedule_slot_cell);
+                     (row.workshop_b |> render_schedule_slot_cell);
+                     (row.foyer |> render_schedule_slot_cell)
+                   ]
+                 | _ -> JSX.null
+                )
+              </tr>
+            )
+          ))
+        </tbody>
+      </table>
+    </div>
+  </div>
+
 
 let schedule_day_one_section =
-  <div class_="bg-center bg-gradient-to-br from-[#0F254F] to-[#0B1228] bg-cover text-gray-200 w-full">
+  <div class_="bg-center bg-gradient-to-br from-[#0F254F] to-[#0B1228] bg-cover text-white w-full">
     <div id="schedule" class_="container mx-auto py-20">
       (h2 ~classes:"text-white text-center" "Day One")
       (tag ~classes:"text-xl mt-4 mx-auto text-center block w-fit" "September 15 - 9:00-18:15")
 
-      <div class_="-mx-4 overflow-x-auto sm:-mx-6">
-        <div class_="inline-block min-w-full py-2 align-middle">
-          <table class_="mt-6 table-auto divide-y divide-gray-400 w-full">
-            <thead>
-              <tr class_="divide-x divide-gray-400">
-                <th class_="text-left px-4 pb-2 w-32">"Time"</th>
-                <th class_="text-left px-4 pb-2">"Great Hall"</th>
-                <th class_="text-left px-4 pb-2">"Foyer"</th>
-              </tr>
-            </thead>
-
-            <tbody class_="divide-y divide-gray-400">
-              (list (
-                Data2025.Schedule.day_one.schedule
-                |> List.map (fun (row: Data2025.Schedule.schedule_row) ->
-                  <tr class_="divide-x divide-gray-400">
-                    <td class_="whitespace-nowrap font-medium">(string row.time)</td>
-                    (row.great_hall |> render_schedule_slot_cell)
-                    (row.foyer |> render_schedule_slot_cell)
-                  </tr>
-                )
-              ))
-            </tbody>
-          </table>
-        </div>
-      </div>
+      (render_schedule_table
+        ~headers:["Great Hall"; "Foyer"]
+        ~schedule:Data2025.Schedule.day_one.schedule)
    </div>
   </div>
 
@@ -219,34 +236,9 @@ let schedule_day_two_section =
       (h2 ~classes:"text-white text-center" "Day Two")
       (tag ~classes:"text-xl mt-4 mx-auto text-center block w-fit" "September 16 - 9:00-22:00")
 
-      <div class_="px-8 w-full overflow-x-auto">
-         <div class_="inline-block min-w-full py-2 align-middle">
-            <table class_="mt-6 table-auto divide-y divide-gray-200 w-full">
-              <thead>
-                <tr class_="divide-x divide-gray-200">
-                  <th class_="text-left px-4 pb-2 w-32">"Time"</th>
-                  <th class_="text-left px-4 pb-2">"Workshop A"</th>
-                  <th class_="text-left px-4 pb-2">"Workshop B"</th>
-                  <th class_="text-left px-4 pb-2">"Foyer"</th>
-                </tr>
-              </thead>
-
-              <tbody class_="divide-y divide-gray-200">
-                (list (
-                  Data2025.Schedule.day_two.schedule
-                  |> List.map (fun (row: Data2025.Schedule.schedule_row) ->
-                    <tr class_="divide-x divide-gray-200">
-                      <td class_="whitespace-nowrap font-medium">(string row.time)</td>
-                      (row.workshop_a |> render_schedule_slot_cell)
-                      (row.workshop_b |> render_schedule_slot_cell)
-                      (row.foyer |> render_schedule_slot_cell)
-                    </tr>
-                  )
-                ))
-              </tbody>
-            </table>
-        </div>
-      </div>
+      (render_schedule_table
+        ~headers:["Workshop A"; "Workshop B"; "Foyer"]
+        ~schedule:Data2025.Schedule.day_two.schedule)
     </div>
    </div>
 
