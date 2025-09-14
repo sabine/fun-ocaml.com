@@ -156,18 +156,18 @@ let speakers_section =
 let render_schedule_slot_cell (slot: Data2025.Schedule.event option) =
   match slot with
   | Some slot ->
-    <td class_="py-2 px-4">
+    <td>
       (match slot.slug with
        | Some slug ->
-         <a href=(Data2025.Sessions.url slug) class_="block p-2 -m-2 rounded hover:bg-primary_light/20 transition-colors">
-           <div class_="font-medium text-white underline hover:text-primary_light">(string slot.event)</div>
+         <a href=(Data2025.Sessions.url slug) class_="block px-4 py-2 rounded transition-colors">
+           <div class_="font-medium text-white underline hover:bg-primary_dark">(string slot.event)</div>
            (match slot.speaker with
             | Some speaker -> <div class_="text-sm text-gray-300">(string speaker)</div>
             | None -> JSX.null)
          </a>
        | None ->
          <div>
-           <div class_="font-medium">(string slot.event)</div>
+           <div class_="px-4 py-2 font-medium">(string slot.event)</div>
            (match slot.speaker with
             | Some speaker -> <div class_="text-sm text-gray-300">(string speaker)</div>
             | None -> JSX.null)
@@ -175,11 +175,11 @@ let render_schedule_slot_cell (slot: Data2025.Schedule.event option) =
       )
     </td>
   | None ->
-    <td class_="py-2 px-4"></td>
+    <td class_="py-2"></td>
 
 
 let schedule_day_one_section =
-  <div class_="bg-center bg-gradient-to-br from-[#0F254F] to-[#0B1228] bg-cover text-gray-200">
+  <div class_="bg-center bg-gradient-to-br from-[#0F254F] to-[#0B1228] bg-cover text-gray-200 w-full">
     <div id="schedule" class_="container mx-auto py-20">
       (h2 ~classes:"text-white text-center" "Day One")
       (tag ~classes:"text-xl mt-4 mx-auto text-center block w-fit" "September 15 - 9:00-18:15")
@@ -200,7 +200,7 @@ let schedule_day_one_section =
                 Data2025.Schedule.day_one.schedule
                 |> List.map (fun (row: Data2025.Schedule.schedule_row) ->
                   <tr class_="divide-x divide-gray-400">
-                    <td class_="px-4 whitespace-nowrap font-medium">(string row.time)</td>
+                    <td class_="whitespace-nowrap font-medium">(string row.time)</td>
                     (row.great_hall |> render_schedule_slot_cell)
                     (row.foyer |> render_schedule_slot_cell)
                   </tr>
@@ -214,12 +214,12 @@ let schedule_day_one_section =
   </div>
 
 let schedule_day_two_section =
-  <div class_="bg-center bg-gradient-to-tr from-[#4A1500] to-[#8B4000] bg-cover text-white">
+  <div class_="bg-center bg-gradient-to-tr from-[#4A1500] to-[#8B4000] bg-cover text-white w-full">
     <div class_="container mx-auto py-20">
       (h2 ~classes:"text-white text-center" "Day Two")
       (tag ~classes:"text-xl mt-4 mx-auto text-center block w-fit" "September 16 - 9:00-22:00")
 
-      <div class_="-mx-4 overflow-x-auto sm:-mx-6">
+      <div class_="px-8 w-full overflow-x-auto">
          <div class_="inline-block min-w-full py-2 align-middle">
             <table class_="mt-6 table-auto divide-y divide-gray-200 w-full">
               <thead>
@@ -236,7 +236,7 @@ let schedule_day_two_section =
                   Data2025.Schedule.day_two.schedule
                   |> List.map (fun (row: Data2025.Schedule.schedule_row) ->
                     <tr class_="divide-x divide-gray-200">
-                      <td class_="px-4 whitespace-nowrap font-medium">(string row.time)</td>
+                      <td class_="whitespace-nowrap font-medium">(string row.time)</td>
                       (row.workshop_a |> render_schedule_slot_cell)
                       (row.workshop_b |> render_schedule_slot_cell)
                       (row.foyer |> render_schedule_slot_cell)
