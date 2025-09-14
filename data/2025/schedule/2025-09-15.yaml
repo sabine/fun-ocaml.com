@@ -8,9 +8,9 @@ schedule:
           event: "Organizer Announcements"
     - time: "9:10 - 9:45"
       great_hall:
-          event: "Surprise Talk"
+          event: "A Vision for OCaml in the AI Era"
           speaker: "Thibaut Mattio"
-          slug: "surprise-2"
+          slug: "a-vision-for-ocaml-in-the-ai-era"
     - time: "9:45 - 9:50"
       great_hall:
           event: "Introducing The OCaml Security Advisory Database"

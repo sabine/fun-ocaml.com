@@ -55,8 +55,8 @@
 
       In this hands-on workshop, participants implement a toy version of type reflection in the compiler, serving as both an introduction to the technique and a "compiler hacking 101" experience for those interested in contributing to OCaml's development.
 
-- slug: "surprise-2"
-  title: "Surprise Talk"
+- slug: "a-vision-for-ocaml-in-the-ai-era"
+  title: "A Vision for OCaml in the AI Era"
   speakers: ["thibaut"]
   kind: talk
   abstract: |
