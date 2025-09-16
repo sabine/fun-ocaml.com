@@ -20,7 +20,7 @@ schedule:
           event: "Break"
     - time: "10:00 - 10:35"
       great_hall:
-          event: "Crafting Production-Grade Network Protocols in OCaml"
+          event: "Purely functional gRPC and HTTP/2 with OCaml"
           speaker: "Adam Cholewiński"
           slug: "production-grade-network-protocols"
     - time: "10:35 - 11:10"

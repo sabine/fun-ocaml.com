@@ -1,7 +1,9 @@
 open JSX
 
 let cfp_url = "https://cfp.fun-ocaml.com/fun-ocaml-2025/cfp"
-let youtube_url = "https://www.youtube.com/live/L_rTHhIEfVM"
+let youtube_url = "https://www.youtube.com/watch?v=-YSXXPwAEFI"
+let twitch_url = "https://twitch.tv/sabine_sh"
+let discord_url = "https://discord.gg/B9cM6DSWVW"
 
 let registration_url = "https://tickets.fun-ocaml.com/fun-ocaml/2025/"
 
@@ -93,7 +95,9 @@ Talks are live-streamed and will appear on [watch.ocaml.org](https://watch.ocaml
       (<p class_="text-gray-400 mt-2">(string "The talks from the event will be live streamed free of a charge. We recommend subscribing to FUN OCaml's YouTube channel!")</p>)
 
 
-      (button ~classes:"mt-4 text-xl no-underline" ~href:youtube_url "Go to FUN OCaml's YouTube Channel")
+      (button ~classes:"mt-4 text-xl no-underline" ~href:youtube_url "Watch on FUN OCaml's YouTube Channel")
+
+      (button ~classes:"ml-8 mt-4 text-xl no-underline" ~href:twitch_url "Watch the live stream on Sabine's Twitch")
     </div>
   </div>;
   <div class_="bg-sand">
@@ -134,6 +138,16 @@ Talks are live-streamed and will appear on [watch.ocaml.org](https://watch.ocaml
     </div>
   </div>
   ]
+
+let community_section =
+  <div id="community" class_="container mx-auto px-6 py-20">
+    (h2 "Community")
+    <div class_="mt-8 gap-6">
+      <div class_="flex flex-col justify-center items-center">
+        (button ~classes:"text-xl no-underline" ~href:discord_url "Join the FUN OCaml Discord")
+      </div>
+    </div>
+  </div>
 
 let avatar_maybe_you ~title ~subtitle =
   <div class_="flex flex-col items-center text-lg">
@@ -337,6 +351,7 @@ let make () =
      top_navigation;
      hero_section;
      list program_section;
+     community_section;
      (*speakers_section;*)
      schedule_day_one_section;
      schedule_day_two_section;
