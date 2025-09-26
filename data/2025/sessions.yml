@@ -122,8 +122,12 @@
   kind: workshop
   abstract: |
       The aim of this workshop is to present Vif, a new typed web framework for OCaml 5. We will introduce Vif to participants through a practical example: a user space with a chat room, which we will develop into a web application. We will test this application using hurl, an HTTP client in OCaml. We will see typed routes, typed forms, typed SQL queries (thanks to caqti) as well as websockets (and of course, js_of_ocaml). More importantly, participants will also be able to give feedback on our framework (and perhaps participate in its development) in order to improve it and bring web development back to the world of OCaml 5 and types!
-  links: []
-  slides: null
+  links:
+      - title: "Tutorial"
+        url: "https://robur-coop.github.io/vif/"
+      - title: "Demo Repository"
+        url: "https://github.com/dinosaure/immuable"
+  slides: "https://docs.google.com/presentation/d/19oGwpvwvlsbjM_E92e47ojHq4-t84gN69Y6iv8lctko/edit?usp=sharing"
   youtube_video: null
   watch_ocaml_org_video: null
 
