@@ -16,7 +16,7 @@
   speakers: ["malcolm"]
   kind: talk
   abstract: |
-      Terrateam is an open source infrastructure management product written in OCaml.  In order to stay lean and flexible, Terrateam has developed almost all of its own frameworks and tooling.  With a small team, the Terrateam product punches well above its weight compared to its competition.  This talk will cover the choice to develop their own frameworks, the good, the bad, and how OCaml has been instrumental in being able to achieve so much despite being a two person company.
+      Terrateam is an open source infrastructure management product written in OCaml. In order to stay lean and flexible, Terrateam has developed almost all of its own frameworks and tooling. With a small team, the Terrateam product punches well above its weight compared to its competition. This talk will cover the choice to develop their own frameworks, the good, the bad, and how OCaml has been instrumental in being able to achieve so much despite being a two person company.
   links: []
   slides: null
   youtube_video: null
@@ -75,9 +75,9 @@
   speakers: ["nicolas"]
   kind: workshop
   abstract: |
-      At LexiFi, we maintain a powerful fork of the OCaml compiler that extends it with type reflection capabilities, providing an alternative to PPX for many common tasks.
+      At LexiFi, we maintain a fork of the official OCaml compiler extended with support for type reflection. This is an powerful approach that largely supplants and improves on PPX for many tasks.
 
-      In this hands-on workshop, participants implement a toy version of type reflection in the compiler, serving as both an introduction to the technique and a "compiler hacking 101" experience for those interested in contributing to OCaml's development.
+      While our fork is not open source, the approach using type reflection deserves to be better known. With that in mind, this workshop will explain some of the main ideas involved by implementing a **toy** version of type reflection in the upstream compiler. Participants will be assumed to be conversant in OCaml but not to have any prior experience with compilers/types/etc and anyone interested in getting started hacking the OCaml compiler is welcome to come!
   links: []
   slides: "type-reflection-workshop.pdf"
   youtube_video: null
@@ -136,7 +136,7 @@
   speakers: ["austin"]
   kind: workshop
   abstract: |
-      This session demonstrates how Semgrep leveraged OpenTelemetry to scale their OCaml-based product, covering practical implementation of telemetry types and real-world examples from their production system. You'll learn hands-on techniques for instrumenting OCaml applications with observability tools that have proven essential for scaling complex software systems.
+      Semgrep has significantly scaled their titular product written in OCaml, and telemetry has been a critical element in doing so. In this talk we want to first give a brief introduction to telemetry and how and when to use different types of telemetry. Next we will present on how to use different parts of the OCaml OpenTelemetry library, how we use them, and demo some real life examples. Finally we will cover how adding this telemetry has helped our business scale.
   links:
       - title: "GitHub Repository"
         url: "https://github.com/ajbt200128/funocaml-o11y"
@@ -209,7 +209,7 @@
       In this talk, I'll walk through a simple OCaml program to generate SMT
       constraints that represent a bounded model of programs in a simple
       imperative language. Algebraic data types and pattern matching are a
-      perfect fit for this kin
+      perfect fit for this kind of work.
   links: []
   slides: null
   youtube_video: null
