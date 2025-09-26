@@ -47,7 +47,9 @@
   kind: workshop
   abstract: |
       OCaml 5 added support for both effects based concurrency and multicore parallelism.  In this hands-on workshop you have the opportunity to learn how to wield both of them by participating in a fun cooperative challenge to harness the distributed computation capacity of the participants and generate pretty pictures.
-  links: []
+  links:
+      - title: "Workshop Materials"
+        url: "https://github.com/ocaml-multicore/fun-ocaml-workshop"
   slides: null
   youtube_video: null
   watch_ocaml_org_video: null
@@ -109,7 +111,7 @@
 
       I'll present what MirageOS is today and where it is used, its future, and our learnings so far.
   links: []
-  slides: null
+  slides: "mirageos.pdf"
   youtube_video: null
   watch_ocaml_org_video: null
 
@@ -260,17 +262,6 @@
       We will develop a MirageOS unikernel from scratch. At the beginning, we'll decide what kind of unikernel we develop (HTTP service, something DNS related, TLS, a remote ssh terminal).
 
       We will dive into compilation and execution of the unikernel - also how to modify the code of the unikernel or any dependent library.
-  links: []
-  slides: null
-  youtube_video: null
-  watch_ocaml_org_video: null
-
-- slug: machine-learning
-  title: Machine Learning in OCaml
-  speakers: ["tarun"]
-  kind: talk
-  abstract: |
-      Building a transformer in OCaml using JAX bindings.
   links: []
   slides: null
   youtube_video: null
