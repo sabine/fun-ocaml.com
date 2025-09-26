@@ -13,7 +13,7 @@ schedule:
           slug: "a-vision-for-ocaml-in-the-ai-era"
     - time: "9:45 - 9:50"
       great_hall:
-          event: "Introducing The OCaml Security Advisory Database"
+          event: "Introducing the OCaml Security Team (OCSF)"
           speaker: "Hannes Mehnert"
     - time: "9:50 - 10:00"
       great_hall:
