@@ -107,6 +107,7 @@ end
 
 module Sessions = struct
   type link = { title : string; url : string } [@@deriving of_yaml]
+  type slide_source = LocalFile of string | ExternalUrl of string
 
   type metadata = {
     slug : string;
@@ -131,7 +132,7 @@ module Sessions = struct
     abstract : string;
     kind : kind;
     links : link list;
-    slides : string option;
+    slides : slide_source option;
     youtube_video : string option;
     watch_ocaml_org_video : string option;
   }
@@ -151,7 +152,14 @@ module Sessions = struct
         | "workshop" -> Workshop
         | t -> failwith ("session kind not recognized: " ^ t));
       links = m.links;
-      slides = m.slides;
+      slides =
+        (match m.slides with
+        | None -> None
+        | Some s when String.length s > 8 && String.sub s 0 8 = "https://" ->
+            Some (ExternalUrl s)
+        | Some s when String.length s > 7 && String.sub s 0 7 = "http://" ->
+            Some (ExternalUrl s)
+        | Some s -> Some (LocalFile s));
       youtube_video = m.youtube_video;
       watch_ocaml_org_video = m.watch_ocaml_org_video;
     }

@@ -91,8 +91,13 @@
   speakers: ["lukasz"]
   kind: talk
   abstract: |
-  links: []
-  slides: null
+      OCANNL: OCaml Compiles Algorithms for Neural Networks Learning
+
+      This talk unveils the mysteries of neural networks training through OCaml, exploring how OCANNL makes machine learning algorithms more accessible and understandable. We'll dive into the compilation of neural network algorithms and demonstrate practical applications.
+  links:
+      - title: "OCANNL Project"
+        url: "https://github.com/ahrefs/ocannl"
+  slides: "https://docs.google.com/presentation/d/1AVpHvuA7EpK6qZIMqym_odC1-JlydM0XALaM0WpXakk/pub?start=false&loop=false&delayms=10000&slide=id.p"
   youtube_video: null
   watch_ocaml_org_video: null
 
