@@ -79,7 +79,7 @@
 
       In this hands-on workshop, participants implement a toy version of type reflection in the compiler, serving as both an introduction to the technique and a "compiler hacking 101" experience for those interested in contributing to OCaml's development.
   links: []
-  slides: null
+  slides: "type-reflection-workshop.pdf"
   youtube_video: null
   watch_ocaml_org_video: null
 
@@ -169,7 +169,7 @@
   abstract: |
       [LexiFi](https://www.lexifi.com/) is likely to have been the first real industrial user of OCaml, back when it was funded in 2000. In this talk, I will present some of the things we have learned along the way. Some of the points I will address: our technology stack (development environment, deployment and distribution, cloud infrastructure, etc), tooling, strong and weak points of OCaml, people aspects (hiring and training), etc. If there is time, I will also present one of our key technical innovations: extending the OCaml compiler with type reflection (this topic will be explored further in the dedicated Workshop).
   links: []
-  slides: null
+  slides: "ocaml-at-lexifi.pdf"
   youtube_video: null
   watch_ocaml_org_video: null
 
