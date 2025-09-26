@@ -238,7 +238,7 @@
   watch_ocaml_org_video: null
 
 - slug: easy-gadts
-  title: "Easy" GADT's by repeating yourself
+  title: '"Easy" GADT''s by repeating yourself'
   speakers: ["eduardo"]
   kind: talk
   abstract: |
