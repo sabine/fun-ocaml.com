@@ -101,7 +101,7 @@
   abstract: |
       No info yet!
   links: []
-  slides: null
+  slides: "purely-functional-grpc-and-http2-with-ocaml.pdf"
   youtube_video: null
   watch_ocaml_org_video: null
 
