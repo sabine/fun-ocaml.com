@@ -94,7 +94,7 @@
       Melange is a new compiler for OCaml targetting JavaScript. Melange codebases integrate with the OCaml Platform: install from OPAM, build with Dune, preprocess with `ppxlib`, format with OCamlformat and publish with `dune-release`. Merlin, OCaml-LSP and `odoc` work out of the box.
       In this talk, I will tell you about the Melange success story and give a glimpse of what's coming in the near future.
   links: []
-  slides: null
+  slides: "melange.pdf"
   youtube_video: null
   watch_ocaml_org_video: null
 
