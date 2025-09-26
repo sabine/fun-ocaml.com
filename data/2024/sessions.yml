@@ -66,8 +66,8 @@
       This is a story about standing the project. Why not to write it in C or Rust? How do we tune the garbage collector to avoid major collections at all? All this and much more like the hidden superpower of unboxed floats and some challenges about naked pointers and upgrading to OCaml v5 in my talk!
   links: []
   slides: null
-  youtube_video: null
-  watch_ocaml_org_video: null
+  youtube_video: https://www.youtube.com/watch?v=hTAvAKolWd8
+  watch_ocaml_org_video: https://watch.ocaml.org/w/hSHDx6iT8z9PBgoaXNnFmW
 
 - slug: tiny-code-xmas
   title: Learning OCaml with Tiny Code Xmas
@@ -85,8 +85,8 @@
       - title: "Tiny Code Christmas"
         url: "https://tcc.lovebyte.party"
   slides: null
-  youtube_video: null
-  watch_ocaml_org_video: null
+  youtube_video: https://www.youtube.com/watch?v=2ZswyN4aP2o
+  watch_ocaml_org_video: https://watch.ocaml.org/w/bBWrw9qh6AaEFVRmFCFMKT
 
 - slug: melange
   title: A 'Melange' of Tooling Coming Together
@@ -97,8 +97,8 @@
       In this talk, I will tell you about the Melange success story and give a glimpse of what's coming in the near future.
   links: []
   slides: "melange.pdf"
-  youtube_video: null
-  watch_ocaml_org_video: null
+  youtube_video: https://www.youtube.com/watch?v=3oCXT-ycHHs
+  watch_ocaml_org_video: https://watch.ocaml.org/w/vCzFWXa4RfN6y7BTSenBY5
 
 - slug: mirage-os
   title: MirageOS - developing operating systems in OCaml
@@ -112,8 +112,8 @@
       I'll present what MirageOS is today and where it is used, its future, and our learnings so far.
   links: []
   slides: "mirageos.pdf"
-  youtube_video: null
-  watch_ocaml_org_video: null
+  youtube_video: https://www.youtube.com/watch?v=g7Kl5mRDCDo
+  watch_ocaml_org_video: https://watch.ocaml.org/w/8guYKggC1zYWk8MjcHLtG9
 
 - slug: ocannl
   title: OCANNL, the `neural_nets_lib`. Mysteries of NNs training unveiled in OCaml
@@ -125,8 +125,8 @@
       - title: "OCANNL Project"
         url: "https://github.com/ahrefs/ocannl"
   slides: "https://docs.google.com/presentation/d/1AVpHvuA7EpK6qZIMqym_odC1-JlydM0XALaM0WpXakk/pub?start=false&loop=false&delayms=10000&slide=id.p"
-  youtube_video: null
-  watch_ocaml_org_video: null
+  youtube_video: https://www.youtube.com/watch?v=1J2XyHLb2J0
+  watch_ocaml_org_video: https://watch.ocaml.org/w/vQYhM1uQ3d3ZACKfRPCtrq
 
 - slug: universal-react
   title: Universal React in OCaml
@@ -136,8 +136,8 @@
       server-reason-react implements react-dom/server and some of React's internals in OCaml. Its purpose is to natively render HTML markup from the server for a Reason React application. This pushes the idea for universal code (sharing code between the browser and native) and this talk is the story of all of this, and what are the solutions we applied at Ahrefs.
   links: []
   slides: https://docs.google.com/presentation/d/1woIM-OXBljjMUnC1hq-YBuIdeTihX6JotTRPmkVwN6k/edit?slide=id.p#slide=id.p
-  youtube_video: null
-  watch_ocaml_org_video: null
+  youtube_video: https://www.youtube.com/watch?v=Oy3lZl2kE-0
+  watch_ocaml_org_video: https://watch.ocaml.org/w/wwYKmvEH8CqKZ7TzRAEZXq
 
 - slug: journey-of-growth
   title:
@@ -149,8 +149,8 @@
       In my decade-long journey as a software engineer, the most transformative experience came from an unexpected source: learning and using OCaml. I will share how this functional programming language reshaped my approach to problem-solving, coding practices, and overall mindset about programming. Beyond the technical skills, OCaml connected me with incredibly bright, kind, and talented mentors and peers who have become lifelong friends. This journey also paved the way for my success on Twitch, allowing me to share my passion and knowledge with a broader audience. Join me as I explore the personal and professional growth that OCaml facilitated and celebrate the community that made it possible.
   links: []
   slides: null
-  youtube_video: null
-  watch_ocaml_org_video: null
+  youtube_video: https://www.youtube.com/watch?v=1HlIHPa38gY
+  watch_ocaml_org_video: https://watch.ocaml.org/w/rwDYUk9N3X9cMRyhCav35X
 
 - slug: let-signals
   title: Let Signals in OCaml
@@ -166,8 +166,8 @@
       Finally, helix is revealed, a library based on the presented reactivity principles. I review some examples and discuss how helix is used to implement real-world applications at Hyper and Tarides.
   links: []
   slides: null
-  youtube_video: null
-  watch_ocaml_org_video: null
+  youtube_video: https://www.youtube.com/watch?v=34bceAuSRXE
+  watch_ocaml_org_video: https://watch.ocaml.org/w/78sg2vm4WzbKvcbSmtCpwd
 
 - slug: multicore-gc
   title: How the Multicore Garbage Collector works
@@ -179,8 +179,8 @@
       Let's focus on the first part for now. The most challenging aspect was designing a multicore-capable garbage collector that remains backwards compatible in terms of features, performance, and latency. This is described in the paper 'Retrofitting Parallelism onto OCaml,' which appeared in ICFP 2020. In this talk, we will explore the ideas presented in the paper through doodle illustrations and zines.
   links: []
   slides: "multicore-gc.pdf"
-  youtube_video: null
-  watch_ocaml_org_video: null
+  youtube_video: https://www.youtube.com/watch?v=fgdB_9DcJj4
+  watch_ocaml_org_video: https://watch.ocaml.org/w/772GsUvu7eRobHgLDUeE2M
 
 - slug: odoc
   title: Using odoc to write documentation
@@ -191,8 +191,8 @@
       We will see how to use `odoc` to build nice documentation for your `dune`-based project, from a bare repository to a documentation with both API pages and documentation pages.
   links: []
   slides: null
-  youtube_video: null
-  watch_ocaml_org_video: null
+  youtube_video: https://www.youtube.com/watch?v=Qzf_ZB1TKLQ
+  watch_ocaml_org_video: https://watch.ocaml.org/w/uFvC5GQU8jChh5PmGNrmTo
 
 - slug: incremental-data-pipelines
   title:
@@ -211,8 +211,8 @@
       This work is part of a multi-year collaboration between the departments of Computer Science, Ecology, Zoology and Geography at the University of Cambridge.
   links: []
   slides: null
-  youtube_video: null
-  watch_ocaml_org_video: null
+  youtube_video: https://www.youtube.com/watch?v=6mxx2j1jmhE
+  watch_ocaml_org_video: https://watch.ocaml.org/w/21fL5BUJxWdLigoALGMpLb
 
 - slug: type-engineering
   title: Type engineering in OCaml, illustrated on the OCaml compiler
@@ -222,8 +222,8 @@
       With four different kinds of variants and four different implementations of an object system, OCaml provides many options to design types to fit domain problems. However, it can be sometimes tempting to escalate type complexity, at the cost of code readability. It is therefore important to find a compromise between code complexity and type safety, in order to not let GADTs escape their scope. As a showcase, this talk proposes to review the use of advanced type features in the oldest OCaml project: the OCaml compiler
   links: []
   slides: null
-  youtube_video: null
-  watch_ocaml_org_video: null
+  youtube_video: https://www.youtube.com/watch?v=FHWH6ayUV8c
+  watch_ocaml_org_video: https://watch.ocaml.org/w/g8xFJmbxhyXDnpwaT6pBJm
 
 - slug: dune
   title: The Dune Mental Model
@@ -251,8 +251,19 @@
       Hopefully by the end, a show case of a proposal for the Michelson interpreter.
   links: []
   slides: "easy-gadts.pdf"
-  youtube_video: null
-  watch_ocaml_org_video: null
+  youtube_video: https://www.youtube.com/watch?v=-XYO_ILJG2M
+  watch_ocaml_org_video: https://watch.ocaml.org/w/3i71o7rfq7UzzpTRyCSx2w
+
+- slug: future-of-dune
+  title: The Future of Dune
+  speakers: ["leandro"]
+  kind: talk
+  abstract: |
+      A presentation about the future direction and development plans for Dune, the OCaml build system.
+  links: []
+  slides: null
+  youtube_video: https://www.youtube.com/watch?v=7_bv3EvQANY
+  watch_ocaml_org_video: https://watch.ocaml.org/w/2A6bTKjqQ1StL6yfQehnvp
 
 - slug: hands-on-mirageos
   title: Hands-on MirageOS
