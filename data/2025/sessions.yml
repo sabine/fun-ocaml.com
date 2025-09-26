@@ -6,6 +6,13 @@
       Discover how to build and train language models using OCaml with Raven, a modern scientific computing ecosystem that brings JAX-like capabilities to functional programming. This hands-on workshop introduces Raven's key libraries-Nx for tensor operations, Rune for automatic differentiation and JIT compilation, and Kaun for neural network architectures-demonstrating how to implement transformer-based models with type safety and competitive performance.
 
       We'll explore Rune's effect-based autodiff system, implement attention mechanisms, and train a small language model while leveraging OCaml's type system for production-ready ML systems.
+  links:
+      - title: "Raven Documentation"
+        url: "https://github.com/raven-ml/raven"
+      - title: "JAX Reference"
+        url: "https://jax.readthedocs.io/"
+  slides: "raven-ml.pdf"
+  video: null
 
 - slug: "terrateam"
   title: "Frameworks: No, Libraries: Yes. Developing a product in OCaml from Scratch"
@@ -13,6 +20,9 @@
   kind: talk
   abstract: |
       Terrateam is an open source infrastructure management product written in OCaml.  In order to stay lean and flexible, Terrateam has developed almost all of its own frameworks and tooling.  With a small team, the Terrateam product punches well above its weight compared to its competition.  This talk will cover the choice to develop their own frameworks, the good, the bad, and how OCaml has been instrumental in being able to achieve so much despite being a two person company.
+  links: []
+  slides: null
+  video: null
 
 - slug: "oxcaml-system-engineers-pov"
   title: "0xCaml From a System Engineer's Point of View"
@@ -20,6 +30,13 @@
   kind: talk
   abstract: |
       I do a lot of Rust, C, Zig and whatever else cursed systems programming languages are there. So recently 0xCaml popped out and I was def interested if I can finally use it. So I did some research on how it actually works comparing to native OCaml and other languages and try to build odiff (the fastest image comparison lib in the world) with 0xCaml. Here is what I learned.
+  links:
+      - title: "odiff Repository"
+        url: "https://github.com/dmtrKovalenko/odiff"
+      - title: "0xCaml Documentation"
+        url: "https://0xcaml.org"
+  slides: null
+  video: "https://www.youtube.com/watch?v=example123"
 
 - slug: "reinforcement-learning-workshop"
   title: "Train a Reinforcement Learning Agent for the Box-Pushing Game Sokoban in OCANNL or Raven"
@@ -27,6 +44,9 @@
   kind: workshop
   abstract: |
       I will give a very brief intro to Reinforcement Learning (RL), covering just the REINFORCE algorithm. We will build an RL harness and an environment for the Sokoban game (cheating allowed). We will program and train models using a convolutional neural net or an axial-attention transformer. While the nets are training, I will introduce the Group Relative Policy Optimization (GRPO) algorithm and discuss how our agent setup relates to post-training of language models on solving problems. Time permitting, we would then implement GRPO and compare its performance with REINFORCE.
+  links: []
+  slides: null
+  video: null
 
 - slug: "static-websites-functional-programming"
   title: "Generating Static Websites the Functional Programming Way"
@@ -34,6 +54,9 @@
   kind: talk
   abstract: |
       Static site generators like Jekyll, Zola, and Hugo are effective, but fall short for complex sites like personal encyclopedias, wikis, or sites with rich content. Features like *backlinks* and *transclusions* require richer context and efficient builds. This talk explores the theory behind static site generation (as a case of *build systems*) and shows how to implement advanced features inspired by [Project Xanadu](https://www.xanadu.net/) using [YOCaml](https://github.com/xhtmlboi/yocaml), a static site framework based on functional abstractions (such as strong profunctors) in OCaml.
+  links: []
+  slides: null
+  video: null
 
 - slug: "slipshow"
   title: "Slipshow: A Full-Featured Presentation Tool in OCaml"
@@ -45,6 +68,9 @@
       This talk tells the story of how it is possible to develop and maintain such a challenging project as a single developer.
 
       If you are reading this far into the abstract, I suspect you are going to FUN OCaml? Are you giving a talk? If so, consider (re)writing your presentation in Slipshow!
+  links: []
+  slides: null
+  video: null
 
 - slug: "compiler-hacking-101"
   title: "Hacking the OCaml Compiler to Add Type Reflection"
@@ -54,6 +80,13 @@
       At LexiFi, we maintain a powerful fork of the OCaml compiler that extends it with type reflection capabilities, providing an alternative to PPX for many common tasks.
 
       In this hands-on workshop, participants implement a toy version of type reflection in the compiler, serving as both an introduction to the technique and a "compiler hacking 101" experience for those interested in contributing to OCaml's development.
+  links:
+      - title: "OCaml Compiler Internals Guide"
+        url: "https://dev.realworldocaml.org/compiler-backend.html"
+      - title: "Type Reflection Paper"
+        url: "https://www.lexifi.com/blog/type-reflection"
+  slides: "compiler-hacking-101.pdf"
+  video: null
 
 - slug: "a-vision-for-ocaml-in-the-ai-era"
   title: "A Vision for OCaml in the AI Era"
@@ -61,6 +94,9 @@
   kind: talk
   abstract: |
       No info yet!
+  links: []
+  slides: null
+  video: null
 
 - slug: "production-grade-network-protocols"
   title: "Crafting Production-Grade Network Protocols in OCaml"
@@ -68,6 +104,9 @@
   kind: talk
   abstract: |
       No info yet!
+  links: []
+  slides: null
+  video: null
 
 - slug: "from-ocaml-4-to-5"
   title: "From OCaml 4 to 5 and from Parmap to Effects: A legacy code transition story"
@@ -75,6 +114,9 @@
   kind: talk
   abstract: |
       OCaml 5's support for shared memory parallelism and effects-based concurrency opens up new ways for developers to build new OCaml programs for modern hardware, but it isn't trivial to migrate existing software to this new world.  We've spent the last few months porting a large (~3MM LoC) OCaml codebase from process-based parallelism to multi-domain Eio, and learned a lot along the way.  In this talk, we'll discuss the fundamentals of shared-memory parallism, our incremental migration approach which used a combination of static and dynamic analysis, the pitfalls (both expected and unexpected) that we encountered along the way, and some lessons that others can adopt for their own journey.
+  links: []
+  slides: null
+  video: null
 
 - slug: "vif-hurl-web-framework-for-ocaml-5"
   title: "Vif & Hurl, a Web Framework for OCaml 5"
@@ -82,6 +124,9 @@
   kind: workshop
   abstract: |
       The aim of this workshop is to present Vif, a new typed web framework for OCaml 5. We will introduce Vif to participants through a practical example: a user space with a chat room, which we will develop into a web application. We will test this application using hurl, an HTTP client in OCaml. We will see typed routes, typed forms, typed SQL queries (thanks to caqti) as well as websockets (and of course, js_of_ocaml). More importantly, participants will also be able to give feedback on our framework (and perhaps participate in its development) in order to improve it and bring web development back to the world of OCaml 5 and types!
+  links: []
+  slides: null
+  video: null
 
 - slug: "ocaml-observability-with-opentelemetry"
   title: "OCaml Observability with OpenTelmetry"
@@ -89,6 +134,9 @@
   kind: workshop
   abstract: |
       This session demonstrates how Semgrep leveraged OpenTelemetry to scale their OCaml-based product, covering practical implementation of telemetry types and real-world examples from their production system. You'll learn hands-on techniques for instrumenting OCaml applications with observability tools that have proven essential for scaling complex software systems.
+  links: []
+  slides: null
+  video: null
 
 - slug: "performance-pitfalls-tales-from-a-python-ocaml-codebase"
   title: "Performance Pitfalls: Tales From a Python/OCaml Codebase"
@@ -96,6 +144,9 @@
   kind: talk
   abstract: |
       Semgrep is a tool that enables developers to search their code for security vulnerabilities, built with an OCaml engine and a Python frontend. This has come with a fair amount of performance pain. In this talk, I'll share some of the worst problems we ran into, how we found them, and how we solved them (mostly, rewriting Python code in OCaml).
+  links: []
+  slides: null
+  video: null
 
 - slug: "i-can-see-the-pixels"
   title: "I Can See The Pixels: Designing Cross-Stitch Patterns in OCaml"
@@ -103,6 +154,9 @@
   kind: talk
   abstract: |
       I was unsatisfied with existing cross-stitch pattern generating software, which was mostly structured like pixel-based paint programs. Those programs with support for very common operations like tiling borders were locked behind paywalls. I decided to write my own in OCaml, and I've been using it to design cross-stitch patterns since 2019. I'll talk a bit about the joy of making the Exact Right Tool, the anguish of abandoned experiments, and the ambiguous pleasure of monetizing art.
+  links: []
+  slides: null
+  video: null
 
 - slug: "ocaml-at-lexifi"
   title: "OCaml at LexiFi"
@@ -110,6 +164,13 @@
   kind: talk
   abstract: |
       [LexiFi](https://www.lexifi.com/) is likely to have been the first real industrial user of OCaml, back when it was funded in 2000. In this talk, I will present some of the things we have learned along the way. Some of the points I will address: our technology stack (development environment, deployment and distribution, cloud infrastructure, etc), tooling, strong and weak points of OCaml, people aspects (hiring and training), etc. If there is time, I will also present one of our key technical innovations: extending the OCaml compiler with type reflection (this topic will be explored further in the dedicated Workshop).
+  links:
+      - title: "LexiFi Website"
+        url: "https://www.lexifi.com/"
+      - title: "OCaml Industrial Users"
+        url: "https://ocaml.org/industrial-users"
+  slides: "ocaml-at-lexifi.pdf"
+  video: "https://watch.ocaml.org/w/example456"
 
 - slug: "mlx-melange-react-server-components"
   title: "mlx, Melange, React and Server Components"
@@ -122,6 +183,9 @@
       - Hands-on exploration of Melange single context and other patters of universal libraries
       - Explaining what's React server components
       - and implementing a small app
+  links: []
+  slides: null
+  video: null
 
 - slug: "analyzing-programs-with-smt-solvers"
   title: "Analyzing Programs with SMT Solvers"
@@ -140,3 +204,6 @@
       constraints that represent a bounded model of programs in a simple
       imperative language. Algebraic data types and pattern matching are a
       perfect fit for this kin
+  links: []
+  slides: null
+  video: null

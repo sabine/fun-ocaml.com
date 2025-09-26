@@ -106,12 +106,17 @@ module RecommendedEvents = struct
 end
 
 module Sessions = struct
+  type link = { title : string; url : string } [@@deriving of_yaml]
+
   type metadata = {
     slug : string;
     title : string;
     speakers : string list;
     abstract : string;
     kind : string;
+    links : link list;
+    slides : string option;
+    video : string option;
   }
   [@@deriving of_yaml]
 
@@ -124,6 +129,9 @@ module Sessions = struct
     speakers : People.t list;
     abstract : string;
     kind : kind;
+    links : link list;
+    slides : string option;
+    video : string option;
   }
 
   let of_metadata (m : metadata) : t =
@@ -140,6 +148,9 @@ module Sessions = struct
         | "talk" -> Talk
         | "workshop" -> Workshop
         | t -> failwith ("session kind not recognized: " ^ t));
+      links = m.links;
+      slides = m.slides;
+      video = m.video;
     }
 
   let decode data =
