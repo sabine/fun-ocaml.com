@@ -158,7 +158,7 @@
   abstract: |
       I was unsatisfied with existing cross-stitch pattern generating software, which was mostly structured like pixel-based paint programs. Those programs with support for very common operations like tiling borders were locked behind paywalls. I decided to write my own in OCaml, and I've been using it to design cross-stitch patterns since 2019. I'll talk a bit about the joy of making the Exact Right Tool, the anguish of abandoned experiments, and the ambiguous pleasure of monetizing art.
   links: []
-  slides: null
+  slides: "cross-stitch.pdf"
   youtube_video: null
   watch_ocaml_org_video: null
 
