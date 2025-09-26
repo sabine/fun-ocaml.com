@@ -112,7 +112,7 @@
   abstract: |
       OCaml 5's support for shared memory parallelism and effects-based concurrency opens up new ways for developers to build new OCaml programs for modern hardware, but it isn't trivial to migrate existing software to this new world.  We've spent the last few months porting a large (~3MM LoC) OCaml codebase from process-based parallelism to multi-domain Eio, and learned a lot along the way.  In this talk, we'll discuss the fundamentals of shared-memory parallism, our incremental migration approach which used a combination of static and dynamic analysis, the pitfalls (both expected and unexpected) that we encountered along the way, and some lessons that others can adopt for their own journey.
   links: []
-  slides: null
+  slides: "from-ocaml-4-to-5.pdf"
   youtube_video: null
   watch_ocaml_org_video: null
 
