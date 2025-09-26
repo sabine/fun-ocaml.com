@@ -40,7 +40,7 @@
   abstract: |
       I will give a very brief intro to Reinforcement Learning (RL), covering just the REINFORCE algorithm. We will build an RL harness and an environment for the Sokoban game (cheating allowed). We will program and train models using a convolutional neural net or an axial-attention transformer. While the nets are training, I will introduce the Group Relative Policy Optimization (GRPO) algorithm and discuss how our agent setup relates to post-training of language models on solving problems. Time permitting, we would then implement GRPO and compare its performance with REINFORCE.
   links: []
-  slides: null
+  slides: "reinforcement-learning-workshop.html"
   youtube_video: null
   watch_ocaml_org_video: null
 
