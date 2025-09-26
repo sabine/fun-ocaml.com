@@ -176,7 +176,7 @@
 
       Let's focus on the first part for now. The most challenging aspect was designing a multicore-capable garbage collector that remains backwards compatible in terms of features, performance, and latency. This is described in the paper 'Retrofitting Parallelism onto OCaml,' which appeared in ICFP 2020. In this talk, we will explore the ideas presented in the paper through doodle illustrations and zines.
   links: []
-  slides: null
+  slides: "multicore-gc.pdf"
   youtube_video: null
   watch_ocaml_org_video: null
 
