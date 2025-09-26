@@ -13,8 +13,13 @@
   speakers: ["vincent"]
   kind: workshop
   abstract: |
-  links: []
-  slides: null
+      Learn web and mobile app development using OCaml with the Ocsigen framework and Eliom. This workshop covers building modern web applications and mobile apps using OCaml's powerful type system and functional programming paradigms.
+  links:
+      - title: "Ocsigen Framework"
+        url: "https://ocsigen.org/"
+      - title: "Slides Source Directory"
+        url: "https://github.com/ocsigen/ocsigen.github.io/tree/master/talks"
+  slides: "https://ocsigen.org/talks/tutochat.html"
   youtube_video: null
   watch_ocaml_org_video: null
 
