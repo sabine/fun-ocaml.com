@@ -55,7 +55,13 @@
   speakers: ["michael"]
   kind: talk
   abstract: |
-  links: []
+  links:
+      - title: "Slides"
+        url: "https://github.com/mdales/funocaml24"
+      - title: "Claudius graphics library"
+        url: "https://github.com/mdales/claudius"
+      - title: "Tiny Code Christmas"
+        url: "https://tcc.lovebyte.party"
   slides: null
   youtube_video: null
   watch_ocaml_org_video: null
