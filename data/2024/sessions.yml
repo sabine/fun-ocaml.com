@@ -248,7 +248,7 @@
 
       Hopefully by the end, a show case of a proposal for the Michelson interpreter.
   links: []
-  slides: null
+  slides: "easy-gadts.pdf"
   youtube_video: null
   watch_ocaml_org_video: null
 
