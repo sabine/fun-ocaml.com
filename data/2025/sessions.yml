@@ -133,8 +133,10 @@
   kind: workshop
   abstract: |
       This session demonstrates how Semgrep leveraged OpenTelemetry to scale their OCaml-based product, covering practical implementation of telemetry types and real-world examples from their production system. You'll learn hands-on techniques for instrumenting OCaml applications with observability tools that have proven essential for scaling complex software systems.
-  links: []
-  slides: null
+  links:
+      - title: "GitHub Repository"
+        url: "https://github.com/ajbt200128/funocaml-o11y"
+  slides: "https://link.excalidraw.com/p/readonly/6dHJsAEg8pYNdhI1xPk8"
   youtube_video: null
   watch_ocaml_org_video: null
 
