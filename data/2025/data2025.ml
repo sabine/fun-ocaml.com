@@ -116,7 +116,8 @@ module Sessions = struct
     kind : string;
     links : link list;
     slides : string option;
-    video : string option;
+    youtube_video : string option;
+    watch_ocaml_org_video : string option;
   }
   [@@deriving of_yaml]
 
@@ -131,7 +132,8 @@ module Sessions = struct
     kind : kind;
     links : link list;
     slides : string option;
-    video : string option;
+    youtube_video : string option;
+    watch_ocaml_org_video : string option;
   }
 
   let of_metadata (m : metadata) : t =
@@ -150,7 +152,8 @@ module Sessions = struct
         | t -> failwith ("session kind not recognized: " ^ t));
       links = m.links;
       slides = m.slides;
-      video = m.video;
+      youtube_video = m.youtube_video;
+      watch_ocaml_org_video = m.watch_ocaml_org_video;
     }
 
   let decode data =
