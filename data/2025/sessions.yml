@@ -95,7 +95,7 @@
   watch_ocaml_org_video: null
 
 - slug: "production-grade-network-protocols"
-  title: "Crafting Production-Grade Network Protocols in OCaml"
+  title: "Purely functional gRPC and HTTP/2 with OCaml"
   speakers: ["adam"]
   kind: talk
   abstract: |
